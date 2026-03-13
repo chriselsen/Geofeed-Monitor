@@ -31,8 +31,12 @@ IPINFO_DB_FILE = IPINFO_DIR / "ipinfo_lite.mmdb"
 ASSETS_DIR = DATA_DIR / "assets"
 AWS_LOGO_FILE = ASSETS_DIR / "aws-logo.svg"
 AWS_LOGO_URL = "https://docs.aws.amazon.com/assets/r/images/aws_logo_dark.svg"
+AWS_CARD_LOGO_FILE = ASSETS_DIR / "aws-card-logo.svg"
+AWS_CARD_LOGO_URL = "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
 AS213151_LOGO_FILE = ASSETS_DIR / "as213151-logo.png"
 AS213151_LOGO_URL = "https://as213151.net/images/AS213151.png"
+STARLINK_LOGO_FILE = ASSETS_DIR / "starlink-logo.svg"
+STARLINK_LOGO_URL = "https://upload.wikimedia.org/wikipedia/commons/a/a8/Starlink_Logo.svg"
 
 MAXMIND_FAVICON_FILE = ASSETS_DIR / "maxmind-favicon.ico"
 MAXMIND_FAVICON_URL = "https://www.maxmind.com/favicon.ico"
@@ -66,6 +70,11 @@ def update_maxmind():
          MAXMIND_DOWNLOAD_URL],
         check=True,
     )
+    result = subprocess.run(["file", "--brief", str(tar_path)], capture_output=True, text=True)
+    if "gzip" not in result.stdout.lower():
+        print(f"  MaxMind download failed: {tar_path.read_text()[:120]}")
+        tar_path.unlink()
+        return
 
     with tarfile.open(tar_path, mode="r:gz") as tf:
         for member in tf.getmembers():
@@ -77,22 +86,41 @@ def update_maxmind():
     print("  MaxMind database updated")
 
 
+GLOBE_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>'
+GLOBE_FAVICON = 'data:image/svg+xml,' + '<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><rect width=%2224%22 height=%2224%22 rx=%224%22 fill=%22%23232f3e%22/><circle cx=%2212%22 cy=%2212%22 r=%228%22 fill=%22none%22 stroke=%22white%22 stroke-width=%221.2%22/><path d=%22M4 12h16%22 fill=%22none%22 stroke=%22white%22 stroke-width=%221.2%22/><path d=%22M12 4a12 12 0 0 1 3.2 8 12 12 0 0 1-3.2 8 12 12 0 0 1-3.2-8A12 12 0 0 1 12 4z%22 fill=%22none%22 stroke=%22white%22 stroke-width=%221.2%22/></svg>'
+
 FEEDS = [
     {
         "url": "https://ip-ranges.amazonaws.com/geo-ip-feed.csv",
         "output": Path("./aws.html"),
         "title": "AWS Geofeed Monitoring Report",
-        "topbar_title": "Geofeed Monitoring Report",
+        "topbar_title": "AWS Geofeed Monitoring Report",
         "logo_file": AWS_LOGO_FILE,
         "logo_type": "svg",
+        "card_logo_file": AWS_CARD_LOGO_FILE,
+        "card_logo_type": "svg",
     },
     {
         "url": "https://raw.githubusercontent.com/AS213151/rfc8805-geofeed/main/as213151-geo-ip.txt",
         "output": Path("./as213151.html"),
         "title": "AS213151 Geofeed Monitoring Report",
-        "topbar_title": "Geofeed Monitoring Report",
+        "topbar_title": "AS213151 Geofeed Monitoring Report",
         "logo_file": AS213151_LOGO_FILE,
         "logo_type": "png",
+        "logo_invert": True,
+        "card_logo_file": AS213151_LOGO_FILE,
+        "card_logo_type": "png",
+    },
+    {
+        "url": "https://geoip.starlinkisp.net/",
+        "output": Path("./starlink.html"),
+        "title": "Starlink Geofeed Monitoring Report",
+        "topbar_title": "Starlink Geofeed Monitoring Report",
+        "logo_file": STARLINK_LOGO_FILE,
+        "logo_type": "svg",
+        "logo_invert": True,
+        "card_logo_file": STARLINK_LOGO_FILE,
+        "card_logo_type": "svg",
     },
 ]
 
@@ -102,7 +130,9 @@ def download_assets():
     ASSETS_DIR.mkdir(parents=True, exist_ok=True)
     for path, url in [
         (AWS_LOGO_FILE, AWS_LOGO_URL),
+        (AWS_CARD_LOGO_FILE, AWS_CARD_LOGO_URL),
         (AS213151_LOGO_FILE, AS213151_LOGO_URL),
+        (STARLINK_LOGO_FILE, STARLINK_LOGO_URL),
         (MAXMIND_FAVICON_FILE, MAXMIND_FAVICON_URL),
         (IPINFO_FAVICON_FILE, IPINFO_FAVICON_URL),
         (IP2LOCATION_FAVICON_FILE, IP2LOCATION_FAVICON_URL),
@@ -291,12 +321,13 @@ def generate_index(feeds):
     now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     cards = []
     for feed in feeds:
-        logo_file = feed["logo_file"]
-        if logo_file.exists():
-            if feed["logo_type"] == "svg":
-                logo_html = logo_file.read_text(encoding="utf-8")
+        card_file = feed.get("card_logo_file", feed["logo_file"])
+        card_type = feed.get("card_logo_type", feed["logo_type"])
+        if card_file.exists():
+            if card_type == "svg":
+                logo_html = card_file.read_text(encoding="utf-8")
             else:
-                b64 = base64.b64encode(logo_file.read_bytes()).decode()
+                b64 = base64.b64encode(card_file.read_bytes()).decode()
                 logo_html = f'<img src="data:image/png;base64,{b64}" alt="">'
         else:
             logo_html = ""
@@ -304,17 +335,13 @@ def generate_index(feeds):
         cards.append(f'<a class="feed-card" href="{href}"><div class="feed-logo">{logo_html}</div>'
                      f'<div class="feed-title">{feed["title"]}</div></a>')
 
-    logo_svg = AWS_LOGO_FILE.read_text(encoding="utf-8") if AWS_LOGO_FILE.exists() else ""
-    logo_b64 = base64.b64encode(logo_svg.encode()).decode() if logo_svg else ""
-    favicon_uri = f"data:image/svg+xml;base64,{logo_b64}" if logo_b64 else ""
-
     html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Geofeed Monitor</title>
-{f'<link rel="icon" type="image/svg+xml" href="{favicon_uri}">' if favicon_uri else ''}
+<link rel="icon" href="{GLOBE_FAVICON}">
 <style>
   :root {{
     --squid-ink: #232f3e;
@@ -344,7 +371,7 @@ def generate_index(feeds):
     gap: 16px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.15);
   }}
-  .topbar svg {{ height: 40px; }}
+  .topbar svg {{ height: 40px; width: auto; }}
   .topbar h1 {{ color: #fff; font-size: 20px; font-weight: 700; }}
   .topbar .separator {{ width: 1px; height: 28px; background: var(--squid-ink-light); }}
   .container {{
@@ -402,7 +429,7 @@ def generate_index(feeds):
 </head>
 <body>
 <div class="topbar">
-  {logo_svg}
+  {GLOBE_SVG}
   <div class="separator"></div>
   <h1>Geofeed Monitor</h1>
 </div>
@@ -620,13 +647,18 @@ def generate_html(results, stats, has_mm=True, has_ip=True, has_i2l=True, feed=N
 
     if logo_file.exists():
         if logo_type == "svg":
-            topbar_logo = logo_file.read_text(encoding="utf-8")
-            logo_b64 = base64.b64encode(topbar_logo.encode()).decode()
+            svg_text = logo_file.read_text(encoding="utf-8")
+            logo_b64 = base64.b64encode(svg_text.encode()).decode()
             favicon_uri = f"data:image/svg+xml;base64,{logo_b64}"
+            if feed and feed.get("logo_invert"):
+                topbar_logo = f'<div style="filter:invert(1);display:flex;align-items:center">{svg_text}</div>'
+            else:
+                topbar_logo = svg_text
         else:
             raw = logo_file.read_bytes()
             b64 = base64.b64encode(raw).decode()
-            topbar_logo = f'<img src="data:image/png;base64,{b64}" style="height:40px" alt="">'
+            invert = ' style="height:40px;filter:invert(1)"' if feed and feed.get("logo_invert") else ' style="height:40px"'
+            topbar_logo = f'<img src="data:image/png;base64,{b64}"{invert} alt="">'
             favicon_uri = f"data:image/png;base64,{b64}"
     else:
         topbar_logo = ""
@@ -678,7 +710,7 @@ def generate_html(results, stats, has_mm=True, has_ip=True, has_i2l=True, feed=N
     gap: 16px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.15);
   }}
-  .topbar svg {{ height: 40px; }}
+  .topbar svg {{ height: 40px; width: auto; }}
   .topbar h1 {{
     color: #ffffff;
     font-size: 20px;
