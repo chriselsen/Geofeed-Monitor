@@ -309,6 +309,16 @@ def compute_stats(results, has_mm=True, has_ip=True, has_i2l=True):
     city_all, city_v4, city_v6 = [], [], []
     w_country_all, w_country_v4, w_country_v6 = [], [], []
     w_city_all, w_city_v4, w_city_v6 = [], [], []
+    # Per-provider match indices: (stat_key, result_tuple_index)
+    provider_indices = []
+    if has_mm:
+        provider_indices += [("mm_c", 6), ("mm_ci", 7)]
+    if has_ip:
+        provider_indices += [("ip_c", 9)]
+    if has_i2l:
+        provider_indices += [("i2l_c", 12), ("i2l_ci", 13)]
+    prov = {k: [] for k, _ in provider_indices}
+    w_prov = {k: [] for k, _ in provider_indices}
     for _, _, loc_results in results:
         for r in loc_results:
             net = ipaddress.ip_network(r[0], strict=False)
@@ -320,6 +330,10 @@ def compute_stats(results, has_mm=True, has_ip=True, has_i2l=True):
             city_all.extend(city_matches)
             w_country_all.extend((m, n) for m in country_matches)
             w_city_all.extend((m, n) for m in city_matches)
+            # Per-provider tracking
+            for key, match_idx in provider_indices:
+                prov[key].append(r[match_idx])
+                w_prov[key].append((r[match_idx], n))
             if r[1]:
                 v6 += 1
                 v6_addrs += n
@@ -334,7 +348,7 @@ def compute_stats(results, has_mm=True, has_ip=True, has_i2l=True):
                 city_v4.extend(city_matches)
                 w_country_v4.extend((m, n) for m in country_matches)
                 w_city_v4.extend((m, n) for m in city_matches)
-    return {
+    s = {
         "total": total, "v4": v4, "v6": v6,
         "v4_addrs": v4_addrs, "v6_addrs": v6_addrs,
         "country_pct": compute_pct(country_all),
@@ -350,6 +364,10 @@ def compute_stats(results, has_mm=True, has_ip=True, has_i2l=True):
         "w_city_pct_v4": compute_weighted_pct(w_city_v4),
         "w_city_pct_v6": compute_weighted_pct(w_city_v6),
     }
+    for key in prov:
+        s[key] = compute_pct(prov[key])
+        s["w_" + key] = compute_weighted_pct(w_prov[key])
+    return s
 
 
 def compute_pct(matches):
@@ -706,6 +724,18 @@ def generate_html(results, stats, has_mm=True, has_ip=True, has_i2l=True):
     font-size: 11px;
     color: var(--text-secondary);
   }}
+  tfoot td {{
+    background: var(--bg-page);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-top: 2px solid var(--border);
+    color: var(--text-secondary);
+  }}
+  tfoot td.good {{ color: var(--good); background: var(--good-bg); }}
+  tfoot td.warn {{ color: var(--warn); background: var(--warn-bg); }}
+  tfoot td.bad {{ color: var(--bad); background: var(--bad-bg); }}
+  tfoot td.na {{ color: var(--na-text); }}
 </style>
 </head>
 <body>
@@ -839,7 +869,29 @@ def generate_html(results, stats, has_mm=True, has_ip=True, has_i2l=True):
                 html.append(f'  {match_cell(i2l_c_m, i2l_c, True)}{match_cell(i2l_ci_m, i2l_ci)}')
             html.append("</tr>")
 
-    html.append(f"""</tbody></table>
+    html.append("</tbody>")
+
+    # Table footer with per-provider accuracy
+    def _foot_label(label):
+        return f'<td style="text-align:right;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:0.5px">{label}</td>'
+
+    def _foot_row(label, mm_c_key, mm_ci_key, ip_c_key, i2l_c_key, i2l_ci_key):
+        row = f'<tr>{_foot_label(label)}'
+        if has_mm:
+            row += pct_cell(stats.get(mm_c_key), True) + pct_cell(stats.get(mm_ci_key))
+        if has_ip:
+            row += pct_cell(stats.get(ip_c_key), True) + '<td class="na">N/A</td>'
+        if has_i2l:
+            row += pct_cell(stats.get(i2l_c_key), True) + pct_cell(stats.get(i2l_ci_key))
+        row += '</tr>'
+        return row
+
+    html.append('<tfoot>')
+    html.append(_foot_row('Prefix Accuracy', 'mm_c', 'mm_ci', 'ip_c', 'i2l_c', 'i2l_ci'))
+    html.append(_foot_row('Address Accuracy', 'w_mm_c', 'w_mm_ci', 'w_ip_c', 'w_i2l_c', 'w_i2l_ci'))
+    html.append('</tfoot>')
+
+    html.append(f"""</table>
 </div>
 </div>
 <footer style="text-align:center;padding:16px;font-size:12px;color:#545b64">
