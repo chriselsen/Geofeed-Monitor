@@ -732,6 +732,15 @@ def generate_html(results, stats, has_mm=True, has_ip=True, has_i2l=True, feed=N
     height: 28px;
     background: var(--squid-ink-light);
   }}
+  .back-arrow {{
+    display: inline-block;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 12px;
+    transition: color 0.15s;
+  }}
+  .back-arrow:hover {{ color: var(--text-primary); }}
   .container {{
     max-width: 1400px;
     margin: 0 auto;
@@ -958,6 +967,7 @@ def generate_html(results, stats, has_mm=True, has_ip=True, has_i2l=True, feed=N
   <h1>{topbar_title}</h1>
 </div>
 <div class="container">
+<a href="index.html" class="back-arrow">&larr; All Reports</a>
 <div class="card">
 <div class="card-header">
   <h2>Location Validation Results</h2>
