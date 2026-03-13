@@ -19,9 +19,6 @@ import IP2Location
 import zipfile
 
 DATA_DIR = Path("./data")
-OUTPUT_FILE = Path("./index.html")
-
-GEOFEED_URL = "https://ip-ranges.amazonaws.com/geo-ip-feed.csv"
 
 MAXMIND_DOWNLOAD_URL = "https://download.maxmind.com/geoip/databases/GeoLite2-City/download?suffix=tar.gz"
 MAXMIND_DIR = DATA_DIR / "maxmind"
@@ -34,6 +31,8 @@ IPINFO_DB_FILE = IPINFO_DIR / "ipinfo_lite.mmdb"
 ASSETS_DIR = DATA_DIR / "assets"
 AWS_LOGO_FILE = ASSETS_DIR / "aws-logo.svg"
 AWS_LOGO_URL = "https://docs.aws.amazon.com/assets/r/images/aws_logo_dark.svg"
+AS213151_LOGO_FILE = ASSETS_DIR / "as213151-logo.png"
+AS213151_LOGO_URL = "https://as213151.net/images/AS213151.png"
 
 MAXMIND_FAVICON_FILE = ASSETS_DIR / "maxmind-favicon.ico"
 MAXMIND_FAVICON_URL = "https://www.maxmind.com/favicon.ico"
@@ -78,11 +77,32 @@ def update_maxmind():
     print("  MaxMind database updated")
 
 
+FEEDS = [
+    {
+        "url": "https://ip-ranges.amazonaws.com/geo-ip-feed.csv",
+        "output": Path("./aws.html"),
+        "title": "AWS Geofeed Monitoring Report",
+        "topbar_title": "Geofeed Monitoring Report",
+        "logo_file": AWS_LOGO_FILE,
+        "logo_type": "svg",
+    },
+    {
+        "url": "https://raw.githubusercontent.com/AS213151/rfc8805-geofeed/main/as213151-geo-ip.txt",
+        "output": Path("./as213151.html"),
+        "title": "AS213151 Geofeed Monitoring Report",
+        "topbar_title": "Geofeed Monitoring Report",
+        "logo_file": AS213151_LOGO_FILE,
+        "logo_type": "png",
+    },
+]
+
+
 def download_assets():
     """Download static assets if not already present."""
     ASSETS_DIR.mkdir(parents=True, exist_ok=True)
     for path, url in [
         (AWS_LOGO_FILE, AWS_LOGO_URL),
+        (AS213151_LOGO_FILE, AS213151_LOGO_URL),
         (MAXMIND_FAVICON_FILE, MAXMIND_FAVICON_URL),
         (IPINFO_FAVICON_FILE, IPINFO_FAVICON_URL),
         (IP2LOCATION_FAVICON_FILE, IP2LOCATION_FAVICON_URL),
@@ -182,10 +202,10 @@ def lookup_ipinfo(ip_str, ip_reader):
 # --- Geofeed loader ---
 
 
-def load_geofeed():
-    """Load the AWS geofeed CSV. Returns dict: prefix_str -> (country, subdiv, city)."""
-    print("Loading AWS geofeed CSV...")
-    data = urlopen(GEOFEED_URL).read().decode("utf-8")
+def load_geofeed(url):
+    """Load a geofeed CSV. Returns dict: prefix_str -> (country, subdiv, city)."""
+    print(f"Loading geofeed from {url}...")
+    data = urlopen(url).read().decode("utf-8")
     geofeed = {}
     for row in csv.reader(io.StringIO(data)):
         if not row or row[0].startswith("#"):
@@ -232,33 +252,10 @@ def match_city(gf_city, provider_city):
 # --- Main ---
 
 
-def main():
-    geofeed = load_geofeed()
-    locations = group_by_location(geofeed)
-
-    update_maxmind()
-    update_ipinfo()
-    update_ip2location()
-    download_assets()
-
-    print("Loading databases...")
-    mm_reader = maxminddb.open_database(str(MAXMIND_DB_FILE)) if MAXMIND_DB_FILE.exists() else None
-    ip_reader = maxminddb.open_database(str(IPINFO_DB_FILE)) if IPINFO_DB_FILE.exists() else None
-    i2l_reader = IP2Location.IP2Location(str(IP2LOCATION_DB_FILE)) if IP2LOCATION_DB_FILE.exists() else None
-    if not mm_reader:
-        print("  MaxMind database not available — skipping")
-    if not ip_reader:
-        print("  IPinfo database not available — skipping")
-    if not i2l_reader:
-        print("  IP2Location database not available — skipping")
-
-    print("Validating prefixes...")
-    # Per prefix: (prefix, is_v6, gf_country, gf_city,
-    #              mm_country, mm_city, mm_c_match, mm_ci_match,
-    #              ip_country, ip_c_match,
-    #              i2l_country, i2l_city, i2l_c_match, i2l_ci_match)
+def validate_prefixes(locations, mm_reader, ip_reader, i2l_reader):
+    """Validate all prefixes against available providers. Returns results list."""
     results = []
-    total = len(geofeed)
+    total = sum(len(entries) for _, _, entries in locations)
     done = 0
     for country_code, display_name, entries in locations:
         loc_results = []
@@ -286,6 +283,174 @@ def main():
                 print(f"  {done}/{total} prefixes validated...", end="\r")
         results.append((country_code, display_name, loc_results))
     print(f"  {done}/{total} prefixes validated.    ")
+    return results
+
+
+def generate_index(feeds):
+    """Generate the landing page with links to each feed report."""
+    now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    cards = []
+    for feed in feeds:
+        logo_file = feed["logo_file"]
+        if logo_file.exists():
+            if feed["logo_type"] == "svg":
+                logo_html = logo_file.read_text(encoding="utf-8")
+            else:
+                b64 = base64.b64encode(logo_file.read_bytes()).decode()
+                logo_html = f'<img src="data:image/png;base64,{b64}" alt="">'
+        else:
+            logo_html = ""
+        href = feed["output"].name
+        cards.append(f'<a class="feed-card" href="{href}"><div class="feed-logo">{logo_html}</div>'
+                     f'<div class="feed-title">{feed["title"]}</div></a>')
+
+    logo_svg = AWS_LOGO_FILE.read_text(encoding="utf-8") if AWS_LOGO_FILE.exists() else ""
+    logo_b64 = base64.b64encode(logo_svg.encode()).decode() if logo_svg else ""
+    favicon_uri = f"data:image/svg+xml;base64,{logo_b64}" if logo_b64 else ""
+
+    html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geofeed Monitor</title>
+{f'<link rel="icon" type="image/svg+xml" href="{favicon_uri}">' if favicon_uri else ''}
+<style>
+  :root {{
+    --squid-ink: #232f3e;
+    --squid-ink-light: #37475a;
+    --text-primary: #16191f;
+    --text-secondary: #545b64;
+    --bg-page: #f2f3f3;
+    --bg-card: #ffffff;
+    --border: #d5dbdb;
+    --aws-orange: #ff9900;
+  }}
+  * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+  body {{
+    font-family: "Amazon Ember", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg-page);
+    color: var(--text-primary);
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }}
+  .topbar {{
+    background: var(--squid-ink);
+    padding: 12px 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  }}
+  .topbar svg {{ height: 40px; }}
+  .topbar h1 {{ color: #fff; font-size: 20px; font-weight: 700; }}
+  .topbar .separator {{ width: 1px; height: 28px; background: var(--squid-ink-light); }}
+  .container {{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 32px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }}
+  .container h2 {{
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }}
+  .container p {{
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    text-align: center;
+    max-width: 600px;
+  }}
+  .feed-grid {{
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }}
+  .feed-card {{
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: box-shadow 0.2s, border-color 0.2s;
+    width: 260px;
+  }}
+  .feed-card:hover {{
+    border-color: var(--aws-orange);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }}
+  .feed-logo {{ height: 60px; display: flex; align-items: center; }}
+  .feed-logo svg {{ height: 50px; }}
+  .feed-logo img {{ height: 60px; }}
+  .feed-title {{ font-size: 14px; font-weight: 600; text-align: center; }}
+  footer {{ text-align: center; padding: 16px; font-size: 12px; color: #545b64; }}
+</style>
+</head>
+<body>
+<div class="topbar">
+  {logo_svg}
+  <div class="separator"></div>
+  <h1>Geofeed Monitor</h1>
+</div>
+<div class="container">
+  <h2>Select a Geofeed Report</h2>
+  <p>Monitors the accuracy of RFC 8805 geofeeds by validating geolocation claims against third-party databases.</p>
+  <div class="feed-grid">
+    {''.join(cards)}
+  </div>
+</div>
+<footer>Last updated: {now_utc}</footer>
+</body></html>"""
+    Path("./index.html").write_text(html, encoding="utf-8")
+    print("Landing page written to index.html")
+
+
+def main():
+    update_maxmind()
+    update_ipinfo()
+    update_ip2location()
+    download_assets()
+
+    print("Loading databases...")
+    mm_reader = maxminddb.open_database(str(MAXMIND_DB_FILE)) if MAXMIND_DB_FILE.exists() else None
+    ip_reader = maxminddb.open_database(str(IPINFO_DB_FILE)) if IPINFO_DB_FILE.exists() else None
+    i2l_reader = IP2Location.IP2Location(str(IP2LOCATION_DB_FILE)) if IP2LOCATION_DB_FILE.exists() else None
+    if not mm_reader:
+        print("  MaxMind database not available — skipping")
+    if not ip_reader:
+        print("  IPinfo database not available — skipping")
+    if not i2l_reader:
+        print("  IP2Location database not available — skipping")
+
+    has_mm = mm_reader is not None
+    has_ip = ip_reader is not None
+    has_i2l = i2l_reader is not None
+
+    for feed in FEEDS:
+        print(f"\n=== {feed['title']} ===")
+        geofeed = load_geofeed(feed["url"])
+        locations = group_by_location(geofeed)
+        print("Validating prefixes...")
+        results = validate_prefixes(locations, mm_reader, ip_reader, i2l_reader)
+        stats = compute_stats(results, has_mm, has_ip, has_i2l)
+        print("Generating HTML report...")
+        generate_html(results, stats, has_mm, has_ip, has_i2l, feed)
+        print(f"Report written to {feed['output']}")
+
     if mm_reader:
         mm_reader.close()
     if ip_reader:
@@ -293,13 +458,7 @@ def main():
     if i2l_reader:
         i2l_reader.close()
 
-    has_mm = mm_reader is not None
-    has_ip = ip_reader is not None
-    has_i2l = i2l_reader is not None
-    stats = compute_stats(results, has_mm, has_ip, has_i2l)
-    print("Generating HTML report...")
-    generate_html(results, stats, has_mm, has_ip, has_i2l)
-    print(f"Report written to {OUTPUT_FILE}")
+    generate_index(FEEDS)
 
 
 def compute_stats(results, has_mm=True, has_ip=True, has_i2l=True):
@@ -452,14 +611,26 @@ def match_cell(val, provider_val, provider_start=False):
     return f'<td class="{cls}{ps}">{provider_val}</td>'
 
 
-def generate_html(results, stats, has_mm=True, has_ip=True, has_i2l=True):
-    logo_svg = ""
-    if AWS_LOGO_FILE.exists():
-        logo_svg = AWS_LOGO_FILE.read_text(encoding="utf-8")
-    logo_b64 = ""
-    if logo_svg:
-        logo_b64 = base64.b64encode(logo_svg.encode()).decode()
-    favicon_uri = f"data:image/svg+xml;base64,{logo_b64}" if logo_b64 else ""
+def generate_html(results, stats, has_mm=True, has_ip=True, has_i2l=True, feed=None):
+    logo_file = feed["logo_file"] if feed else AWS_LOGO_FILE
+    logo_type = feed.get("logo_type", "svg") if feed else "svg"
+    title = feed["title"] if feed else "Geofeed Monitoring Report"
+    topbar_title = feed.get("topbar_title", title) if feed else title
+    output_path = feed["output"] if feed else Path("./index.html")
+
+    if logo_file.exists():
+        if logo_type == "svg":
+            topbar_logo = logo_file.read_text(encoding="utf-8")
+            logo_b64 = base64.b64encode(topbar_logo.encode()).decode()
+            favicon_uri = f"data:image/svg+xml;base64,{logo_b64}"
+        else:
+            raw = logo_file.read_bytes()
+            b64 = base64.b64encode(raw).decode()
+            topbar_logo = f'<img src="data:image/png;base64,{b64}" style="height:40px" alt="">'
+            favicon_uri = f"data:image/png;base64,{b64}"
+    else:
+        topbar_logo = ""
+        favicon_uri = ""
 
     now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
@@ -469,8 +640,8 @@ def generate_html(results, stats, has_mm=True, has_ip=True, has_i2l=True):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AWS Geofeed Monitoring Report</title>
-{f'<link rel="icon" type="image/svg+xml" href="{favicon_uri}">' if favicon_uri else ''}
+<title>{title}</title>
+{f'<link rel="icon" href="{favicon_uri}">' if favicon_uri else ''}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css">
 <style>
   :root {{
@@ -740,9 +911,9 @@ def generate_html(results, stats, has_mm=True, has_ip=True, has_i2l=True):
 </head>
 <body>
 <div class="topbar">
-  {logo_svg if logo_svg else ''}
+  {topbar_logo}
   <div class="separator"></div>
-  <h1>Geofeed Monitoring Report</h1>
+  <h1>{topbar_title}</h1>
 </div>
 <div class="container">
 <div class="card">
@@ -996,7 +1167,7 @@ document.querySelectorAll('.loc-row').forEach(row => {
 </script>
 </body></html>""")
 
-    OUTPUT_FILE.write_text("\n".join(html), encoding="utf-8")
+    output_path.write_text("\n".join(html), encoding="utf-8")
 
 
 if __name__ == "__main__":

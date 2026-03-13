@@ -1,22 +1,29 @@
-# AWS Geofeed Monitor
+# Geofeed Monitor
 
-Monitors the accuracy of the [AWS IP geofeed](https://ip-ranges.amazonaws.com/geo-ip-feed.csv) by validating geolocation claims against third-party geolocation databases.
+Monitors the accuracy of [RFC 8805 geofeeds](https://datatracker.ietf.org/doc/html/rfc8805) by validating geolocation claims against third-party geolocation databases.
 
 ## What it does
 
-1. Fetches the AWS geofeed CSV — a list of IP prefixes with their claimed country, subdivision, and city.
+1. Fetches geofeed CSVs — lists of IP prefixes with their claimed country, subdivision, and city.
 2. Looks up each prefix in multiple geolocation providers (MaxMind GeoLite2, IPinfo Lite, IP2Location Lite) and compares the results.
-3. Generates a self-contained HTML report with:
+3. Generates self-contained HTML reports with:
    - Global accuracy statistics (by prefix and by address count)
    - Per-location breakdown with expandable prefix details
    - Search by prefix or IP address
    - Filter to show only inaccurate entries
 
+## Monitored Geofeeds
+
+| Network | Geofeed | Report |
+|---------|---------|--------|
+| [AWS](https://aws.amazon.com/) | [geo-ip-feed.csv](https://ip-ranges.amazonaws.com/geo-ip-feed.csv) | [aws.html](https://chriselsen.github.io/Geofeed-Monitor/aws.html) |
+| [AS213151](https://as213151.net/) | [as213151-geo-ip.txt](https://raw.githubusercontent.com/AS213151/rfc8805-geofeed/main/as213151-geo-ip.txt) | [as213151.html](https://chriselsen.github.io/Geofeed-Monitor/as213151.html) |
+
 ## Live Report
 
-The report is published via GitHub Pages and refreshed daily:
+The reports are published via GitHub Pages and refreshed daily:
 
-**https://chriselsen.github.io/AWS-Geofeed-Monitor/**
+**https://chriselsen.github.io/Geofeed-Monitor/**
 
 ## Running locally
 
@@ -31,7 +38,7 @@ export IP2LOCATION_TOKEN="<your_token>"
 python monitor-geofeed.py
 ```
 
-The report is written to `index.html`.
+The reports are written to `aws.html`, `as213151.html`, and a landing page `index.html`.
 
 ## Providers
 
