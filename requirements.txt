@@ -1,2 +1,3 @@
 maxminddb
 IP2Location
+pytricia

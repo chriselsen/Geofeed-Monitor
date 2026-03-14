@@ -1,0 +1,574 @@
+"""HTML report generation."""
+
+import base64
+from datetime import datetime, timezone
+from pathlib import Path
+
+from .config import (
+    GLOBE_SVG, GLOBE_FAVICON, FEEDS,
+    MAXMIND_FAVICON_FILE, IPINFO_FAVICON_FILE, IP2LOCATION_FAVICON_FILE,
+)
+from .stats import compute_pct
+
+
+def _pct_cls(pct):
+    if pct is None:
+        return "na"
+    return "good" if pct >= 90 else ("warn" if pct >= 50 else "bad")
+
+
+def _fmt_pct(pct):
+    return "N/A" if pct is None else f"{pct:.1f}%"
+
+
+def _fmt_addrs(n, is_v6):
+    if is_v6:
+        exp = len(str(n)) - 1
+        return f"{n / 10**exp:.1f} &times; 10<sup>{exp}</sup>"
+    for threshold, suffix in [(1e12, "T"), (1e9, "B"), (1e6, "M"), (1e3, "K")]:
+        if n >= threshold:
+            return f"{n / threshold:.1f}{suffix}"
+    return str(n)
+
+
+def _favicon_uri(path):
+    if not path.exists():
+        return ""
+    data = base64.b64encode(path.read_bytes()).decode()
+    ext = path.suffix.lstrip(".")
+    mime = "image/x-icon" if ext == "ico" else f"image/{ext}"
+    return f"data:{mime};base64,{data}"
+
+
+def _col_widths(has_mm, has_ip, has_i2l):
+    ncols = (2 if has_mm else 0) + (2 if has_ip else 0) + (2 if has_i2l else 0)
+    if ncols == 0:
+        return (100, 0)
+    other = round(50 / ncols, 1)
+    return (100 - ncols * other, other)
+
+
+def pct_cell(pct, provider_start=False):
+    ps = " provider-start" if provider_start else ""
+    if pct is None:
+        return f'<td class="na{ps}">N/A</td>'
+    cls = "good" if pct >= 90 else ("warn" if pct >= 50 else "bad")
+    return f'<td class="{cls}{ps}">{pct:.1f}%</td>'
+
+
+def match_cell(val, provider_val, provider_start=False, is_city=False):
+    ps = " provider-start" if provider_start else ""
+    if val is None:
+        return f'<td class="na{ps}">N/A</td>'
+    gf_label = "city" if is_city else "country"
+    if val:
+        tooltip = f'{provider_val} ✓ matches geofeed {gf_label}'
+        return f'<td class="good{ps}"><span title="{tooltip}" style="cursor:help">{CHECK_SVG}</span></td>'
+    tooltip = f'{provider_val or "(none)"} ✗ does not match geofeed {gf_label}'
+    return f'<td class="bad{ps}"><span title="{tooltip}" style="cursor:help">{XBOX_SVG}</span></td>'
+
+WARN_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color:#ff9900;vertical-align:middle;margin-left:4px;flex-shrink:0"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 1.67c.955 0 1.845 .467 2.39 1.247l.105 .16l8.114 13.548a2.914 2.914 0 0 1 -2.307 4.363l-.195 .008h-16.225a2.914 2.914 0 0 1 -2.582 -4.2l.099 -.185l8.11 -13.538a2.914 2.914 0 0 1 2.491 -1.403zm.01 13.33l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007zm-.01 -7a1 1 0 0 0 -.993 .883l-.007 .117v4l.007 .117a1 1 0 0 0 1.986 0l.007 -.117v-4l-.007 -.117a1 1 0 0 0 -.993 -.883z"></path></svg>'
+CHECK_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#037f0c;vertical-align:middle;flex-shrink:0"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14" /><path d="M9 12l2 2l4 -4" /></svg>'
+XBOX_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#d13212;vertical-align:middle;flex-shrink:0"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14" /><path d="M9 9l6 6m0 -6l-6 6" /></svg>'
+ROUTE_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#d13212;vertical-align:middle;margin-left:4px;flex-shrink:0"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" /><path d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87" /><path d="M3 3l18 18" /></svg>'
+ROUTE_OK_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#037f0c;vertical-align:middle;margin-left:4px;flex-shrink:0"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>'
+ROUTE_NA_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#879596;vertical-align:middle;margin-left:4px;flex-shrink:0"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M12 18c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /><path d="M16 19a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M17 21l4 -4" /></svg>'
+
+
+def _locode_icon(issues):
+    tooltip = "&#10;".join(issues).replace('"', "&quot;")
+    return f'<span title="{tooltip}" style="cursor:help">{WARN_SVG}</span>'
+
+
+def _route_icon(prefix, routed, route_match, too_specific):
+    if too_specific:
+        plen = prefix.split('/')[1]
+        tooltip = f'Prefix {prefix} is too specific (/{plen} > max routable) — cannot appear in global routing table'
+        return f'<span title="{tooltip}" style="cursor:help">{ROUTE_NA_SVG}</span>'
+    if routed:
+        if route_match == prefix:
+            tooltip = f'Prefix {prefix} is visible in RIPE RIS routing table'
+        elif int(route_match.split('/')[1]) < int(prefix.split('/')[1]):
+            tooltip = f'Prefix {prefix} is covered by {route_match} in RIPE RIS routing table'
+        else:
+            tooltip = f'Prefix {prefix} has more-specific {route_match} visible in RIPE RIS routing table'
+        return f'<span title="{tooltip}" style="cursor:help">{ROUTE_OK_SVG}</span>'
+    tooltip = f'Prefix {prefix} not visible in RIPE RIS routing table'
+    return f'<span title="{tooltip}" style="cursor:help">{ROUTE_SVG}</span>'
+
+
+def _route_icon_loc(total, routed, unrouted, too_specific):
+    checkable = total - too_specific
+    if too_specific == total:
+        tooltip = f'All {total} prefix{"es" if total > 1 else ""} too specific to appear in global routing table'
+        return f'<span title="{tooltip}" style="cursor:help">{ROUTE_NA_SVG}</span>'
+    parts = []
+    if routed:
+        parts.append(f'{routed} visible')
+    if unrouted:
+        parts.append(f'{unrouted} not visible')
+    if too_specific:
+        parts.append(f'{too_specific} too specific')
+    tooltip = f'{" | ".join(parts)} (of {total} prefixes) in RIPE RIS routing table'
+    svg = ROUTE_OK_SVG if unrouted == 0 else ROUTE_SVG
+    return f'<span title="{tooltip}" style="cursor:help">{svg}</span>'
+
+
+def _build_topbar_logo(feed):
+    logo_file = feed["logo_file"]
+    logo_type = feed.get("logo_type", "svg")
+    favicon_uri = ""
+    topbar_logo = ""
+    if not logo_file.exists():
+        return topbar_logo, favicon_uri
+    if logo_type == "svg":
+        svg_text = logo_file.read_text(encoding="utf-8")
+        logo_b64 = base64.b64encode(svg_text.encode()).decode()
+        favicon_uri = f"data:image/svg+xml;base64,{logo_b64}"
+        if feed.get("logo_invert"):
+            topbar_logo = f'<div style="filter:invert(1);display:flex;align-items:center">{svg_text}</div>'
+        else:
+            topbar_logo = svg_text
+    else:
+        raw = logo_file.read_bytes()
+        b64 = base64.b64encode(raw).decode()
+        invert = ' style="height:40px;filter:invert(1)"' if feed.get("logo_invert") else ' style="height:40px"'
+        topbar_logo = f'<img src="data:image/png;base64,{b64}"{invert} alt="">'
+        favicon_uri = f"data:image/png;base64,{b64}"
+    return topbar_logo, favicon_uri
+
+
+def generate_html(results, stats, has_mm, has_ip, has_i2l, feed):
+    topbar_logo, favicon_uri = _build_topbar_logo(feed)
+    title = feed["title"]
+    topbar_title = feed.get("topbar_title", title)
+    output_path = feed["output"]
+    now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    first_w, other_w = _col_widths(has_mm, has_ip, has_i2l)
+    mm_fav = _favicon_uri(MAXMIND_FAVICON_FILE)
+    ip_fav = _favicon_uri(IPINFO_FAVICON_FILE)
+    i2l_fav = _favicon_uri(IP2LOCATION_FAVICON_FILE)
+
+    html = []
+    html.append(f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{title}</title>
+{f'<link rel="icon" href="{favicon_uri}">' if favicon_uri else ''}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css">
+<style>
+  :root {{
+    --squid-ink: #232f3e; --squid-ink-light: #37475a; --aws-orange: #ff9900;
+    --aws-orange-hover: #ec7211; --text-primary: #16191f; --text-secondary: #545b64;
+    --bg-page: #f2f3f3; --bg-card: #ffffff; --border: #d5dbdb; --border-light: #eaeded;
+    --good: #037f0c; --good-bg: #f2fcf3; --warn: #8a6d00; --warn-bg: #fef8e7;
+    --bad: #d13212; --bad-bg: #fdf3f1; --na-text: #879596;
+  }}
+  * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+  body {{ font-family: "Amazon Ember", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg-page); color: var(--text-primary); line-height: 1.5; }}
+  .topbar {{ background: var(--squid-ink); padding: 12px 32px; display: flex; align-items: center; gap: 16px; box-shadow: 0 2px 4px rgba(0,0,0,0.15); }}
+  .topbar svg {{ height: 40px; width: auto; }}
+  .topbar h1 {{ color: #ffffff; font-size: 20px; font-weight: 700; letter-spacing: -0.2px; }}
+  .topbar .separator {{ width: 1px; height: 28px; background: var(--squid-ink-light); }}
+  .back-arrow {{ display: inline-block; color: var(--text-secondary); text-decoration: none; font-size: 13px; margin-bottom: 12px; transition: color 0.15s; }}
+  .back-arrow:hover {{ color: var(--text-primary); }}
+  .container {{ max-width: 1400px; margin: 0 auto; padding: 24px 32px; }}
+  .card {{ background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }}
+  .card-header {{ padding: 16px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }}
+  .card-header h2 {{ font-size: 18px; font-weight: 700; color: var(--text-primary); }}
+  .filter-toggle {{ font-size: 13px; color: var(--text-secondary); cursor: pointer; user-select: none; white-space: nowrap; }}
+  .search-box {{ font-size: 13px; padding: 5px 10px; border: 1px solid var(--border); border-radius: 6px; outline: none; width: 180px; font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }}
+  .search-box:focus {{ border-color: var(--aws-orange); }}
+  .filter-toggle input {{ vertical-align: middle; margin-right: 4px; cursor: pointer; }}
+  .loc-filter {{ font-size: 11px; color: var(--text-secondary); cursor: pointer; user-select: none; margin-left: 8px; font-weight: 400; display: none; }}
+  .loc-row.open .loc-filter {{ display: inline; }}
+  .loc-filter input {{ vertical-align: middle; margin-right: 2px; cursor: pointer; }}
+  .loc-counter {{ font-size: 11px; font-weight: 400; color: var(--text-secondary); }}
+  .header-counter {{ font-size: 11px; font-weight: 400; opacity: 0.7; }}
+  .loc-row.filtered, .prefix-row.filtered {{ display: none !important; }}
+  table {{ border-collapse: collapse; width: 100%; table-layout: fixed; }}
+  th:first-child, td:first-child {{ width: {first_w}%; }}
+  th:not(:first-child), td:not(:first-child) {{ width: {other_w}%; }}
+  th {{ background: var(--squid-ink); color: #fff; padding: 10px 16px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; position: sticky; top: 0; z-index: 10; }}
+  th.provider-hdr {{ text-align: center; border-left: 2px solid var(--squid-ink-light); background: var(--squid-ink); font-size: 13px; text-transform: uppercase; }}
+  th.provider-hdr img {{ height: 16px; width: 16px; vertical-align: middle; margin-right: 6px; }}
+  th.sub-hdr {{ text-align: center; font-size: 11px; background: var(--squid-ink-light); text-transform: none; letter-spacing: 0; font-weight: 500; }}
+  th.sub-hdr.provider-start {{ border-left: 2px solid var(--squid-ink-light); }}
+  td {{ padding: 10px 16px; font-size: 14px; border-bottom: 1px solid var(--border-light); color: var(--text-primary); }}
+  .loc-row {{ cursor: pointer; background: var(--bg-card); transition: background 0.15s; }}
+  .loc-row:hover {{ background: #f7f8f8; }}
+  .loc-row td {{ font-weight: 600; }}
+  .loc-row td:first-child {{ padding-left: 20px; }}
+  .loc-row td:first-child::before {{ content: ""; display: inline-block; width: 0; height: 0; margin-right: 10px; border-left: 6px solid var(--aws-orange); border-top: 4px solid transparent; border-bottom: 4px solid transparent; transition: transform 0.2s; vertical-align: middle; }}
+  .loc-row.open td:first-child::before {{ transform: rotate(90deg); }}
+  .prefix-row {{ display: none; }}
+  .prefix-row.show {{ display: table-row; }}
+  .prefix-row td {{ background: #fafbfc; }}
+  .prefix-row td:first-child {{ padding-left: 44px; font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; font-size: 13px; color: var(--text-secondary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }}
+  .prefix-row td:first-child small {{ color: var(--na-text); font-family: "Amazon Ember", -apple-system, sans-serif; }}
+  td.good {{ color: var(--good); background: var(--good-bg); font-weight: 600; }}
+  td.warn {{ color: var(--warn); background: var(--warn-bg); font-weight: 600; }}
+  td.bad {{ color: var(--bad); background: var(--bad-bg); font-weight: 600; }}
+  td.na {{ color: var(--na-text); }}
+  td.provider-start {{ border-left: 2px solid var(--border-light); }}
+  .loc-row td.provider-start {{ border-left: 2px solid var(--border); }}
+  td {{ text-align: center; }}
+  td:first-child {{ text-align: left; }}
+  .stats-bar {{ display: grid; grid-template-columns: auto repeat(3, 1fr); gap: 0; border-bottom: 1px solid var(--border); background: var(--bg-page); }}
+  .stats-row-label {{ display: flex; align-items: center; padding: 16px 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary); border-bottom: 1px solid var(--border); }}
+  .stats-row-label:last-of-type, .stats-bar .stat-group:nth-last-child(-n+3) {{ border-bottom: none; }}
+  .stat-group {{ min-width: 0; padding: 14px 24px; border-bottom: 1px solid var(--border); }}
+  .stat-group-title {{ font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary); margin-bottom: 6px; }}
+  .stat-items {{ display: flex; gap: 16px; }}
+  .stat {{ display: flex; flex-direction: column; }}
+  .stat-value {{ font-size: 20px; font-weight: 700; color: var(--text-primary); line-height: 1.2; }}
+  .stat-value.good {{ color: var(--good); }} .stat-value.warn {{ color: var(--warn); }} .stat-value.bad {{ color: var(--bad); }}
+  .stat-label {{ font-size: 11px; color: var(--text-secondary); }}
+  tfoot td {{ background: var(--bg-page); font-size: 12px; font-weight: 600; padding: 8px 16px; border-top: 2px solid var(--border); color: var(--text-secondary); }}
+  tfoot td.good {{ color: var(--good); background: var(--good-bg); }}
+  tfoot td.warn {{ color: var(--warn); background: var(--warn-bg); }}
+  tfoot td.bad {{ color: var(--bad); background: var(--bad-bg); }}
+  tfoot td.na {{ color: var(--na-text); }}
+</style>
+</head>
+<body>
+<div class="topbar">
+  {topbar_logo}
+  <div class="separator"></div>
+  <h1>{topbar_title}</h1>
+</div>
+<div class="container">
+<a href="index.html" class="back-arrow">&larr; All Reports</a>
+<div class="card">
+<div class="card-header">
+  <h2>Location Validation Results</h2>
+  <div style="display:flex;align-items:center;gap:12px">
+    <input type="text" id="prefixSearch" placeholder="Search prefix or IP&hellip;" class="search-box">
+    <label class="filter-toggle"><input type="checkbox" id="globalFilter"> Show only inaccurate</label>
+  </div>
+</div>
+<div class="stats-bar">
+  <div class="stats-row-label">Prefixes</div>
+  <div class="stat-group">
+    <div class="stat-group-title">Count</div>
+    <div class="stat-items">
+      <div class="stat"><span class="stat-value">{stats['total']:,}</span><span class="stat-label">Total</span></div>
+      <div class="stat"><span class="stat-value">{stats['v4']:,}</span><span class="stat-label">IPv4</span></div>
+      <div class="stat"><span class="stat-value">{stats['v6']:,}</span><span class="stat-label">IPv6</span></div>
+    </div>
+  </div>
+  <div class="stat-group">
+    <div class="stat-group-title">Country Accuracy</div>
+    <div class="stat-items">
+      <div class="stat"><span class="stat-value {_pct_cls(stats['country_pct'])}">{_fmt_pct(stats['country_pct'])}</span><span class="stat-label">Total</span></div>
+      <div class="stat"><span class="stat-value {_pct_cls(stats['country_pct_v4'])}">{_fmt_pct(stats['country_pct_v4'])}</span><span class="stat-label">IPv4</span></div>
+      <div class="stat"><span class="stat-value {_pct_cls(stats['country_pct_v6'])}">{_fmt_pct(stats['country_pct_v6'])}</span><span class="stat-label">IPv6</span></div>
+    </div>
+  </div>
+  <div class="stat-group">
+    <div class="stat-group-title">City Accuracy</div>
+    <div class="stat-items">
+      <div class="stat"><span class="stat-value {_pct_cls(stats['city_pct'])}">{_fmt_pct(stats['city_pct'])}</span><span class="stat-label">Total</span></div>
+      <div class="stat"><span class="stat-value {_pct_cls(stats['city_pct_v4'])}">{_fmt_pct(stats['city_pct_v4'])}</span><span class="stat-label">IPv4</span></div>
+      <div class="stat"><span class="stat-value {_pct_cls(stats['city_pct_v6'])}">{_fmt_pct(stats['city_pct_v6'])}</span><span class="stat-label">IPv6</span></div>
+    </div>
+  </div>
+  <div class="stats-row-label">Addresses</div>
+  <div class="stat-group">
+    <div class="stat-group-title">Count</div>
+    <div class="stat-items">
+      <div class="stat"><span class="stat-value">{_fmt_addrs(stats['v4_addrs'], False)}</span><span class="stat-label">IPv4</span></div>
+      <div class="stat"><span class="stat-value">{_fmt_addrs(stats['v6_addrs'], True)}</span><span class="stat-label">IPv6</span></div>
+    </div>
+  </div>
+  <div class="stat-group">
+    <div class="stat-group-title">Country Accuracy</div>
+    <div class="stat-items">
+      <div class="stat"><span class="stat-value {_pct_cls(stats['w_country_pct'])}">{_fmt_pct(stats['w_country_pct'])}</span><span class="stat-label">Total</span></div>
+      <div class="stat"><span class="stat-value {_pct_cls(stats['w_country_pct_v4'])}">{_fmt_pct(stats['w_country_pct_v4'])}</span><span class="stat-label">IPv4</span></div>
+      <div class="stat"><span class="stat-value {_pct_cls(stats['w_country_pct_v6'])}">{_fmt_pct(stats['w_country_pct_v6'])}</span><span class="stat-label">IPv6</span></div>
+    </div>
+  </div>
+  <div class="stat-group">
+    <div class="stat-group-title">City Accuracy</div>
+    <div class="stat-items">
+      <div class="stat"><span class="stat-value {_pct_cls(stats['w_city_pct'])}">{_fmt_pct(stats['w_city_pct'])}</span><span class="stat-label">Total</span></div>
+      <div class="stat"><span class="stat-value {_pct_cls(stats['w_city_pct_v4'])}">{_fmt_pct(stats['w_city_pct_v4'])}</span><span class="stat-label">IPv4</span></div>
+      <div class="stat"><span class="stat-value {_pct_cls(stats['w_city_pct_v6'])}">{_fmt_pct(stats['w_city_pct_v6'])}</span><span class="stat-label">IPv6</span></div>
+    </div>
+  </div>
+</div>
+<table>
+<thead>
+<tr>
+  <th rowspan="2">Location <span id="locCounter" class="header-counter"></span></th>
+  {'<th colspan="2" class="provider-hdr"><img src="' + mm_fav + '" alt="">MaxMind</th>' if has_mm else ''}
+  {'<th colspan="2" class="provider-hdr"><img src="' + ip_fav + '" alt="">IPinfo</th>' if has_ip else ''}
+  {'<th colspan="2" class="provider-hdr"><img src="' + i2l_fav + '" alt="">IP2Location</th>' if has_i2l else ''}
+</tr>
+<tr>
+  {'<th class="sub-hdr provider-start">Country</th><th class="sub-hdr">City</th>' if has_mm else ''}
+  {'<th class="sub-hdr provider-start">Country</th><th class="sub-hdr">City</th>' if has_ip else ''}
+  {'<th class="sub-hdr provider-start">Country</th><th class="sub-hdr">City</th>' if has_i2l else ''}
+</tr>
+</thead><tbody>""")
+
+    for loc_idx, (country_code, display_name, loc_results) in enumerate(results):
+        if not loc_results:
+            continue
+        mm_c_pct = compute_pct([r[7] for r in loc_results])
+        mm_ci_pct = compute_pct([r[8] for r in loc_results])
+        ip_c_pct = compute_pct([r[10] for r in loc_results])
+        i2l_c_pct = compute_pct([r[13] for r in loc_results])
+        i2l_ci_pct = compute_pct([r[14] for r in loc_results])
+        active = ([7, 8] if has_mm else []) + ([10] if has_ip else []) + ([13, 14] if has_i2l else [])
+        has_bad = any(any(r[i] is not None and not r[i] for i in active) for r in loc_results)
+        cc = country_code.lower()
+        flag = f'<span class="fi fi-{cc}" style="margin-right:8px"></span>'
+        loc_filter = f'<label class="loc-filter"><input type="checkbox" class="locFilter" data-loc="{loc_idx}"> inaccurate only</label>'
+        # All prefixes share the same location — validate once from the first result
+        r0 = loc_results[0]
+        locode_issues = r0[15]
+        locode_icon = _locode_icon(locode_issues) if locode_issues else ""
+        unrouted_count = sum(1 for r in loc_results if not r[16] and not r[18])
+        routed_count = sum(1 for r in loc_results if r[16])
+        too_specific_count = sum(1 for r in loc_results if r[18])
+        route_icon = _route_icon_loc(len(loc_results), routed_count, unrouted_count, too_specific_count)
+        html.append(f'<tr class="loc-row" data-loc="{loc_idx}" data-has-bad="{int(has_bad)}">')
+        html.append(f"  <td>{flag}{display_name}{locode_icon}{route_icon} <span class='loc-count' data-loc-count='{loc_idx}' data-total='{len(loc_results)}'>({len(loc_results)})</span> {loc_filter}</td>")
+        if has_mm:
+            html.append(f"  {pct_cell(mm_c_pct, True)}{pct_cell(mm_ci_pct)}")
+        if has_ip:
+            html.append(f'  {pct_cell(ip_c_pct, True)}<td class="na">N/A</td>')
+        if has_i2l:
+            html.append(f"  {pct_cell(i2l_c_pct, True)}{pct_cell(i2l_ci_pct)}")
+        html.append("</tr>")
+
+        for r in sorted(loc_results, key=lambda r: (r[1], r[0])):
+            prefix, is_v6, gf_c, gf_sub, gf_ci = r[0], r[1], r[2], r[3], r[4]
+            mm_c, mm_ci, mm_c_m, mm_ci_m = r[5], r[6], r[7], r[8]
+            ip_c, ip_c_m = r[9], r[10]
+            i2l_c, i2l_ci, i2l_c_m, i2l_ci_m = r[11], r[12], r[13], r[14]
+            proto = "IPv6" if is_v6 else "IPv4"
+            active_m = ([mm_c_m, mm_ci_m] if has_mm else []) + ([ip_c_m] if has_ip else []) + ([i2l_c_m, i2l_ci_m] if has_i2l else [])
+            perfect = all(m is None or m for m in active_m)
+            gf_label = ", ".join(filter(None, [gf_c, gf_sub, gf_ci]))
+            routed = r[16]
+            route_match = r[17]
+            too_specific = r[18]
+            route_icon = _route_icon(prefix, routed, route_match, too_specific)
+            html.append(f'<tr class="prefix-row" data-loc="{loc_idx}" data-perfect="{int(perfect)}" data-prefix="{prefix}">')
+            html.append(f"  <td>{prefix}{route_icon} <small>({proto}) &mdash; geofeed: {gf_label}</small></td>")
+            if has_mm:
+                html.append(f"  {match_cell(mm_c_m, mm_c, True)}{match_cell(mm_ci_m, mm_ci, is_city=True)}")
+            if has_ip:
+                html.append(f'  {match_cell(ip_c_m, ip_c, True)}<td class="na">N/A</td>')
+            if has_i2l:
+                html.append(f"  {match_cell(i2l_c_m, i2l_c, True)}{match_cell(i2l_ci_m, i2l_ci, is_city=True)}")
+            html.append("</tr>")
+
+    html.append("</tbody>")
+
+    def _foot_label(label):
+        return f'<td style="text-align:right;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:0.5px">{label}</td>'
+
+    def _foot_row(label, mm_c_key, mm_ci_key, ip_c_key, i2l_c_key, i2l_ci_key):
+        row = f"<tr>{_foot_label(label)}"
+        if has_mm:
+            row += pct_cell(stats.get(mm_c_key), True) + pct_cell(stats.get(mm_ci_key))
+        if has_ip:
+            row += pct_cell(stats.get(ip_c_key), True) + '<td class="na">N/A</td>'
+        if has_i2l:
+            row += pct_cell(stats.get(i2l_c_key), True) + pct_cell(stats.get(i2l_ci_key))
+        return row + "</tr>"
+
+    html.append("<tfoot>")
+    html.append(_foot_row("Prefix Accuracy", "mm_c", "mm_ci", "ip_c", "i2l_c", "i2l_ci"))
+    html.append(_foot_row("Address Accuracy", "w_mm_c", "w_mm_ci", "w_ip_c", "w_i2l_c", "w_i2l_ci"))
+    html.append("</tfoot>")
+    html.append(f"""</table>
+</div>
+</div>
+<footer style="text-align:center;padding:16px;font-size:12px;color:#545b64">Last updated: {now_utc}</footer>""")
+
+    output_path.write_text("\n".join(html) + _report_js(), encoding="utf-8")
+
+
+def _report_js():
+    return """
+<script>
+function parseIP(s) {
+  if (s.includes(':')) {
+    const parts = s.split(':');
+    const full = [];
+    for (let i = 0; i < parts.length; i++) {
+      if (parts[i] === '') {
+        const fill = 8 - parts.filter(p => p !== '').length;
+        for (let j = 0; j < fill; j++) full.push(0n);
+      } else { full.push(BigInt(parseInt(parts[i], 16))); }
+    }
+    if (full.length !== 8) return null;
+    let n = 0n;
+    for (const p of full) n = (n << 16n) | p;
+    return { bits: n, ver: 6 };
+  }
+  const p = s.split('.');
+  if (p.length !== 4 || p.some(x => isNaN(x) || x < 0 || x > 255 || x === '')) return null;
+  return { bits: BigInt(p[0]) << 24n | BigInt(p[1]) << 16n | BigInt(p[2]) << 8n | BigInt(p[3]), ver: 4 };
+}
+function parsePrefix(cidr) {
+  const [addr, lenStr] = cidr.split('/');
+  const ip = parseIP(addr);
+  if (!ip) return null;
+  const len = BigInt(lenStr);
+  const total = ip.ver === 6 ? 128n : 32n;
+  const mask = ((1n << total) - 1n) ^ ((1n << (total - len)) - 1n);
+  return { net: ip.bits & mask, mask, ver: ip.ver };
+}
+function ipInPrefix(ip, prefix) {
+  if (ip.ver !== prefix.ver) return false;
+  return (ip.bits & prefix.mask) === prefix.net;
+}
+function applyFilters() {
+  const globalOn = document.getElementById('globalFilter').checked;
+  const query = document.getElementById('prefixSearch').value.trim().toLowerCase();
+  const searching = query.length > 0;
+  const filtering = globalOn || searching;
+  const searchIP = searching ? parseIP(query) : null;
+  let visibleLocs = 0, totalLocs = 0;
+  document.querySelectorAll('.loc-row').forEach(row => {
+    const id = row.dataset.loc;
+    const hasBad = row.dataset.hasBad === '1';
+    const prefixes = document.querySelectorAll(`.prefix-row[data-loc="${id}"]`);
+    const local = row.querySelector('.locFilter');
+    const localOn = local && local.checked;
+    const countEl = document.querySelector(`[data-loc-count="${id}"]`);
+    const total = prefixes.length;
+    let visible = 0;
+    prefixes.forEach(r => {
+      let hidden = false;
+      if ((globalOn || localOn) && r.dataset.perfect === '1') hidden = true;
+      if (searching) {
+        let match = r.dataset.prefix.indexOf(query) !== -1;
+        if (!match && searchIP) {
+          const pfx = parsePrefix(r.dataset.prefix);
+          if (pfx) match = ipInPrefix(searchIP, pfx);
+        }
+        if (!match) hidden = true;
+      }
+      r.classList.toggle('filtered', hidden);
+      if (!hidden) visible++;
+    });
+    const hideRow = (globalOn && !hasBad) || (searching && visible === 0);
+    row.classList.toggle('filtered', hideRow);
+    totalLocs++;
+    if (!hideRow) visibleLocs++;
+    const isFiltered = (globalOn || localOn || searching) && visible < total;
+    countEl.textContent = isFiltered ? `(${visible} / ${total})` : `(${total})`;
+    if (searching && visible > 0 && !row.classList.contains('open')) {
+      row.classList.add('open');
+      prefixes.forEach(r => r.classList.add('show'));
+    }
+  });
+  const hdr = document.getElementById('locCounter');
+  hdr.textContent = filtering ? `${visibleLocs} / ${totalLocs}` : '';
+}
+document.getElementById('globalFilter').addEventListener('change', applyFilters);
+document.getElementById('prefixSearch').addEventListener('input', applyFilters);
+document.querySelectorAll('.locFilter').forEach(cb => {
+  cb.addEventListener('change', e => { e.stopPropagation(); applyFilters(); });
+  cb.addEventListener('click', e => e.stopPropagation());
+});
+document.querySelectorAll('.loc-filter').forEach(lbl => {
+  lbl.addEventListener('click', e => e.stopPropagation());
+});
+document.querySelectorAll('.loc-row').forEach(row => {
+  row.addEventListener('click', () => {
+    const id = row.dataset.loc;
+    row.classList.toggle('open');
+    document.querySelectorAll(`.prefix-row[data-loc="${id}"]`).forEach(r => r.classList.toggle('show'));
+  });
+});
+</script>
+</body></html>"""
+
+
+def generate_index(feeds, feed_stats):
+    now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    cards = []
+    for feed, stats in zip(feeds, feed_stats):
+        card_file = feed.get("card_logo_file", feed["logo_file"])
+        card_type = feed.get("card_logo_type", feed["logo_type"])
+        if card_file.exists():
+            if card_type == "svg":
+                logo_html = card_file.read_text(encoding="utf-8")
+            else:
+                b64 = base64.b64encode(card_file.read_bytes()).decode()
+                logo_html = f'<img src="data:image/png;base64,{b64}" alt="">'
+        else:
+            logo_html = ""
+        href = feed["output"].name
+        country_pct = _fmt_pct(stats.get("country_pct"))
+        city_pct = _fmt_pct(stats.get("city_pct"))
+        total = stats.get("total", 0)
+        country_cls = _pct_cls(stats.get("country_pct"))
+        city_cls = _pct_cls(stats.get("city_pct"))
+        stats_html = f"""<div class="card-stats">
+  <span>{total:,} prefixes</span>
+  <span>Country: <b class="{country_cls}">{country_pct}</b></span>
+  <span>City: <b class="{city_cls}">{city_pct}</b></span>
+</div>"""
+        cards.append(
+            f'<a class="feed-card" href="{href}"><div class="feed-logo">{logo_html}</div>'
+            f'<div class="feed-title">{feed["title"]}</div>{stats_html}</a>'
+        )
+
+    html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geofeed Monitor</title>
+<link rel="icon" href="{GLOBE_FAVICON}">
+<style>
+  :root {{ --squid-ink: #232f3e; --squid-ink-light: #37475a; --text-primary: #16191f; --text-secondary: #545b64; --bg-page: #f2f3f3; --bg-card: #ffffff; --border: #d5dbdb; --aws-orange: #ff9900; }}
+  * {{ box-sizing: border-box; margin: 0; padding: 0; }}
+  body {{ font-family: "Amazon Ember", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg-page); color: var(--text-primary); line-height: 1.5; min-height: 100vh; display: flex; flex-direction: column; }}
+  .topbar {{ background: var(--squid-ink); padding: 12px 32px; display: flex; align-items: center; gap: 16px; box-shadow: 0 2px 4px rgba(0,0,0,0.15); }}
+  .topbar svg {{ height: 40px; width: auto; }}
+  .topbar h1 {{ color: #fff; font-size: 20px; font-weight: 700; }}
+  .topbar .separator {{ width: 1px; height: 28px; background: var(--squid-ink-light); }}
+  .container {{ max-width: 900px; margin: 0 auto; padding: 48px 32px; flex: 1; display: flex; flex-direction: column; align-items: center; gap: 16px; }}
+  .container h2 {{ font-size: 22px; font-weight: 700; margin-bottom: 8px; }}
+  .container p {{ font-size: 14px; color: var(--text-secondary); margin-bottom: 24px; text-align: center; max-width: 600px; }}
+  .feed-grid {{ display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }}
+  .feed-card {{ background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 32px 40px; display: flex; flex-direction: column; align-items: center; gap: 16px; text-decoration: none; color: var(--text-primary); transition: box-shadow 0.2s, border-color 0.2s; width: 260px; }}
+  .feed-card:hover {{ border-color: var(--aws-orange); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }}
+  .feed-logo {{ height: 60px; display: flex; align-items: center; }}
+  .feed-logo svg {{ height: 50px; }}
+  .feed-logo img {{ height: 60px; }}
+  .feed-title {{ font-size: 14px; font-weight: 600; text-align: center; }}
+  .card-stats {{ display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 11px; color: var(--text-secondary); border-top: 1px solid var(--border); padding-top: 10px; width: 100%; text-align: center; }}
+  .card-stats .good {{ color: #037f0c; }}
+  .card-stats .warn {{ color: #8a6d00; }}
+  .card-stats .bad {{ color: #d13212; }}
+  footer {{ text-align: center; padding: 16px; font-size: 12px; color: #545b64; }}
+</style>
+</head>
+<body>
+<div class="topbar">
+  {GLOBE_SVG}
+  <div class="separator"></div>
+  <h1>Geofeed Monitor</h1>
+</div>
+<div class="container">
+  <h2>Select a Geofeed Report</h2>
+  <p>Monitors the accuracy of RFC 8805 geofeeds by validating geolocation claims against third-party databases.</p>
+  <div class="feed-grid">{''.join(cards)}</div>
+</div>
+<footer>Last updated: {now_utc}</footer>
+</body></html>"""
+    Path("./index.html").write_text(html, encoding="utf-8")
+    print("Landing page written to index.html")
