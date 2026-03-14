@@ -48,12 +48,13 @@ FEEDS = [
     {
         "url": "https://ip-ranges.amazonaws.com/geo-ip-feed.csv",
         "output": Path("./aws.html"),
-        "title": "AWS Geofeed Monitoring Report (Official)",
-        "topbar_title": "AWS Geofeed Monitoring Report (Official)",
+        "title": "AWS Geofeed Monitoring Report (Official Feed)",
+        "topbar_title": "AWS Geofeed Monitoring Report (Official Feed)",
         "logo_file": AWS_LOGO_FILE,
         "logo_type": "svg",
         "card_logo_file": AWS_CARD_LOGO_FILE,
         "card_logo_type": "svg",
+        "embargo_countries": {"IR", "CU", "KP", "SY", "RU", "BY"},
     },
     {
         "url": "https://www.gstatic.com/ipranges/cloud_geofeed",
@@ -80,8 +81,8 @@ FEEDS = [
     {
         "url": "https://raw.githubusercontent.com/chriselsen/AWS-Geofeed/main/data/aws-geofeed.txt",
         "output": Path("./aws-ce.html"),
-        "title": "AWS Geofeed Monitoring Report (Christian Elsen)",
-        "topbar_title": "AWS Geofeed Monitoring Report (Christian Elsen)",
+        "title": "AWS Geofeed Monitoring Report (Christian Elsen's Feed)",
+        "topbar_title": "AWS Geofeed Monitoring Report (Christian Elsen's Feed)",
         "logo_file": AWS_LOGO_FILE,
         "logo_type": "svg",
         "card_logo_file": AWS_CARD_LOGO_FILE,

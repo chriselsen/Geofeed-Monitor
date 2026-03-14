@@ -80,6 +80,10 @@ def compute_stats(results, has_mm=True, has_ip=True, has_i2l=True):
         "w_city_pct": compute_weighted_pct(w_city_all),
         "w_city_pct_v4": compute_weighted_pct(w_city_v4),
         "w_city_pct_v6": compute_weighted_pct(w_city_v6),
+        "routed": sum(1 for _, _, lr in results for r in lr if r[16] and not r[18]),
+        "unrouted": sum(1 for _, _, lr in results for r in lr if not r[16] and not r[18]),
+        "too_specific": sum(1 for _, _, lr in results for r in lr if r[18]),
+        "locode_errors": sum(1 for _, _, lr in results for r in lr if r[15]),
     }
     for key in prov:
         s[key] = compute_pct(prov[key])

@@ -1,0 +1,91 @@
+{
+  "locations": {
+    "Ashburn, US": {
+      "country": "US",
+      "prefixes": [
+        "2602:fb2a:c0::/46",
+        "2602:fb2a:ff::/48"
+      ],
+      "country_pct": 100.0,
+      "city_pct": 100.0
+    },
+    "Auckland, NZ": {
+      "country": "NZ",
+      "prefixes": [
+        "2602:fb2a:d0::/46"
+      ],
+      "country_pct": 100.0,
+      "city_pct": 100.0
+    },
+    "Boardman, US": {
+      "country": "US",
+      "prefixes": [
+        "2602:fb2a:cc::/46"
+      ],
+      "country_pct": 100.0,
+      "city_pct": 100.0
+    },
+    "Columbus, US": {
+      "country": "US",
+      "prefixes": [
+        "2602:fb2a:c4::/46"
+      ],
+      "country_pct": 100.0,
+      "city_pct": 100.0
+    },
+    "Frankfurt am Main, DE": {
+      "country": "DE",
+      "prefixes": [
+        "185.197.135.0/24",
+        "2001:678:1e8::/48",
+        "2602:fb2a::/40",
+        "2a06:e881:7300::/40"
+      ],
+      "country_pct": 100.0,
+      "city_pct": 100.0
+    },
+    "Mumbai, IN": {
+      "country": "IN",
+      "prefixes": [
+        "2602:fb2a:f8::/46"
+      ],
+      "country_pct": 100.0,
+      "city_pct": 100.0
+    },
+    "San Francisco, US": {
+      "country": "US",
+      "prefixes": [
+        "2602:fb2a:c8::/46"
+      ],
+      "country_pct": 100.0,
+      "city_pct": 100.0
+    }
+  },
+  "prefixes": [
+    "185.197.135.0/24",
+    "2001:678:1e8::/48",
+    "2602:fb2a::/40",
+    "2602:fb2a:c0::/46",
+    "2602:fb2a:c4::/46",
+    "2602:fb2a:c8::/46",
+    "2602:fb2a:cc::/46",
+    "2602:fb2a:d0::/46",
+    "2602:fb2a:f8::/46",
+    "2602:fb2a:ff::/48",
+    "2a06:e881:7300::/40"
+  ],
+  "routed": {
+    "2602:fb2a:c0::/46": true,
+    "2602:fb2a:ff::/48": true,
+    "2602:fb2a:d0::/46": true,
+    "2602:fb2a:cc::/46": true,
+    "2602:fb2a:c4::/46": true,
+    "2a06:e881:7300::/40": true,
+    "2001:678:1e8::/48": true,
+    "2602:fb2a::/40": true,
+    "185.197.135.0/24": true,
+    "2602:fb2a:f8::/46": true,
+    "2602:fb2a:c8::/46": true
+  },
+  "locode_issues": {}
+}

@@ -515,10 +515,18 @@ def generate_index(feeds, feed_stats):
         total = stats.get("total", 0)
         country_cls = _pct_cls(stats.get("country_pct"))
         city_cls = _pct_cls(stats.get("city_pct"))
+        routed = stats.get("routed", 0)
+        unrouted = stats.get("unrouted", 0)
+        too_specific = stats.get("too_specific", 0)
+        locode_errors = stats.get("locode_errors", 0)
+        checkable = total - too_specific
+        route_cls = "good" if unrouted == 0 else "bad"
+        locode_cls = "good" if locode_errors == 0 else "warn"
         stats_html = f"""<div class="card-stats">
   <span>{total:,} prefixes</span>
-  <span>Country: <b class="{country_cls}">{country_pct}</b></span>
-  <span>City: <b class="{city_cls}">{city_pct}</b></span>
+  <span>Country: <b class="{country_cls}">{country_pct}</b> &nbsp; City: <b class="{city_cls}">{city_pct}</b></span>
+  <span>Routing: <b class="{route_cls}">{routed:,} visible</b>{f' / <b class="bad">{unrouted:,} not visible</b>' if unrouted else ''}{f' / {too_specific:,} too specific' if too_specific else ''}</span>
+  <span>UN/LOCODE: <b class="{locode_cls}">{locode_errors:,} issue{'s' if locode_errors != 1 else ''}</b></span>
 </div>"""
         cards.append(
             f'<a class="feed-card" href="{href}"><div class="feed-logo">{logo_html}</div>'
