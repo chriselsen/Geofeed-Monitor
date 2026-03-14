@@ -1,4 +1,5 @@
 *.mmdb
 *.tar.gz
+*.zip
 *.BIN
 __pycache__/

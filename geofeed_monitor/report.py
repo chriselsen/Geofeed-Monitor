@@ -63,28 +63,37 @@ def match_cell(val, provider_val, provider_start=False, is_city=False):
     gf_label = "city" if is_city else "country"
     if val:
         tooltip = f'{provider_val} ✓ matches geofeed {gf_label}'
-        return f'<td class="good{ps}"><span title="{tooltip}" style="cursor:help">{CHECK_SVG}</span></td>'
+        return f'<td class="good{ps}"><span title="{tooltip}" style="cursor:help" class="icon-ok">{CHECK_SVG}</span></td>'
     tooltip = f'{provider_val or "(none)"} ✗ does not match geofeed {gf_label}'
-    return f'<td class="bad{ps}"><span title="{tooltip}" style="cursor:help">{XBOX_SVG}</span></td>'
+    return f'<td class="bad{ps}"><span title="{tooltip}" style="cursor:help" class="icon-bad">{XBOX_SVG}</span></td>'
 
-WARN_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color:#ff9900;vertical-align:middle;margin-left:4px;flex-shrink:0"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 1.67c.955 0 1.845 .467 2.39 1.247l.105 .16l8.114 13.548a2.914 2.914 0 0 1 -2.307 4.363l-.195 .008h-16.225a2.914 2.914 0 0 1 -2.582 -4.2l.099 -.185l8.11 -13.538a2.914 2.914 0 0 1 2.491 -1.403zm.01 13.33l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007zm-.01 -7a1 1 0 0 0 -.993 .883l-.007 .117v4l.007 .117a1 1 0 0 0 1.986 0l.007 -.117v-4l-.007 -.117a1 1 0 0 0 -.993 -.883z"></path></svg>'
-CHECK_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#037f0c;vertical-align:middle;flex-shrink:0"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14" /><path d="M9 12l2 2l4 -4" /></svg>'
-XBOX_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#d13212;vertical-align:middle;flex-shrink:0"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14" /><path d="M9 9l6 6m0 -6l-6 6" /></svg>'
-ROUTE_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#d13212;vertical-align:middle;margin-left:4px;flex-shrink:0"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" /><path d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87" /><path d="M3 3l18 18" /></svg>'
-ROUTE_OK_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#037f0c;vertical-align:middle;margin-left:4px;flex-shrink:0"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>'
-ROUTE_NA_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#879596;vertical-align:middle;margin-left:4px;flex-shrink:0"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M12 18c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /><path d="M16 19a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M17 21l4 -4" /></svg>'
+WARN_SVG = '<svg width="14" height="14"><use href="#icon-warn"/></svg>'
+CHECK_SVG = '<svg width="14" height="14"><use href="#icon-check"/></svg>'
+XBOX_SVG = '<svg width="14" height="14"><use href="#icon-xbox"/></svg>'
+ROUTE_SVG = '<svg width="14" height="14"><use href="#icon-eye-off"/></svg>'
+ROUTE_OK_SVG = '<svg width="14" height="14"><use href="#icon-eye"/></svg>'
+ROUTE_NA_SVG = '<svg width="14" height="14"><use href="#icon-eye-cancel"/></svg>'
+
+SVG_SPRITE = """<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<symbol id="icon-warn" viewBox="0 0 24 24" fill="currentColor"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 1.67c.955 0 1.845 .467 2.39 1.247l.105 .16l8.114 13.548a2.914 2.914 0 0 1 -2.307 4.363l-.195 .008h-16.225a2.914 2.914 0 0 1 -2.582 -4.2l.099 -.185l8.11 -13.538a2.914 2.914 0 0 1 2.491 -1.403zm.01 13.33l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007zm-.01 -7a1 1 0 0 0 -.993 .883l-.007 .117v4l.007 .117a1 1 0 0 0 1.986 0l.007 -.117v-4l-.007 -.117a1 1 0 0 0 -.993 -.883z"/></symbol>
+<symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14"/><path d="M9 12l2 2l4 -4"/></symbol>
+<symbol id="icon-xbox" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14"/><path d="M9 9l6 6m0 -6l-6 6"/></symbol>
+<symbol id="icon-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10.585 10.587a2 2 0 0 0 2.829 2.828"/><path d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87"/><path d="M3 3l18 18"/></symbol>
+<symbol id="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"/></symbol>
+<symbol id="icon-eye-cancel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M12 18c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"/><path d="M16 19a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M17 21l4 -4"/></symbol>
+</svg>"""
 
 
 def _locode_icon(issues):
     tooltip = "&#10;".join(issues).replace('"', "&quot;")
-    return f'<span title="{tooltip}" style="cursor:help">{WARN_SVG}</span>'
+    return f'<span title="{tooltip}" style="cursor:help" class="icon-warn">{WARN_SVG}</span>'
 
 
 def _route_icon(prefix, routed, route_match, too_specific):
     if too_specific:
         plen = prefix.split('/')[1]
         tooltip = f'Prefix {prefix} is too specific (/{plen} > max routable) — cannot appear in global routing table'
-        return f'<span title="{tooltip}" style="cursor:help">{ROUTE_NA_SVG}</span>'
+        return f'<span title="{tooltip}" style="cursor:help" class="icon-na">{ROUTE_NA_SVG}</span>'
     if routed:
         if route_match == prefix:
             tooltip = f'Prefix {prefix} is visible in RIPE RIS routing table'
@@ -92,16 +101,16 @@ def _route_icon(prefix, routed, route_match, too_specific):
             tooltip = f'Prefix {prefix} is covered by {route_match} in RIPE RIS routing table'
         else:
             tooltip = f'Prefix {prefix} has more-specific {route_match} visible in RIPE RIS routing table'
-        return f'<span title="{tooltip}" style="cursor:help">{ROUTE_OK_SVG}</span>'
+        return f'<span title="{tooltip}" style="cursor:help" class="icon-ok">{ROUTE_OK_SVG}</span>'
     tooltip = f'Prefix {prefix} not visible in RIPE RIS routing table'
-    return f'<span title="{tooltip}" style="cursor:help">{ROUTE_SVG}</span>'
+    return f'<span title="{tooltip}" style="cursor:help" class="icon-bad">{ROUTE_SVG}</span>'
 
 
 def _route_icon_loc(total, routed, unrouted, too_specific):
     checkable = total - too_specific
     if too_specific == total:
         tooltip = f'All {total} prefix{"es" if total > 1 else ""} too specific to appear in global routing table'
-        return f'<span title="{tooltip}" style="cursor:help">{ROUTE_NA_SVG}</span>'
+        return f'<span title="{tooltip}" style="cursor:help" class="icon-na">{ROUTE_NA_SVG}</span>'
     parts = []
     if routed:
         parts.append(f'{routed} visible')
@@ -111,7 +120,8 @@ def _route_icon_loc(total, routed, unrouted, too_specific):
         parts.append(f'{too_specific} too specific')
     tooltip = f'{" | ".join(parts)} (of {total} prefixes) in RIPE RIS routing table'
     svg = ROUTE_OK_SVG if unrouted == 0 else ROUTE_SVG
-    return f'<span title="{tooltip}" style="cursor:help">{svg}</span>'
+    cls = 'icon-ok' if unrouted == 0 else 'icon-bad'
+    return f'<span title="{tooltip}" style="cursor:help" class="{cls}">{svg}</span>'
 
 
 def _build_topbar_logo(feed):
@@ -231,9 +241,14 @@ def generate_html(results, stats, has_mm, has_ip, has_i2l, feed):
   tfoot td.warn {{ color: var(--warn); background: var(--warn-bg); }}
   tfoot td.bad {{ color: var(--bad); background: var(--bad-bg); }}
   tfoot td.na {{ color: var(--na-text); }}
+  .icon-ok {{ color: var(--good); vertical-align: middle; flex-shrink: 0; }}
+  .icon-bad {{ color: var(--bad); vertical-align: middle; flex-shrink: 0; }}
+  .icon-warn {{ color: var(--aws-orange); vertical-align: middle; margin-left: 4px; flex-shrink: 0; }}
+  .icon-na {{ color: var(--na-text); vertical-align: middle; margin-left: 4px; flex-shrink: 0; }}
 </style>
 </head>
 <body>
+{SVG_SPRITE}
 <div class="topbar">
   {topbar_logo}
   <div class="separator"></div>
@@ -513,16 +528,21 @@ def generate_index(feeds, feed_stats):
         country_pct = _fmt_pct(stats.get("country_pct"))
         city_pct = _fmt_pct(stats.get("city_pct"))
         total = stats.get("total", 0)
-        country_cls = _pct_cls(stats.get("country_pct"))
-        city_cls = _pct_cls(stats.get("city_pct"))
-        routed = stats.get("routed", 0)
-        unrouted = stats.get("unrouted", 0)
-        too_specific = stats.get("too_specific", 0)
-        locode_errors = stats.get("locode_errors", 0)
-        checkable = total - too_specific
-        route_cls = "good" if unrouted == 0 else "bad"
-        locode_cls = "good" if locode_errors == 0 else "warn"
-        stats_html = f"""<div class="card-stats">
+        country_pct = _fmt_pct(stats.get("country_pct"))
+        city_pct = _fmt_pct(stats.get("city_pct"))
+        total = stats.get("total", 0)
+        if not total:
+            stats_html = '<div class="card-stats"><span class="bad">Feed unavailable</span></div>'
+        else:
+            country_cls = _pct_cls(stats.get("country_pct"))
+            city_cls = _pct_cls(stats.get("city_pct"))
+            routed = stats.get("routed", 0)
+            unrouted = stats.get("unrouted", 0)
+            too_specific = stats.get("too_specific", 0)
+            locode_errors = stats.get("locode_errors", 0)
+            route_cls = "good" if unrouted == 0 else "bad"
+            locode_cls = "good" if locode_errors == 0 else "warn"
+            stats_html = f"""<div class="card-stats">
   <span>{total:,} prefixes</span>
   <span>Country: <b class="{country_cls}">{country_pct}</b> &nbsp; City: <b class="{city_cls}">{city_pct}</b></span>
   <span>Routing: <b class="{route_cls}">{routed:,} visible</b>{f' / <b class="bad">{unrouted:,} not visible</b>' if unrouted else ''}{f' / {too_specific:,} too specific' if too_specific else ''}</span>

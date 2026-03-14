@@ -8,7 +8,7 @@
         "2605:59c0:1d00::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": null
+      "city_pct": 0.0
     },
     "Accra, GH": {
       "country": "GH",
@@ -273,7 +273,7 @@
         "98.97.17.0/24"
       ],
       "country_pct": 100.0,
-      "city_pct": 98.27586206896551
+      "city_pct": 99.13793103448276
     },
     "Ashgabat, TM": {
       "country": "TM",
@@ -396,7 +396,7 @@
         "98.97.175.0/24"
       ],
       "country_pct": 100.0,
-      "city_pct": 100.0
+      "city_pct": 98.27586206896551
     },
     "Auckland, NZ": {
       "country": "NZ",
@@ -433,7 +433,7 @@
         "2406:2d40:a400::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": null
+      "city_pct": 0.0
     },
     "Baghdad, IQ": {
       "country": "IQ",
@@ -590,7 +590,7 @@
         "2605:59c0:4b00::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": null
+      "city_pct": 100.0
     },
     "Berlin, DE": {
       "country": "DE",
@@ -652,7 +652,7 @@
         "98.97.165.0/24"
       ],
       "country_pct": 100.0,
-      "city_pct": 90.9090909090909
+      "city_pct": 95.45454545454545
     },
     "Bishkek, KG": {
       "country": "KG",
@@ -725,7 +725,7 @@
         "74.244.169.0/24"
       ],
       "country_pct": 95.65217391304348,
-      "city_pct": 91.30434782608695
+      "city_pct": 93.47826086956522
     },
     "Boise, US": {
       "country": "US",
@@ -746,7 +746,7 @@
         "98.97.41.0/24"
       ],
       "country_pct": 100.0,
-      "city_pct": 100.0
+      "city_pct": 96.42857142857143
     },
     "Boston, US": {
       "country": "US",
@@ -885,7 +885,7 @@
         "2605:59c7:f006::/48"
       ],
       "country_pct": 100.0,
-      "city_pct": null
+      "city_pct": 0.0
     },
     "Brussels, BE": {
       "country": "BE",
@@ -949,8 +949,8 @@
         "2a0d:3344:6100::/40",
         "2a0d:3344:7600::/40"
       ],
-      "country_pct": 100.0,
-      "city_pct": 100.0
+      "country_pct": 97.05882352941177,
+      "city_pct": 97.05882352941177
     },
     "Buenos Aires, AR": {
       "country": "AR",
@@ -1048,8 +1048,8 @@
         "98.97.148.0/24",
         "98.97.149.0/24"
       ],
-      "country_pct": 96.73913043478261,
-      "city_pct": 97.77777777777777
+      "country_pct": 97.28260869565217,
+      "city_pct": 97.8021978021978
     },
     "Buffalo, US": {
       "country": "US",
@@ -1214,7 +1214,7 @@
         "74.244.221.0/24"
       ],
       "country_pct": 100.0,
-      "city_pct": 100.0
+      "city_pct": 97.5
     },
     "Charlotte Amalie, VI": {
       "country": "VI",
@@ -1403,7 +1403,7 @@
         "2605:59ca:8068::/45"
       ],
       "country_pct": 100.0,
-      "city_pct": 100.0
+      "city_pct": 97.72727272727273
     },
     "Conakry, GN": {
       "country": "GN",
@@ -1546,7 +1546,7 @@
         "98.97.95.0/24"
       ],
       "country_pct": 100.0,
-      "city_pct": 100.0
+      "city_pct": 97.16981132075472
     },
     "Damascus, SY": {
       "country": "SY",
@@ -1949,8 +1949,8 @@
         "150.228.212.0/25",
         "2406:2d40:ae00::/40"
       ],
-      "country_pct": 100.0,
-      "city_pct": 100.0
+      "country_pct": 87.5,
+      "city_pct": 87.5
     },
     "Halifax, CA": {
       "country": "CA",
@@ -2099,7 +2099,7 @@
         "2605:59ca:6700::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": 100.0
+      "city_pct": 95.0
     },
     "Iqaluit, CA": {
       "country": "CA",
@@ -2127,7 +2127,7 @@
         "2605:59ca:5500::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": 100.0
+      "city_pct": 94.44444444444444
     },
     "Jakarta, ID": {
       "country": "ID",
@@ -2170,7 +2170,7 @@
         "2620:134:b054:100::23/128"
       ],
       "country_pct": 94.44444444444444,
-      "city_pct": 93.75
+      "city_pct": 94.11764705882352
     },
     "Jerusalem, IL": {
       "country": "IL",
@@ -2292,8 +2292,8 @@
         "98.97.191.0/25",
         "98.97.191.128/25"
       ],
-      "country_pct": 100.0,
-      "city_pct": 100.0
+      "country_pct": 97.61904761904762,
+      "city_pct": 97.61904761904762
     },
     "Kigali, RW": {
       "country": "RW",
@@ -2402,8 +2402,8 @@
         "212.105.145.128/25",
         "2a0d:3344:6f00::/40"
       ],
-      "country_pct": 100.0,
-      "city_pct": 100.0
+      "country_pct": 95.83333333333334,
+      "city_pct": 95.83333333333334
     },
     "Kuujjuaq, CA": {
       "country": "CA",
@@ -2425,8 +2425,8 @@
         "2620:134:b054:100::79/128",
         "2a0d:3341:d500::/40"
       ],
-      "country_pct": 100.0,
-      "city_pct": 100.0
+      "country_pct": 85.71428571428571,
+      "city_pct": 50.0
     },
     "Kyiv, UA": {
       "country": "UA",
@@ -2481,8 +2481,8 @@
         "87.251.28.0/24",
         "87.251.29.0/24"
       ],
-      "country_pct": 100.0,
-      "city_pct": 100.0
+      "country_pct": 89.79591836734694,
+      "city_pct": 89.79591836734694
     },
     "Lagos, NG": {
       "country": "NG",
@@ -2514,7 +2514,7 @@
         "98.97.79.0/24"
       ],
       "country_pct": 92.0,
-      "city_pct": 88.0
+      "city_pct": 90.0
     },
     "Las Vegas, US": {
       "country": "US",
@@ -2595,8 +2595,8 @@
         "98.97.44.0/24",
         "98.97.45.0/24"
       ],
-      "country_pct": 86.66666666666667,
-      "city_pct": 88.88888888888889
+      "country_pct": 90.0,
+      "city_pct": 91.66666666666666
     },
     "Lisbon, PT": {
       "country": "PT",
@@ -2648,8 +2648,8 @@
         "2a0d:3344:3b00::/40",
         "2a0d:3344:6200::/40"
       ],
-      "country_pct": 100.0,
-      "city_pct": 100.0
+      "country_pct": 95.83333333333334,
+      "city_pct": 95.83333333333334
     },
     "Lome, TG": {
       "country": "TG",
@@ -2666,8 +2666,8 @@
       "prefixes": [
         "2605:59c7:f0c1::/48"
       ],
-      "country_pct": 0.0,
-      "city_pct": null
+      "country_pct": 50.0,
+      "city_pct": 0.0
     },
     "London, GB": {
       "country": "GB",
@@ -2729,7 +2729,7 @@
         "2a0d:3344:5800::/38"
       ],
       "country_pct": 100.0,
-      "city_pct": 0.0
+      "city_pct": 50.0
     },
     "Longyearben, SJ": {
       "country": "SJ",
@@ -2743,7 +2743,7 @@
         "2a0d:3341:e800::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": null
+      "city_pct": 0.0
     },
     "Los Angeles, US": {
       "country": "US",
@@ -2910,7 +2910,7 @@
         "2620:134:b054:100::21/128"
       ],
       "country_pct": 71.42857142857143,
-      "city_pct": 0.0
+      "city_pct": 55.55555555555556
     },
     "Managua, NI": {
       "country": "NI",
@@ -3021,8 +3021,8 @@
         "2a0d:3344:1280::/42",
         "2a0d:3344:3800::/40"
       ],
-      "country_pct": 100.0,
-      "city_pct": 100.0
+      "country_pct": 95.0,
+      "city_pct": 95.0
     },
     "Marigot, MF": {
       "country": "MF",
@@ -3063,7 +3063,7 @@
         "2605:59ca:8400::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": null
+      "city_pct": 0.0
     },
     "Mbabane, SZ": {
       "country": "SZ",
@@ -3503,7 +3503,7 @@
         "2a0d:3341:d400::/40",
         "2a0d:3344:4000::/38"
       ],
-      "country_pct": 83.33333333333334,
+      "country_pct": 91.66666666666666,
       "city_pct": 100.0
     },
     "N'Djamena, TD": {
@@ -3558,7 +3558,7 @@
         "2605:59ca:6e00::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": 100.0
+      "city_pct": 92.85714285714286
     },
     "Nassau, BS": {
       "country": "BS",
@@ -3637,7 +3637,7 @@
         "2605:59ca:4600::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": 100.0
+      "city_pct": 50.0
     },
     "New York City, US": {
       "country": "US",
@@ -3647,7 +3647,7 @@
         "74.244.219.0/24"
       ],
       "country_pct": 100.0,
-      "city_pct": 0.0
+      "city_pct": 50.0
     },
     "Newark, US": {
       "country": "US",
@@ -3712,7 +3712,7 @@
         "2605:59c0:4900::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": null
+      "city_pct": 100.0
     },
     "Nuku'alofa, TO": {
       "country": "TO",
@@ -3742,7 +3742,7 @@
         "2605:59ca:7200::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": 100.0
+      "city_pct": 96.15384615384616
     },
     "Omaha, US": {
       "country": "US",
@@ -3845,7 +3845,7 @@
         "2803:9810:5d00::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": 100.0
+      "city_pct": 50.0
     },
     "Paramaribo, SR": {
       "country": "SR",
@@ -3986,8 +3986,8 @@
         "143.105.125.0/24",
         "2605:59ca:8f00::/40"
       ],
-      "country_pct": 100.0,
-      "city_pct": 100.0
+      "country_pct": 50.0,
+      "city_pct": 50.0
     },
     "Phoenix, US": {
       "country": "US",
@@ -4082,7 +4082,7 @@
         "2406:2d40:a900::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": 0.0
+      "city_pct": 50.0
     },
     "Port-au-Prince, HT": {
       "country": "HT",
@@ -4096,7 +4096,7 @@
         "74.244.7.0/24"
       ],
       "country_pct": 100.0,
-      "city_pct": 85.71428571428571
+      "city_pct": 92.85714285714286
     },
     "Portland, US": {
       "country": "US",
@@ -4129,7 +4129,7 @@
         "98.97.49.0/24"
       ],
       "country_pct": 100.0,
-      "city_pct": 100.0
+      "city_pct": 96.0
     },
     "Porto-Novo, BJ": {
       "country": "BJ",
@@ -4216,7 +4216,7 @@
         "2803:9810:c100::/40"
       ],
       "country_pct": 89.47368421052632,
-      "city_pct": 78.94736842105263
+      "city_pct": 84.21052631578947
     },
     "Ramallah, PS": {
       "country": "PS",
@@ -4261,7 +4261,7 @@
         "153.67.95.0/24"
       ],
       "country_pct": 100.0,
-      "city_pct": null
+      "city_pct": 100.0
     },
     "Reykjavik, IS": {
       "country": "IS",
@@ -4350,7 +4350,7 @@
         "2803:9810:a500::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": 0.0
+      "city_pct": 50.0
     },
     "Saint John's, CA": {
       "country": "CA",
@@ -4372,7 +4372,7 @@
         "2a0d:3341:fa00::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": 0.0
+      "city_pct": 50.0
     },
     "Saint-Denis, RE": {
       "country": "RE",
@@ -4405,8 +4405,8 @@
         "65.181.29.32/27",
         "65.181.29.64/26"
       ],
-      "country_pct": 100.0,
-      "city_pct": 100.0
+      "country_pct": 93.75,
+      "city_pct": 93.75
     },
     "Salt Lake City, US": {
       "country": "US",
@@ -4504,7 +4504,7 @@
         "98.97.63.0/24"
       ],
       "country_pct": 100.0,
-      "city_pct": 100.0
+      "city_pct": 97.36842105263158
     },
     "San Juan, PR": {
       "country": "PR",
@@ -4721,7 +4721,7 @@
         "98.97.157.0/24"
       ],
       "country_pct": 96.15384615384616,
-      "city_pct": 93.33333333333333
+      "city_pct": 94.77124183006535
     },
     "Sao Tome, ST": {
       "country": "ST",
@@ -4798,7 +4798,7 @@
         "98.97.99.0/24"
       ],
       "country_pct": 100.0,
-      "city_pct": 100.0
+      "city_pct": 96.96969696969697
     },
     "Seoul, KR": {
       "country": "KR",
@@ -4848,7 +4848,7 @@
         "2a0d:3344:6a00::/40"
       ],
       "country_pct": 71.42857142857143,
-      "city_pct": 0.0
+      "city_pct": 55.55555555555556
     },
     "Sofia, BG": {
       "country": "BG",
@@ -4888,7 +4888,7 @@
         "2605:59c7:f009::/48"
       ],
       "country_pct": 100.0,
-      "city_pct": 100.0
+      "city_pct": 50.0
     },
     "Stockholm, SE": {
       "country": "SE",
@@ -4927,7 +4927,7 @@
         "2401:e320:c00::/38"
       ],
       "country_pct": 100.0,
-      "city_pct": 84.61538461538461
+      "city_pct": 92.3076923076923
     },
     "Suva, FJ": {
       "country": "FJ",
@@ -4992,7 +4992,7 @@
         "65.181.15.0/24"
       ],
       "country_pct": 95.65217391304348,
-      "city_pct": 91.30434782608695
+      "city_pct": 93.47826086956522
     },
     "Tallinn, EE": {
       "country": "EE",
@@ -5009,8 +5009,8 @@
         "87.251.27.0/25",
         "87.251.27.128/25"
       ],
-      "country_pct": 100.0,
-      "city_pct": 100.0
+      "country_pct": 90.9090909090909,
+      "city_pct": 90.9090909090909
     },
     "Tarawa, KI": {
       "country": "KI",
@@ -5028,7 +5028,7 @@
         "2406:2d40:5800::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": null
+      "city_pct": 100.0
     },
     "Tbilisi, GE": {
       "country": "GE",
@@ -5095,8 +5095,8 @@
         "2620:134:b054:100::47/128",
         "2a0d:3344:6800::/40"
       ],
-      "country_pct": 75.0,
-      "city_pct": 75.0
+      "country_pct": 68.75,
+      "city_pct": 68.75
     },
     "Tokyo, JP": {
       "country": "JP",
@@ -5209,8 +5209,8 @@
         "74.244.74.0/24",
         "74.244.75.0/24"
       ],
-      "country_pct": 100.0,
-      "city_pct": 100.0
+      "country_pct": 99.15254237288136,
+      "city_pct": 99.14529914529915
     },
     "Tripoli, LY": {
       "country": "LY",
@@ -5222,7 +5222,7 @@
         "98.97.75.0/24"
       ],
       "country_pct": 100.0,
-      "city_pct": null
+      "city_pct": 100.0
     },
     "Ulaanbaatar, MN": {
       "country": "MN",
@@ -5239,7 +5239,7 @@
         "2620:134:b054:100::53/128"
       ],
       "country_pct": 80.0,
-      "city_pct": 0.0
+      "city_pct": 40.0
     },
     "Vaduz, LI": {
       "country": "LI",
@@ -5305,7 +5305,7 @@
         "2605:59c7:f018::/48"
       ],
       "country_pct": 100.0,
-      "city_pct": null
+      "city_pct": 0.0
     },
     "Victoria, SC": {
       "country": "SC",
@@ -5315,7 +5315,7 @@
         "2605:59c0:7400::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": null
+      "city_pct": 100.0
     },
     "Vienna, AT": {
       "country": "AT",
@@ -5478,7 +5478,7 @@
         "2406:2d40:a200::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": 0.0
+      "city_pct": 50.0
     },
     "Yerevan, AM": {
       "country": "AM",

@@ -24,6 +24,8 @@ Monitors the accuracy of [RFC 8805 geofeeds](https://datatracker.ietf.org/doc/ht
 | [AWS](https://aws.amazon.com/) (Official) | [geo-ip-feed.csv](https://ip-ranges.amazonaws.com/geo-ip-feed.csv) | [aws.html](https://chriselsen.github.io/Geofeed-Monitor/aws.html) |
 | [Google Cloud](https://cloud.google.com/) | [cloud_geofeed](https://www.gstatic.com/ipranges/cloud_geofeed) | [gcp.html](https://chriselsen.github.io/Geofeed-Monitor/gcp.html) |
 | [Microsoft](https://www.microsoft.com/) | [geoloc-Microsoft.csv](https://www.microsoft.com/en-us/download/details.aspx?id=53601) | [microsoft.html](https://chriselsen.github.io/Geofeed-Monitor/microsoft.html) |
+
+Note: The Microsoft feed is not a strict RFC 8805 geofeed — it uses a CSV with a header row and uppercase city names. The download URL is resolved dynamically from the Microsoft Download Center page on each run.
 | [AWS](https://aws.amazon.com/) (Christian Elsen) | [aws-geofeed.txt](https://raw.githubusercontent.com/chriselsen/AWS-Geofeed/main/data/aws-geofeed.txt) | [aws-ce.html](https://chriselsen.github.io/Geofeed-Monitor/aws-ce.html) |
 | [AS213151](https://as213151.net/) | [as213151-geo-ip.txt](https://raw.githubusercontent.com/AS213151/rfc8805-geofeed/main/as213151-geo-ip.txt) | [as213151.html](https://chriselsen.github.io/Geofeed-Monitor/as213151.html) |
 | [Starlink](https://www.starlink.com/) | [geoip.starlinkisp.net](https://geoip.starlinkisp.net/) | [starlink.html](https://chriselsen.github.io/Geofeed-Monitor/starlink.html) |

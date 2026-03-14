@@ -57,7 +57,7 @@ def main():
         stats = compute_stats(results, has_mm, has_ip, has_i2l)
         feed_stats.append(stats)
         print("Checking alerts...")
-        new_state = check_and_alert(feed, results, stats, prev_state)
+        new_state = check_and_alert(feed, results, stats, prev_state, has_mm, has_ip, has_i2l)
         STATE_DIR.mkdir(exist_ok=True)
         state_file.write_text(json.dumps(new_state, indent=2))
         print("Generating HTML report...")

@@ -80,7 +80,7 @@
         "8.34.211.0/24",
         "8.34.220.0/22"
       ],
-      "country_pct": 97.91666666666666,
+      "country_pct": 98.95833333333334,
       "city_pct": 100.0
     },
     "Columbus, US": {
@@ -101,7 +101,7 @@
         "34.4.102.0/23"
       ],
       "country_pct": 100.0,
-      "city_pct": 100.0
+      "city_pct": 96.15384615384616
     },
     "Council Bluffs, US": {
       "country": "US",
@@ -227,8 +227,8 @@
         "34.174.0.0/16",
         "34.34.243.0/24"
       ],
-      "country_pct": 100.0,
-      "city_pct": 100.0
+      "country_pct": 90.0,
+      "city_pct": 90.0
     },
     "Dammam, SA": {
       "country": "SA",
@@ -248,8 +248,8 @@
         "8.228.192.0/19",
         "8.230.64.0/19"
       ],
-      "country_pct": 100.0,
-      "city_pct": 100.0
+      "country_pct": 96.42857142857143,
+      "city_pct": 96.42857142857143
     },
     "Doha, QA": {
       "country": "QA",
@@ -299,7 +299,7 @@
         "35.242.192.0/18",
         "35.246.128.0/17"
       ],
-      "country_pct": 100.0,
+      "country_pct": 96.66666666666667,
       "city_pct": 0.0
     },
     "Groningen, NL": {
@@ -342,7 +342,7 @@
         "35.242.16.0/23"
       ],
       "country_pct": 100.0,
-      "city_pct": 100.0
+      "city_pct": 52.85714285714286
     },
     "Heringsdorf, DE": {
       "country": "DE",
@@ -356,7 +356,7 @@
         "34.96.59.0/24"
       ],
       "country_pct": 100.0,
-      "city_pct": null
+      "city_pct": 100.0
     },
     "Hong Kong, HK": {
       "country": "HK",
@@ -392,8 +392,8 @@
         "34.96.37.0/24",
         "35.206.10.0/23"
       ],
-      "country_pct": 100.0,
-      "city_pct": 100.0
+      "country_pct": 88.88888888888889,
+      "city_pct": 61.111111111111114
     },
     "Jakarta, ID": {
       "country": "ID",
@@ -495,7 +495,7 @@
         "35.242.26.0/24"
       ],
       "country_pct": 100.0,
-      "city_pct": 100.0
+      "city_pct": 59.09090909090909
     },
     "Las Vegas, US": {
       "country": "US",
@@ -558,7 +558,7 @@
         "8.228.32.0/19"
       ],
       "country_pct": 100.0,
-      "city_pct": 2.7027027027027026
+      "city_pct": 51.35135135135135
     },
     "Los Angeles, US": {
       "country": "US",
@@ -641,8 +641,8 @@
         "34.96.32.0/24",
         "35.219.224.0/19"
       ],
-      "country_pct": 100.0,
-      "city_pct": 100.0
+      "country_pct": 96.875,
+      "city_pct": 96.875
     },
     "Montreal, CA": {
       "country": "CA",
@@ -732,7 +732,7 @@
         "34.96.33.0/24"
       ],
       "country_pct": 100.0,
-      "city_pct": 100.0
+      "city_pct": 55.88235294117647
     },
     "North Charleston, US": {
       "country": "US",
@@ -786,7 +786,7 @@
         "35.243.128.0/17"
       ],
       "country_pct": 100.0,
-      "city_pct": 100.0
+      "city_pct": 52.68817204301075
     },
     "Osaka, JP": {
       "country": "JP",
@@ -848,7 +848,7 @@
         "34.96.55.0/24"
       ],
       "country_pct": 100.0,
-      "city_pct": null
+      "city_pct": 100.0
     },
     "Salt Lake City, US": {
       "country": "US",
@@ -888,8 +888,8 @@
         "34.184.1.0/24",
         "34.34.252.0/24"
       ],
-      "country_pct": 100.0,
-      "city_pct": 100.0
+      "country_pct": 86.66666666666667,
+      "city_pct": 86.66666666666667
     },
     "Sao Paulo, BR": {
       "country": "BR",
@@ -1009,8 +1009,8 @@
         "34.51.128.0/17",
         "34.96.54.0/24"
       ],
-      "country_pct": 100.0,
-      "city_pct": 100.0
+      "country_pct": 64.28571428571429,
+      "city_pct": 64.28571428571429
     },
     "Sydney, AU": {
       "country": "AU",
@@ -1042,8 +1042,8 @@
         "35.242.41.0/24",
         "35.244.64.0/18"
       ],
-      "country_pct": 100.0,
-      "city_pct": 100.0
+      "country_pct": 96.15384615384616,
+      "city_pct": 96.15384615384616
     },
     "Taipei, TW": {
       "country": "TW",
@@ -1098,8 +1098,8 @@
         "35.252.0.0/19",
         "8.230.32.0/19"
       ],
-      "country_pct": 100.0,
-      "city_pct": 100.0
+      "country_pct": 84.61538461538461,
+      "city_pct": 57.692307692307686
     },
     "The Dalles, US": {
       "country": "US",
@@ -1149,7 +1149,7 @@
         "8.229.0.0/16"
       ],
       "country_pct": 100.0,
-      "city_pct": 100.0
+      "city_pct": 97.67441860465115
     },
     "Tokyo, JP": {
       "country": "JP",
@@ -1224,7 +1224,7 @@
         "35.242.46.0/24"
       ],
       "country_pct": 100.0,
-      "city_pct": 100.0
+      "city_pct": 58.333333333333336
     },
     "Turin, IT": {
       "country": "IT",
@@ -1242,8 +1242,8 @@
         "34.183.3.128/25",
         "34.34.238.0/24"
       ],
-      "country_pct": 100.0,
-      "city_pct": 100.0
+      "country_pct": 83.33333333333334,
+      "city_pct": 50.0
     },
     "Warsaw, PL": {
       "country": "PL",
@@ -1314,7 +1314,7 @@
         "8.228.64.0/18"
       ],
       "country_pct": 100.0,
-      "city_pct": 100.0
+      "city_pct": 53.2608695652174
     },
     "Zurich, CH": {
       "country": "CH",
