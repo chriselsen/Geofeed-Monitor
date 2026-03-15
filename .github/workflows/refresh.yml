@@ -26,6 +26,7 @@ jobs:
           MAXMIND_LICENSE_KEY: ${{ secrets.MAXMIND_LICENSE_KEY }}
           IPINFO_TOKEN: ${{ secrets.IPINFO_TOKEN }}
           IP2LOCATION_TOKEN: ${{ secrets.IP2LOCATION_TOKEN }}
+          ARIN_API_KEY: ${{ secrets.ARIN_API_KEY }}
           SLACK_WEBHOOK_UNREACHABLE: ${{ secrets.SLACK_WEBHOOK_UNREACHABLE }}
           SLACK_WEBHOOK_EMBARGO: ${{ secrets.SLACK_WEBHOOK_EMBARGO }}
           SLACK_WEBHOOK_NEW_LOCATION: ${{ secrets.SLACK_WEBHOOK_NEW_LOCATION }}

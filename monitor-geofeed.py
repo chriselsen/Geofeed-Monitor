@@ -53,7 +53,7 @@ def main():
             continue
         locations = group_by_location(geofeed)
         print("Validating prefixes...")
-        results = validate_prefixes(locations, mm_reader, ip_reader, i2l_reader)
+        results = validate_prefixes(locations, mm_reader, ip_reader, i2l_reader, feed.get("check_rdap", False))
         stats = compute_stats(results, has_mm, has_ip, has_i2l)
         feed_stats.append(stats)
         print("Checking alerts...")

@@ -1,21 +1,24 @@
 # Geofeed Monitor
 
-Monitors the accuracy of [RFC 8805 geofeeds](https://datatracker.ietf.org/doc/html/rfc8805) by validating geolocation claims against third-party geolocation databases, routing tables, and the UN/LOCODE location registry.
+Monitors the accuracy of [RFC 8805 geofeeds](https://datatracker.ietf.org/doc/html/rfc8805) by validating geolocation claims against third-party geolocation databases, routing tables, the UN/LOCODE location registry, and RIR whois data.
 
 ## What it does
 
 1. Fetches geofeed CSVs — lists of IP prefixes with their claimed country, subdivision, and city.
 2. Looks up each prefix in multiple geolocation providers (MaxMind GeoLite2, IPinfo Lite, IP2Location Lite) and compares the results.
-3. Validates each location entry against the [UN/LOCODE](https://service.unece.org/trade/locode/) registry — checking that the city exists, belongs to the claimed country, and is in the correct subdivision.
+3. Validates each location entry against the [UN/LOCODE 2024-2](https://service.unece.org/trade/locode/loc242csv.zip) registry — checking that the city exists, belongs to the claimed country, and is in the correct subdivision.
 4. Checks each prefix for visibility in the global routing table using [RIPE RIS](https://www.ripe.net/analyse/internet-measurements/routing-information-service-ris) whois dumps.
-5. Generates self-contained HTML reports with:
+5. Checks each prefix for a registered geofeed URL in RIR whois (RFC 9092/9632) using the [geolocatemuch.com](https://geolocatemuch.com/) validated prefix list.
+6. Generates self-contained HTML reports with:
    - Global accuracy statistics (by prefix and by address count)
    - Per-location breakdown with expandable prefix details
    - UN/LOCODE validation warnings per location
    - Routing visibility indicators per prefix (visible / not visible / too specific)
+   - Geofeed in RIR indicators per prefix (matches / mismatches / not registered)
    - Search by prefix or IP address
    - Filter to show only inaccurate entries
-6. Sends Slack alerts on detected changes or issues (see [Alerting](#alerting)).
+7. Generates a landing page (`index.html`) with per-feed summary cards showing prefix count, accuracy, routing, UN/LOCODE, and Geofeed in RIR stats.
+8. Sends Slack alerts on detected changes or issues (see [Alerting](#alerting)).
 
 ## Monitored Geofeeds
 
@@ -24,11 +27,11 @@ Monitors the accuracy of [RFC 8805 geofeeds](https://datatracker.ietf.org/doc/ht
 | [AWS](https://aws.amazon.com/) (Official) | [geo-ip-feed.csv](https://ip-ranges.amazonaws.com/geo-ip-feed.csv) | [aws.html](https://chriselsen.github.io/Geofeed-Monitor/aws.html) |
 | [Google Cloud](https://cloud.google.com/) | [cloud_geofeed](https://www.gstatic.com/ipranges/cloud_geofeed) | [gcp.html](https://chriselsen.github.io/Geofeed-Monitor/gcp.html) |
 | [Microsoft](https://www.microsoft.com/) | [geoloc-Microsoft.csv](https://www.microsoft.com/en-us/download/details.aspx?id=53601) | [microsoft.html](https://chriselsen.github.io/Geofeed-Monitor/microsoft.html) |
+| [AWS](https://aws.amazon.com/) (Christian Elsen) | [aws-geofeed.txt](https://raw.githubusercontent.com/chriselsen/AWS-Geofeed/main/data/aws-geofeed.txt) | [aws-ce.html](https://chriselsen.github.io/Geofeed-Monitor/aws-ce.html) |
+| [AS213151](https://as213151.net/) | [geofeed.as213151.net](https://geofeed.as213151.net/geofeed.txt) | [as213151.html](https://chriselsen.github.io/Geofeed-Monitor/as213151.html) |
+| [Starlink](https://www.starlink.com/) | [geoip.starlinkisp.net](https://geoip.starlinkisp.net/) | [starlink.html](https://chriselsen.github.io/Geofeed-Monitor/starlink.html) |
 
 Note: The Microsoft feed is not a strict RFC 8805 geofeed — it uses a CSV with a header row and uppercase city names. The download URL is resolved dynamically from the Microsoft Download Center page on each run.
-| [AWS](https://aws.amazon.com/) (Christian Elsen) | [aws-geofeed.txt](https://raw.githubusercontent.com/chriselsen/AWS-Geofeed/main/data/aws-geofeed.txt) | [aws-ce.html](https://chriselsen.github.io/Geofeed-Monitor/aws-ce.html) |
-| [AS213151](https://as213151.net/) | [as213151-geo-ip.txt](https://raw.githubusercontent.com/AS213151/rfc8805-geofeed/main/as213151-geo-ip.txt) | [as213151.html](https://chriselsen.github.io/Geofeed-Monitor/as213151.html) |
-| [Starlink](https://www.starlink.com/) | [geoip.starlinkisp.net](https://geoip.starlinkisp.net/) | [starlink.html](https://chriselsen.github.io/Geofeed-Monitor/starlink.html) |
 
 ## Live Report
 
@@ -45,6 +48,7 @@ export MAXMIND_ACCOUNT_ID="<your_account_id>"
 export MAXMIND_LICENSE_KEY="<your_license_key>"
 export IPINFO_TOKEN="<your_token>"
 export IP2LOCATION_TOKEN="<your_token>"
+export ARIN_API_KEY="<your_api_key>"   # optional, for ARIN bulk whois
 
 python3 monitor-geofeed.py
 ```
@@ -81,6 +85,19 @@ Each prefix is checked against [RIPE RIS](https://www.ris.ripe.net/dumps/) whois
 
 Prefixes more specific than `/24` (IPv4) or `/48` (IPv6) are marked as too specific to appear in the global routing table and shown with a grey indicator.
 
+### Geofeed in RIR (RFC 9092/9632)
+
+Each prefix is checked against the [geolocatemuch.com](https://geolocatemuch.com/geofeeds/validated-all.csv) daily-updated validated prefix list (sourced from all RIR whois databases). If a prefix is found, its registered geofeed URL is retrieved via RDAP and compared to the monitored feed URL. Results are cached locally to avoid repeated RDAP queries.
+
+Per-prefix indicators:
+- 🟢 Green shield — geofeed URL in RIR whois matches the monitored feed URL
+- 🟡 Amber shield — geofeed URL in RIR whois points to a different URL
+- ⚫ Grey shield — no geofeed entry found in RIR whois
+
+Per-location summary icons reflect the proportion of prefixes with registered geofeed entries.
+
+This check is opt-in per feed via the `check_rdap` config key. Currently enabled for: AWS (Official), AS213151.
+
 ## Alerting
 
 Slack alerts are sent via webhooks on a per-feed, per-alert-type basis. Each alert type has a fixed JSON schema for use with Slack Workflows.
@@ -115,7 +132,7 @@ SLACK_WEBHOOK_AWS_EMBARGO   (feed-specific)
 SLACK_WEBHOOK_EMBARGO       (global fallback)
 ```
 
-Sanctioned countries default to the OFAC comprehensive list: `IR`, `CU`, `KP`, `SY`. This can be overridden per feed via the `embargo_countries` config key.
+Sanctioned countries default to the OFAC comprehensive list: `IR`, `CU`, `KP`, `SY`. This can be overridden per feed via the `embargo_countries` config key. The AWS Official feed uses an extended list that also includes `RU` and `BY`.
 
 ### State
 

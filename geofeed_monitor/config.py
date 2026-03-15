@@ -55,6 +55,7 @@ FEEDS = [
         "card_logo_file": AWS_CARD_LOGO_FILE,
         "card_logo_type": "svg",
         "embargo_countries": {"IR", "CU", "KP", "SY", "RU", "BY"},
+        "check_rdap": True,
     },
     {
         "url": "https://www.gstatic.com/ipranges/cloud_geofeed",
@@ -89,7 +90,7 @@ FEEDS = [
         "card_logo_type": "svg",
     },
     {
-        "url": "https://raw.githubusercontent.com/AS213151/rfc8805-geofeed/main/as213151-geo-ip.txt",
+        "url": "https://geofeed.as213151.net/geofeed.txt",
         "output": Path("./as213151.html"),
         "title": "AS213151 Geofeed Monitoring Report",
         "topbar_title": "AS213151 Geofeed Monitoring Report",
@@ -98,6 +99,7 @@ FEEDS = [
         "logo_invert": True,
         "card_logo_file": AS213151_LOGO_FILE,
         "card_logo_type": "png",
+        "check_rdap": True,
     },
     {
         "url": "https://geoip.starlinkisp.net/",

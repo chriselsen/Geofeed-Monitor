@@ -73,6 +73,9 @@ XBOX_SVG = '<svg width="14" height="14"><use href="#icon-xbox"/></svg>'
 ROUTE_SVG = '<svg width="14" height="14"><use href="#icon-eye-off"/></svg>'
 ROUTE_OK_SVG = '<svg width="14" height="14"><use href="#icon-eye"/></svg>'
 ROUTE_NA_SVG = '<svg width="14" height="14"><use href="#icon-eye-cancel"/></svg>'
+RDAP_OK_SVG = '<svg width="14" height="14"><use href="#icon-shield-check"/></svg>'
+RDAP_BAD_SVG = '<svg width="14" height="14"><use href="#icon-shield-x"/></svg>'
+RDAP_NA_SVG = '<svg width="14" height="14"><use href="#icon-shield"/></svg>'
 
 SVG_SPRITE = """<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
 <symbol id="icon-warn" viewBox="0 0 24 24" fill="currentColor"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 1.67c.955 0 1.845 .467 2.39 1.247l.105 .16l8.114 13.548a2.914 2.914 0 0 1 -2.307 4.363l-.195 .008h-16.225a2.914 2.914 0 0 1 -2.582 -4.2l.099 -.185l8.11 -13.538a2.914 2.914 0 0 1 2.491 -1.403zm.01 13.33l-.127 .007a1 1 0 0 0 0 1.986l.117 .007l.127 -.007a1 1 0 0 0 0 -1.986l-.117 -.007zm-.01 -7a1 1 0 0 0 -.993 .883l-.007 .117v4l.007 .117a1 1 0 0 0 1.986 0l.007 -.117v-4l-.007 -.117a1 1 0 0 0 -.993 -.883z"/></symbol>
@@ -81,6 +84,9 @@ SVG_SPRITE = """<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
 <symbol id="icon-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10.585 10.587a2 2 0 0 0 2.829 2.828"/><path d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87"/><path d="M3 3l18 18"/></symbol>
 <symbol id="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"/></symbol>
 <symbol id="icon-eye-cancel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M12 18c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"/><path d="M16 19a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M17 21l4 -4"/></symbol>
+<symbol id="icon-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06"/><path d="M15 19l2 2l4 -4"/></symbol>
+<symbol id="icon-shield-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -1.047 6.924"/><path d="M19 19m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/><path d="M17 21l4 -4"/></symbol>
+<symbol id="icon-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3a12 12 0 0 0 8.5 3a12 12 0 0 1 -8.5 15a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3"/></symbol>
 </svg>"""
 
 
@@ -122,6 +128,28 @@ def _route_icon_loc(total, routed, unrouted, too_specific):
     svg = ROUTE_OK_SVG if unrouted == 0 else ROUTE_SVG
     cls = 'icon-ok' if unrouted == 0 else 'icon-bad'
     return f'<span title="{tooltip}" style="cursor:help" class="{cls}">{svg}</span>'
+
+
+def _rdap_icon(prefix, rdap_url, feed_url):
+    if rdap_url is None:
+        tooltip = f'Geofeed in RIR: not found for {prefix}'
+        return f'<span title="{tooltip}" style="cursor:help" class="icon-na">{RDAP_NA_SVG}</span>'
+    if rdap_url == feed_url:
+        tooltip = f'Geofeed in RIR: matches feed URL'
+        return f'<span title="{tooltip}" style="cursor:help" class="icon-ok">{RDAP_OK_SVG}</span>'
+    tooltip = f'Geofeed in RIR: points to {rdap_url} (different from monitored feed URL)'
+    return f'<span title="{tooltip}" style="cursor:help" class="icon-warn">{RDAP_BAD_SVG}</span>'
+
+
+def _rdap_icon_loc(total, with_rdap):
+    if with_rdap == 0:
+        tooltip = f'Geofeed in RIR: not registered for any prefix in this location'
+        return f'<span title="{tooltip}" style="cursor:help" class="icon-na">{RDAP_NA_SVG}</span>'
+    if with_rdap == total:
+        tooltip = f'All {total} prefix{"es" if total > 1 else ""} have Geofeed in RIR registered'
+        return f'<span title="{tooltip}" style="cursor:help" class="icon-ok">{RDAP_OK_SVG}</span>'
+    tooltip = f'{with_rdap} of {total} prefixes have Geofeed in RIR registered'
+    return f'<span title="{tooltip}" style="cursor:help" class="icon-warn">{RDAP_BAD_SVG}</span>'
 
 
 def _build_topbar_logo(feed):
@@ -351,8 +379,12 @@ def generate_html(results, stats, has_mm, has_ip, has_i2l, feed):
         routed_count = sum(1 for r in loc_results if r[16])
         too_specific_count = sum(1 for r in loc_results if r[18])
         route_icon = _route_icon_loc(len(loc_results), routed_count, unrouted_count, too_specific_count)
+        rdap_loc_icon = ""
+        if feed.get("check_rdap"):
+            with_rdap = sum(1 for r in loc_results if r[19] is not None)
+            rdap_loc_icon = _rdap_icon_loc(len(loc_results), with_rdap)
         html.append(f'<tr class="loc-row" data-loc="{loc_idx}" data-has-bad="{int(has_bad)}">')
-        html.append(f"  <td>{flag}{display_name}{locode_icon}{route_icon} <span class='loc-count' data-loc-count='{loc_idx}' data-total='{len(loc_results)}'>({len(loc_results)})</span> {loc_filter}</td>")
+        html.append(f"  <td>{flag}{display_name} <span class='loc-count' data-loc-count='{loc_idx}' data-total='{len(loc_results)}'>({len(loc_results)})</span> {locode_icon}{route_icon}{rdap_loc_icon} {loc_filter}</td>")
         if has_mm:
             html.append(f"  {pct_cell(mm_c_pct, True)}{pct_cell(mm_ci_pct)}")
         if has_ip:
@@ -373,9 +405,11 @@ def generate_html(results, stats, has_mm, has_ip, has_i2l, feed):
             routed = r[16]
             route_match = r[17]
             too_specific = r[18]
+            rdap_url = r[19]
             route_icon = _route_icon(prefix, routed, route_match, too_specific)
+            rdap_icon = _rdap_icon(prefix, rdap_url, feed["url"]) if feed.get("check_rdap") else ""
             html.append(f'<tr class="prefix-row" data-loc="{loc_idx}" data-perfect="{int(perfect)}" data-prefix="{prefix}">')
-            html.append(f"  <td>{prefix}{route_icon} <small>({proto}) &mdash; geofeed: {gf_label}</small></td>")
+            html.append(f"  <td>{prefix} <small>({proto}) &mdash; geofeed: {gf_label}</small> {route_icon}{rdap_icon}</td>")
             if has_mm:
                 html.append(f"  {match_cell(mm_c_m, mm_c, True)}{match_cell(mm_ci_m, mm_ci, is_city=True)}")
             if has_ip:
@@ -540,13 +574,16 @@ def generate_index(feeds, feed_stats):
             unrouted = stats.get("unrouted", 0)
             too_specific = stats.get("too_specific", 0)
             locode_errors = stats.get("locode_errors", 0)
-            route_cls = "good" if unrouted == 0 else "bad"
+            route_cls = "good" if unrouted == 0 else ("warn" if unrouted / (routed + unrouted) < 0.10 else "bad")
+            unrouted_pct = f" ({unrouted / (routed + unrouted) * 100:.1f}%)" if unrouted else ""
             locode_cls = "good" if locode_errors == 0 else "warn"
+            rfc9092 = stats.get("rfc9092", 0)
+            rfc9092_str = f' / <b>{rfc9092:,} Geofeed in RIR</b>' if rfc9092 else ''
             stats_html = f"""<div class="card-stats">
   <span>{total:,} prefixes</span>
   <span>Country: <b class="{country_cls}">{country_pct}</b> &nbsp; City: <b class="{city_cls}">{city_pct}</b></span>
-  <span>Routing: <b class="{route_cls}">{routed:,} visible</b>{f' / <b class="bad">{unrouted:,} not visible</b>' if unrouted else ''}{f' / {too_specific:,} too specific' if too_specific else ''}</span>
-  <span>UN/LOCODE: <b class="{locode_cls}">{locode_errors:,} issue{'s' if locode_errors != 1 else ''}</b></span>
+  <span>Routing: <b class="{route_cls}">{routed:,} visible</b>{f' / <b class="{route_cls}">{unrouted:,} not visible{unrouted_pct}</b>' if unrouted else ''}{f' / {too_specific:,} too specific' if too_specific else ''}</span>
+  <span>UN/LOCODE: <b class="{locode_cls}">{locode_errors:,} issue{'s' if locode_errors != 1 else ''}</b>{rfc9092_str}</span>
 </div>"""
         cards.append(
             f'<a class="feed-card" href="{href}"><div class="feed-logo">{logo_html}</div>'

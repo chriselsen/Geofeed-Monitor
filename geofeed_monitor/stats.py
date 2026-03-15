@@ -84,6 +84,7 @@ def compute_stats(results, has_mm=True, has_ip=True, has_i2l=True):
         "unrouted": sum(1 for _, _, lr in results for r in lr if not r[16] and not r[18]),
         "too_specific": sum(1 for _, _, lr in results for r in lr if r[18]),
         "locode_errors": sum(1 for _, _, lr in results for r in lr if r[15]),
+        "rfc9092": sum(1 for _, _, lr in results for r in lr if r[19] is not None),
     }
     for key in prov:
         s[key] = compute_pct(prov[key])
