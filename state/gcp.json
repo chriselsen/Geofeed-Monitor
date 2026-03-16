@@ -3404,48 +3404,6 @@
     "2600:1900:4010::/44": [
       "City \"Brussels\" not found in country BE (known in: US)"
     ],
-    "8.228.192.0/19": [
-      "City \"Dammam\" not found in UN/LOCODE"
-    ],
-    "8.230.64.0/19": [
-      "City \"Dammam\" not found in UN/LOCODE"
-    ],
-    "34.1.48.0/20": [
-      "City \"Dammam\" not found in UN/LOCODE"
-    ],
-    "34.34.255.0/24": [
-      "City \"Dammam\" not found in UN/LOCODE"
-    ],
-    "34.152.84.0/23": [
-      "City \"Dammam\" not found in UN/LOCODE"
-    ],
-    "34.152.102.0/24": [
-      "City \"Dammam\" not found in UN/LOCODE"
-    ],
-    "34.157.122.128/25": [
-      "City \"Dammam\" not found in UN/LOCODE"
-    ],
-    "34.157.218.128/25": [
-      "City \"Dammam\" not found in UN/LOCODE"
-    ],
-    "34.166.0.0/16": [
-      "City \"Dammam\" not found in UN/LOCODE"
-    ],
-    "34.177.48.0/23": [
-      "City \"Dammam\" not found in UN/LOCODE"
-    ],
-    "34.177.70.0/24": [
-      "City \"Dammam\" not found in UN/LOCODE"
-    ],
-    "35.252.32.0/19": [
-      "City \"Dammam\" not found in UN/LOCODE"
-    ],
-    "2600:1900:0:2b00::/56": [
-      "City \"Dammam\" not found in UN/LOCODE"
-    ],
-    "2600:1900:5400::/44": [
-      "City \"Dammam\" not found in UN/LOCODE"
-    ],
     "34.0.224.0/24": [
       "City \"Frankfurt\" not found in UN/LOCODE"
     ],

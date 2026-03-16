@@ -19,10 +19,15 @@ LOCODE_PARTS = [
 _db = None  # (country, norm_city) -> set of subdivision codes
 
 
+_ARABIC_ARTICLES = re.compile(r'^(al|ad|an|ar|as|at|az|ash|ath)\s+', re.IGNORECASE)
+
+
 def _normalize(s):
     s = re.sub(r'\s*\(.*?\)', '', s)   # strip parenthetical suffixes
     s = re.sub(r'\s*=.*', '', s)       # strip "= alternate name" suffixes
-    return unicodedata.normalize("NFD", s).encode("ascii", "ignore").decode().strip().lower()
+    s = unicodedata.normalize("NFD", s).encode("ascii", "ignore").decode().strip().lower()
+    s = _ARABIC_ARTICLES.sub('', s)    # strip Arabic definite article
+    return s
 
 
 def load_locode():
@@ -44,7 +49,14 @@ def load_locode():
                 subdiv = row[5].strip()
                 if not country or not name:
                     continue
-                db[(country, _normalize(name))].add(subdiv)
+                norm = _normalize(name)
+                db[(country, norm)].add(subdiv)
+                # Also index parenthetical alias e.g. "Brussel (Bruxelles)" -> also index "bruxelles"
+                m = re.search(r'\(([^)]+)\)', name)
+                if m:
+                    alias = _normalize(m.group(1))
+                    if alias and alias != norm:
+                        db[(country, alias)].add(subdiv)
     _db = db
     print(f"  Loaded {len(_db)} UN/LOCODE entries")
 

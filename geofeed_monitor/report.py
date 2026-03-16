@@ -92,7 +92,7 @@ SVG_SPRITE = """<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
 
 
 def _locode_icon(issues):
-    tooltip = "&#10;".join(issues).replace('"', "&quot;")
+    tooltip = "&#10;".join(issues).replace('"', "'")
     return f'<span title="{tooltip}" style="cursor:help" class="icon-warn">{WARN_SVG}</span>'
 
 
