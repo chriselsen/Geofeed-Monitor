@@ -220,12 +220,22 @@ def generate_html(results, stats, has_mm, has_ip, has_i2l, has_dbip=False, has_i
   .card-header {{ padding: 16px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }}
   .card-header h2 {{ font-size: 18px; font-weight: 700; color: var(--text-primary); }}
   .filter-toggle {{ font-size: 13px; color: var(--text-secondary); cursor: pointer; user-select: none; white-space: nowrap; }}
+  .filter-btn {{ background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; padding: 4px 8px; cursor: pointer; display: flex; align-items: center; color: var(--text-secondary); transition: border-color 0.15s, background 0.15s; }}
+  .filter-btn:hover {{ border-color: var(--aws-orange); }}
+  .filter-btn.active {{ border-color: var(--aws-orange); background: #fff8ee; color: var(--text-primary); }}
+  .filter-btn svg {{ pointer-events: none; }}
   .search-box {{ font-size: 13px; padding: 5px 10px; border: 1px solid var(--border); border-radius: 6px; outline: none; width: 180px; font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }}
   .search-box:focus {{ border-color: var(--aws-orange); }}
   .filter-toggle input {{ vertical-align: middle; margin-right: 4px; cursor: pointer; }}
   .loc-filter {{ font-size: 11px; color: var(--text-secondary); cursor: pointer; user-select: none; margin-left: 8px; font-weight: 400; display: none; }}
   .loc-row.open .loc-filter {{ display: inline; }}
   .loc-filter input {{ vertical-align: middle; margin-right: 2px; cursor: pointer; }}
+  .loc-filter-btn {{ background: none; border: 1px solid transparent; border-radius: 4px; padding: 1px 3px; cursor: pointer; display: none; align-items: center; vertical-align: middle; margin-left: 2px; color: var(--text-secondary); }}
+  .loc-row.open .loc-filter-btn {{ display: inline-flex; }}
+  .loc-filter-btn:hover {{ border-color: var(--aws-orange); }}
+  .loc-filter-btn.active {{ border-color: var(--aws-orange); background: #fff8ee; }}
+  .loc-filter-sep {{ display: none; width: 1px; height: 14px; background: var(--border); margin: 0 6px; vertical-align: middle; }}
+  .loc-row.open .loc-filter-sep {{ display: inline-block; }}
   .loc-counter {{ font-size: 11px; font-weight: 400; color: var(--text-secondary); }}
   .header-counter {{ font-size: 11px; font-weight: 400; opacity: 0.7; }}
   .loc-row.filtered, .prefix-row.filtered {{ display: none !important; }}
@@ -290,9 +300,12 @@ def generate_html(results, stats, has_mm, has_ip, has_i2l, has_dbip=False, has_i
 <div class="card">
 <div class="card-header">
   <h2>Location Validation Results</h2>
-  <div style="display:flex;align-items:center;gap:12px">
+  <div style="display:flex;align-items:center;gap:8px">
     <input type="text" id="prefixSearch" placeholder="Search prefix or IP&hellip;" class="search-box">
-    <label class="filter-toggle"><input type="checkbox" id="globalFilter"> Show only inaccurate</label>
+    <button class="filter-btn" id="filterInaccurate" title="Show only inaccurate locations">{XBOX_SVG}</button>
+    <button class="filter-btn" id="filterLocode" title="Show only locations with UN/LOCODE issues">{WARN_SVG}</button>
+    <button class="filter-btn" id="filterUnrouted" title="Show only locations with unrouted prefixes">{ROUTE_SVG}</button>
+    {'<button class="filter-btn" id="filterRir" title="Show only locations with Geofeed in RIR">'+RDAP_OK_SVG+'</button>' if feed.get('check_rdap') else ''}
   </div>
 </div>
 <div class="stats-bar">
@@ -349,18 +362,18 @@ def generate_html(results, stats, has_mm, has_ip, has_i2l, has_dbip=False, has_i
 <table>
 <thead>
 <tr>
-  <th rowspan="2">Location <span id="locCounter" class="header-counter"></span></th>
+  <th rowspan="2">Location <span id="locCounter" class="header-counter"></span> <span id="prefixCounter" class="header-counter"></span></th>
   {'<th colspan="2" class="provider-hdr"><img src="' + mm_fav + '" alt="">MaxMind</th>' if has_mm else ''}
   {'<th colspan="2" class="provider-hdr"><img src="' + ip_fav + '" alt="">IPinfo</th>' if has_ip else ''}
-  {'<th colspan="2" class="provider-hdr"><img src="' + i2l_fav + '" alt="">IP2Location</th>' if has_i2l else ''}
   {'<th colspan="2" class="provider-hdr"><img src="' + dbip_fav + '" alt="">DB-IP</th>' if has_dbip else ''}
+  {'<th colspan="2" class="provider-hdr"><img src="' + i2l_fav + '" alt="">IP2Location</th>' if has_i2l else ''}
   {'<th colspan="2" class="provider-hdr"><img src="' + iplocate_fav + '" alt="">IPLocate</th>' if has_iplocate else ''}
 </tr>
 <tr>
   {'<th class="sub-hdr provider-start">Country</th><th class="sub-hdr">City</th>' if has_mm else ''}
   {'<th class="sub-hdr provider-start">Country</th><th class="sub-hdr">City</th>' if has_ip else ''}
-  {'<th class="sub-hdr provider-start">Country</th><th class="sub-hdr">City</th>' if has_i2l else ''}
   {'<th class="sub-hdr provider-start">Country</th><th class="sub-hdr">City</th>' if has_dbip else ''}
+  {'<th class="sub-hdr provider-start">Country</th><th class="sub-hdr">City</th>' if has_i2l else ''}
   {'<th class="sub-hdr provider-start">Country</th><th class="sub-hdr">City</th>' if has_iplocate else ''}
 </tr>
 </thead><tbody>""")
@@ -380,7 +393,10 @@ def generate_html(results, stats, has_mm, has_ip, has_i2l, has_dbip=False, has_i
         has_bad = any(any(r[i] is not None and not r[i] for i in active) for r in loc_results)
         cc = country_code.lower()
         flag = f'<span class="fi fi-{cc}" style="margin-right:8px"></span>'
-        loc_filter = f'<label class="loc-filter"><input type="checkbox" class="locFilter" data-loc="{loc_idx}"> inaccurate only</label>'
+        loc_filter = f'<span class="loc-filter-sep"></span><button class="loc-filter-btn" data-loc="{loc_idx}" data-filter="inaccurate" title="Show only inaccurate prefixes">{XBOX_SVG}</button>'
+        loc_filter += f'<button class="loc-filter-btn" data-loc="{loc_idx}" data-filter="unrouted" title="Show only unrouted prefixes">{ROUTE_SVG}</button>'
+        if feed.get("check_rdap"):
+            loc_filter += f'<button class="loc-filter-btn" data-loc="{loc_idx}" data-filter="rir" title="Show only prefixes with Geofeed in RIR">{RDAP_OK_SVG}</button>'
         # All prefixes share the same location — validate once from the first result
         r0 = loc_results[0]
         locode_issues = r0[15]
@@ -393,16 +409,19 @@ def generate_html(results, stats, has_mm, has_ip, has_i2l, has_dbip=False, has_i
         if feed.get("check_rdap"):
             with_rdap = sum(1 for r in loc_results if r[19] is not None)
             rdap_loc_icon = _rdap_icon_loc(len(loc_results), with_rdap)
-        html.append(f'<tr class="loc-row" data-loc="{loc_idx}" data-has-bad="{int(has_bad)}">')
+        has_locode = 1 if locode_issues else 0
+        has_unrouted = 1 if unrouted_count > 0 else 0
+        has_rir = 1 if feed.get("check_rdap") and any(r[19] is not None for r in loc_results) else 0
+        html.append(f'<tr class="loc-row" data-loc="{loc_idx}" data-has-bad="{int(has_bad)}" data-has-locode="{has_locode}" data-has-unrouted="{has_unrouted}" data-has-rir="{has_rir}">')
         html.append(f"  <td>{flag}{display_name} <span class='loc-count' data-loc-count='{loc_idx}' data-total='{len(loc_results)}'>({len(loc_results)})</span> {locode_icon}{route_icon}{rdap_loc_icon} {loc_filter}</td>")
         if has_mm:
             html.append(f"  {pct_cell(mm_c_pct, True)}{pct_cell(mm_ci_pct)}")
         if has_ip:
             html.append(f'  {pct_cell(ip_c_pct, True)}<td class="na">N/A</td>')
-        if has_i2l:
-            html.append(f"  {pct_cell(i2l_c_pct, True)}{pct_cell(i2l_ci_pct)}")
         if has_dbip:
             html.append(f"  {pct_cell(dbip_c_pct, True)}{pct_cell(dbip_ci_pct)}")
+        if has_i2l:
+            html.append(f"  {pct_cell(i2l_c_pct, True)}{pct_cell(i2l_ci_pct)}")
         if has_iplocate:
             html.append(f'  {pct_cell(iplocate_c_pct, True)}<td class="na">N/A</td>')
         html.append("</tr>")
@@ -424,16 +443,18 @@ def generate_html(results, stats, has_mm, has_ip, has_i2l, has_dbip=False, has_i
             rdap_url = r[19]
             route_icon = _route_icon(prefix, routed, route_match, too_specific)
             rdap_icon = _rdap_icon(prefix, rdap_url, feed["url"]) if feed.get("check_rdap") else ""
-            html.append(f'<tr class="prefix-row" data-loc="{loc_idx}" data-perfect="{int(perfect)}" data-prefix="{prefix}">')
+            prefix_rir = "1" if rdap_url is not None else "0"
+            prefix_routed = "0" if (not routed and not too_specific) else "1"
+            html.append(f'<tr class="prefix-row" data-loc="{loc_idx}" data-perfect="{int(perfect)}" data-prefix="{prefix}" data-routed="{prefix_routed}" data-has-rir="{prefix_rir}">')
             html.append(f"  <td>{prefix} <small>({proto}) &mdash; geofeed: {gf_label}</small> {route_icon}{rdap_icon}</td>")
             if has_mm:
                 html.append(f"  {match_cell(mm_c_m, mm_c, True)}{match_cell(mm_ci_m, mm_ci, is_city=True)}")
             if has_ip:
                 html.append(f'  {match_cell(ip_c_m, ip_c, True)}<td class="na">N/A</td>')
-            if has_i2l:
-                html.append(f"  {match_cell(i2l_c_m, i2l_c, True)}{match_cell(i2l_ci_m, i2l_ci, is_city=True)}")
             if has_dbip:
                 html.append(f"  {match_cell(dbip_c_m, dbip_c, True)}{match_cell(dbip_ci_m, dbip_ci, is_city=True)}")
+            if has_i2l:
+                html.append(f"  {match_cell(i2l_c_m, i2l_c, True)}{match_cell(i2l_ci_m, i2l_ci, is_city=True)}")
             if has_iplocate:
                 html.append(f'  {match_cell(iplocate_c_m, iplocate_c, True)}<td class="na">N/A</td>')
             html.append("</tr>")
@@ -449,10 +470,10 @@ def generate_html(results, stats, has_mm, has_ip, has_i2l, has_dbip=False, has_i
             row += pct_cell(stats.get(mm_c_key), True) + pct_cell(stats.get(mm_ci_key))
         if has_ip:
             row += pct_cell(stats.get(ip_c_key), True) + '<td class="na">N/A</td>'
-        if has_i2l:
-            row += pct_cell(stats.get(i2l_c_key), True) + pct_cell(stats.get(i2l_ci_key))
         if has_dbip and dbip_c_key:
             row += pct_cell(stats.get(dbip_c_key), True) + pct_cell(stats.get(dbip_ci_key))
+        if has_i2l:
+            row += pct_cell(stats.get(i2l_c_key), True) + pct_cell(stats.get(i2l_ci_key))
         if has_iplocate and iplocate_c_key:
             row += pct_cell(stats.get(iplocate_c_key), True) + '<td class="na">N/A</td>'
         return row + "</tr>"
@@ -505,24 +526,35 @@ function ipInPrefix(ip, prefix) {
   return (ip.bits & prefix.mask) === prefix.net;
 }
 function applyFilters() {
-  const globalOn = document.getElementById('globalFilter').checked;
+  const filterInaccurate = document.getElementById('filterInaccurate')?.classList.contains('active');
+  const filterLocode = document.getElementById('filterLocode')?.classList.contains('active');
+  const filterUnrouted = document.getElementById('filterUnrouted')?.classList.contains('active');
+  const filterRir = document.getElementById('filterRir')?.classList.contains('active');
   const query = document.getElementById('prefixSearch').value.trim().toLowerCase();
   const searching = query.length > 0;
-  const filtering = globalOn || searching;
+  const filtering = filterInaccurate || filterLocode || filterUnrouted || filterRir || searching;
   const searchIP = searching ? parseIP(query) : null;
-  let visibleLocs = 0, totalLocs = 0;
+  let visibleLocs = 0, totalLocs = 0, visiblePfx = 0, totalPfx = 0;
   document.querySelectorAll('.loc-row').forEach(row => {
     const id = row.dataset.loc;
     const hasBad = row.dataset.hasBad === '1';
+    const hasLocode = row.dataset.hasLocode === '1';
+    const hasUnrouted = row.dataset.hasUnrouted === '1';
+    const hasRir = row.dataset.hasRir === '1';
     const prefixes = document.querySelectorAll(`.prefix-row[data-loc="${id}"]`);
     const local = row.querySelector('.locFilter');
     const localOn = local && local.checked;
+    const locInaccurate = row.querySelector('.loc-filter-btn[data-filter="inaccurate"]')?.classList.contains('active');
+    const locUnrouted = row.querySelector('.loc-filter-btn[data-filter="unrouted"]')?.classList.contains('active');
+    const locRir = row.querySelector('.loc-filter-btn[data-filter="rir"]')?.classList.contains('active');
     const countEl = document.querySelector(`[data-loc-count="${id}"]`);
     const total = prefixes.length;
     let visible = 0;
     prefixes.forEach(r => {
       let hidden = false;
-      if ((globalOn || localOn) && r.dataset.perfect === '1') hidden = true;
+      if ((filterInaccurate || localOn || locInaccurate) && r.dataset.perfect === '1') hidden = true;
+      if ((filterUnrouted || locUnrouted) && r.dataset.routed !== '0') hidden = true;
+      if ((filterRir || locRir) && r.dataset.hasRir !== '1') hidden = true;
       if (searching) {
         let match = r.dataset.prefix.indexOf(query) !== -1;
         if (!match && searchIP) {
@@ -534,11 +566,19 @@ function applyFilters() {
       r.classList.toggle('filtered', hidden);
       if (!hidden) visible++;
     });
-    const hideRow = (globalOn && !hasBad) || (searching && visible === 0);
+    totalPfx += total;
+    visiblePfx += visible;
+    let hideRow = false;
+    if (filterInaccurate && !hasBad) hideRow = true;
+    if (filterLocode && !hasLocode) hideRow = true;
+    if (filterUnrouted && !hasUnrouted) hideRow = true;
+    if (filterRir && !hasRir) hideRow = true;
+    if (searching && visible === 0) hideRow = true;
     row.classList.toggle('filtered', hideRow);
     totalLocs++;
-    if (!hideRow) visibleLocs++;
-    const isFiltered = (globalOn || localOn || searching) && visible < total;
+    if (!hideRow) { visibleLocs++; visiblePfx += visible; totalPfx += total; }
+    else { totalPfx += total; }
+    const isFiltered = (filterInaccurate || localOn || locInaccurate || filterUnrouted || locUnrouted || filterRir || locRir || searching) && visible < total;
     countEl.textContent = isFiltered ? `(${visible} / ${total})` : `(${total})`;
     if (searching && visible > 0 && !row.classList.contains('open')) {
       row.classList.add('open');
@@ -546,9 +586,32 @@ function applyFilters() {
     }
   });
   const hdr = document.getElementById('locCounter');
-  hdr.textContent = filtering ? `${visibleLocs} / ${totalLocs}` : '';
+  hdr.textContent = filtering ? `${visibleLocs} / ${totalLocs} locations` : '';
+  const pfxHdr = document.getElementById('prefixCounter');
+  pfxHdr.textContent = filtering ? `| ${visiblePfx} / ${totalPfx} prefixes` : '';
 }
-document.getElementById('globalFilter').addEventListener('change', applyFilters);
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('active');
+    applyFilters();
+  });
+});
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.loc-filter-btn');
+  if (btn) {
+    e.stopPropagation();
+    btn.classList.toggle('active');
+    applyFilters();
+    return;
+  }
+  const sep = e.target.closest('.loc-filter-sep');
+  if (sep) {
+    e.stopPropagation();
+  }
+});
+document.querySelectorAll('.loc-filter').forEach(lbl => {
+  lbl.addEventListener('click', e => e.stopPropagation());
+});
 document.getElementById('prefixSearch').addEventListener('input', applyFilters);
 document.querySelectorAll('.locFilter').forEach(cb => {
   cb.addEventListener('change', e => { e.stopPropagation(); applyFilters(); });
@@ -558,7 +621,8 @@ document.querySelectorAll('.loc-filter').forEach(lbl => {
   lbl.addEventListener('click', e => e.stopPropagation());
 });
 document.querySelectorAll('.loc-row').forEach(row => {
-  row.addEventListener('click', () => {
+  row.addEventListener('click', (e) => {
+    if (e.target.closest('.loc-filter-btn') || e.target.closest('.loc-filter-sep') || e.target.closest('.loc-filter')) return;
     const id = row.dataset.loc;
     row.classList.toggle('open');
     document.querySelectorAll(`.prefix-row[data-loc="${id}"]`).forEach(r => r.classList.toggle('show'));
