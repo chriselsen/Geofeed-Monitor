@@ -44,7 +44,7 @@ def _col_widths(has_mm, has_ip, has_i2l, has_dbip=False, has_iplocate=False):
     ncols = (2 if has_mm else 0) + (2 if has_ip else 0) + (2 if has_i2l else 0) + (2 if has_dbip else 0) + (2 if has_iplocate else 0)
     if ncols == 0:
         return (100, 0)
-    other = 7.0  # fixed width per provider column in %
+    other = 7.5  # fixed width per provider column in %
     first = max(100 - ncols * other, 20)
     return (first, other)
 
