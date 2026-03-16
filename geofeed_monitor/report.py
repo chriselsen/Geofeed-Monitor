@@ -487,7 +487,70 @@ def generate_html(results, stats, has_mm, has_ip, has_i2l, has_dbip=False, has_i
 </div>
 <footer style="text-align:center;padding:16px;font-size:12px;color:#545b64">Last updated: {now_utc}</footer>""")
 
-    output_path.write_text("\n".join(html) + _report_js(), encoding="utf-8")
+    raw = "\n".join(html) + _report_js()
+    output_path.write_text(_dedup_tooltips(raw), encoding="utf-8")
+
+
+def _dedup_tooltips(html):
+    """Collapse icon spans and deduplicate tooltips into JS lookup tables."""
+    import re, json
+
+    # Step 1: collapse <span title="T" style="cursor:help" class="C"><svg ...><use href="#I"/></svg></span>
+    # into <i class="ic C" data-i="I" title="T"></i>
+    icon_re = re.compile(
+        r'<span title="([^"]*)" style="cursor:help" class="([^"]+)">'  
+        r'<svg width="14" height="14"><use href="(#[^"]+)"/></svg></span>'
+    )
+    html = icon_re.sub(lambda m: f'<i class="ic {m.group(2)}" data-i="{m.group(3)}" title="{m.group(1)}"></i>', html)
+
+    # Step 2: deduplicate title= into a JS lookup table
+    titles = []
+    title_index = {}
+
+    def replace_title(m):
+        val = m.group(1)
+        if val not in title_index:
+            title_index[val] = len(titles)
+            titles.append(val)
+        return f'data-t="{title_index[val]}"'
+
+    html = re.sub(r'title="([^"]+)"', replace_title, html)
+
+    # Step 3: inject CSS for <i class="ic"> and JS lookup table
+    ic_css = '<style>.ic{display:inline-block;width:14px;height:14px;vertical-align:middle;flex-shrink:0;cursor:help;}</style>'
+    table_js = (
+        'const _T=' + json.dumps(titles, ensure_ascii=False) + ';'
+        'document.addEventListener("mouseover",e=>{'
+        'const t=e.target.closest("[data-t]");'
+        'if(t&&!t.title){t.title=_T[t.dataset.t];}});'
+        'document.addEventListener("DOMContentLoaded",()=>{'
+        'document.querySelectorAll("i.ic[data-i]").forEach(el=>{'
+        'const svg=document.createElementNS("http://www.w3.org/2000/svg","svg");'
+        'svg.setAttribute("width","14");svg.setAttribute("height","14");'
+        'const use=document.createElementNS("http://www.w3.org/2000/svg","use");'
+        'use.setAttribute("href",el.dataset.i);svg.appendChild(use);el.appendChild(svg);});});'
+    )
+    html = html.replace('</style>\n</head>', ic_css + '</style>\n</head>', 1)
+    html = html.replace('</script>\n</body>', table_js + '</script>\n</body>', 1)
+    return html
+    """Replace repeated title= attributes with data-t= indices into a JS lookup table."""
+    import re
+    titles = []
+    title_index = {}
+
+    def replace(m):
+        val = m.group(1)
+        if val not in title_index:
+            title_index[val] = len(titles)
+            titles.append(val)
+        return f'data-t="{title_index[val]}"'
+
+    html = re.sub(r'title="([^"]+)"', replace, html)
+    # Inject lookup table + mouseover handler before </script>
+    table_js = 'const _T=' + __import__('json').dumps(titles, ensure_ascii=False) + ';'
+    table_js += 'document.addEventListener("mouseover",e=>{const t=e.target.closest("[data-t]");if(t){t.title=_T[t.dataset.t];}});'
+    html = html.replace('</script>', table_js + '</script>', 1)
+    return html
 
 
 def _report_js():
