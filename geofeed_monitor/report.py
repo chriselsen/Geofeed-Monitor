@@ -6,7 +6,7 @@ from pathlib import Path
 
 from .config import (
     GLOBE_SVG, GLOBE_FAVICON, FEEDS,
-    MAXMIND_FAVICON_FILE, IPINFO_FAVICON_FILE, IP2LOCATION_FAVICON_FILE,
+    MAXMIND_FAVICON_FILE, IPINFO_FAVICON_FILE, IP2LOCATION_FAVICON_FILE, DBIP_FAVICON_FILE, IPLOCATE_FAVICON_FILE,
 )
 from .stats import compute_pct
 
@@ -40,12 +40,13 @@ def _favicon_uri(path):
     return f"data:{mime};base64,{data}"
 
 
-def _col_widths(has_mm, has_ip, has_i2l):
-    ncols = (2 if has_mm else 0) + (2 if has_ip else 0) + (2 if has_i2l else 0)
+def _col_widths(has_mm, has_ip, has_i2l, has_dbip=False, has_iplocate=False):
+    ncols = (2 if has_mm else 0) + (2 if has_ip else 0) + (2 if has_i2l else 0) + (2 if has_dbip else 0) + (2 if has_iplocate else 0)
     if ncols == 0:
         return (100, 0)
-    other = round(50 / ncols, 1)
-    return (100 - ncols * other, other)
+    other = 7.0  # fixed width per provider column in %
+    first = max(100 - ncols * other, 20)
+    return (first, other)
 
 
 def pct_cell(pct, provider_start=False):
@@ -176,16 +177,18 @@ def _build_topbar_logo(feed):
     return topbar_logo, favicon_uri
 
 
-def generate_html(results, stats, has_mm, has_ip, has_i2l, feed):
+def generate_html(results, stats, has_mm, has_ip, has_i2l, has_dbip=False, has_iplocate=False, feed=None):
     topbar_logo, favicon_uri = _build_topbar_logo(feed)
     title = feed["title"]
     topbar_title = feed.get("topbar_title", title)
     output_path = feed["output"]
     now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-    first_w, other_w = _col_widths(has_mm, has_ip, has_i2l)
+    first_w, other_w = _col_widths(has_mm, has_ip, has_i2l, has_dbip, has_iplocate)
     mm_fav = _favicon_uri(MAXMIND_FAVICON_FILE)
     ip_fav = _favicon_uri(IPINFO_FAVICON_FILE)
     i2l_fav = _favicon_uri(IP2LOCATION_FAVICON_FILE)
+    dbip_fav = _favicon_uri(DBIP_FAVICON_FILE)
+    iplocate_fav = _favicon_uri(IPLOCATE_FAVICON_FILE)
 
     html = []
     html.append(f"""<!DOCTYPE html>
@@ -350,11 +353,15 @@ def generate_html(results, stats, has_mm, has_ip, has_i2l, feed):
   {'<th colspan="2" class="provider-hdr"><img src="' + mm_fav + '" alt="">MaxMind</th>' if has_mm else ''}
   {'<th colspan="2" class="provider-hdr"><img src="' + ip_fav + '" alt="">IPinfo</th>' if has_ip else ''}
   {'<th colspan="2" class="provider-hdr"><img src="' + i2l_fav + '" alt="">IP2Location</th>' if has_i2l else ''}
+  {'<th colspan="2" class="provider-hdr"><img src="' + dbip_fav + '" alt="">DB-IP</th>' if has_dbip else ''}
+  {'<th colspan="2" class="provider-hdr"><img src="' + iplocate_fav + '" alt="">IPLocate</th>' if has_iplocate else ''}
 </tr>
 <tr>
   {'<th class="sub-hdr provider-start">Country</th><th class="sub-hdr">City</th>' if has_mm else ''}
   {'<th class="sub-hdr provider-start">Country</th><th class="sub-hdr">City</th>' if has_ip else ''}
   {'<th class="sub-hdr provider-start">Country</th><th class="sub-hdr">City</th>' if has_i2l else ''}
+  {'<th class="sub-hdr provider-start">Country</th><th class="sub-hdr">City</th>' if has_dbip else ''}
+  {'<th class="sub-hdr provider-start">Country</th><th class="sub-hdr">City</th>' if has_iplocate else ''}
 </tr>
 </thead><tbody>""")
 
@@ -366,7 +373,10 @@ def generate_html(results, stats, has_mm, has_ip, has_i2l, feed):
         ip_c_pct = compute_pct([r[10] for r in loc_results])
         i2l_c_pct = compute_pct([r[13] for r in loc_results])
         i2l_ci_pct = compute_pct([r[14] for r in loc_results])
-        active = ([7, 8] if has_mm else []) + ([10] if has_ip else []) + ([13, 14] if has_i2l else [])
+        dbip_c_pct = compute_pct([r[23] for r in loc_results])
+        dbip_ci_pct = compute_pct([r[24] for r in loc_results])
+        iplocate_c_pct = compute_pct([r[26] for r in loc_results])
+        active = ([7, 8] if has_mm else []) + ([10] if has_ip else []) + ([13, 14] if has_i2l else []) + ([23, 24] if has_dbip else []) + ([26] if has_iplocate else [])
         has_bad = any(any(r[i] is not None and not r[i] for i in active) for r in loc_results)
         cc = country_code.lower()
         flag = f'<span class="fi fi-{cc}" style="margin-right:8px"></span>'
@@ -391,6 +401,10 @@ def generate_html(results, stats, has_mm, has_ip, has_i2l, feed):
             html.append(f'  {pct_cell(ip_c_pct, True)}<td class="na">N/A</td>')
         if has_i2l:
             html.append(f"  {pct_cell(i2l_c_pct, True)}{pct_cell(i2l_ci_pct)}")
+        if has_dbip:
+            html.append(f"  {pct_cell(dbip_c_pct, True)}{pct_cell(dbip_ci_pct)}")
+        if has_iplocate:
+            html.append(f'  {pct_cell(iplocate_c_pct, True)}<td class="na">N/A</td>')
         html.append("</tr>")
 
         for r in sorted(loc_results, key=lambda r: (r[1], r[0])):
@@ -398,8 +412,10 @@ def generate_html(results, stats, has_mm, has_ip, has_i2l, feed):
             mm_c, mm_ci, mm_c_m, mm_ci_m = r[5], r[6], r[7], r[8]
             ip_c, ip_c_m = r[9], r[10]
             i2l_c, i2l_ci, i2l_c_m, i2l_ci_m = r[11], r[12], r[13], r[14]
+            dbip_c, dbip_ci, dbip_c_m, dbip_ci_m = r[21], r[22], r[23], r[24]
+            iplocate_c, iplocate_c_m = r[25], r[26]
             proto = "IPv6" if is_v6 else "IPv4"
-            active_m = ([mm_c_m, mm_ci_m] if has_mm else []) + ([ip_c_m] if has_ip else []) + ([i2l_c_m, i2l_ci_m] if has_i2l else [])
+            active_m = ([mm_c_m, mm_ci_m] if has_mm else []) + ([ip_c_m] if has_ip else []) + ([i2l_c_m, i2l_ci_m] if has_i2l else []) + ([dbip_c_m, dbip_ci_m] if has_dbip else []) + ([iplocate_c_m] if has_iplocate else [])
             perfect = all(m is None or m for m in active_m)
             gf_label = ", ".join(filter(None, [gf_c, gf_sub, gf_ci]))
             routed = r[16]
@@ -416,6 +432,10 @@ def generate_html(results, stats, has_mm, has_ip, has_i2l, feed):
                 html.append(f'  {match_cell(ip_c_m, ip_c, True)}<td class="na">N/A</td>')
             if has_i2l:
                 html.append(f"  {match_cell(i2l_c_m, i2l_c, True)}{match_cell(i2l_ci_m, i2l_ci, is_city=True)}")
+            if has_dbip:
+                html.append(f"  {match_cell(dbip_c_m, dbip_c, True)}{match_cell(dbip_ci_m, dbip_ci, is_city=True)}")
+            if has_iplocate:
+                html.append(f'  {match_cell(iplocate_c_m, iplocate_c, True)}<td class="na">N/A</td>')
             html.append("</tr>")
 
     html.append("</tbody>")
@@ -423,7 +443,7 @@ def generate_html(results, stats, has_mm, has_ip, has_i2l, feed):
     def _foot_label(label):
         return f'<td style="text-align:right;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:0.5px">{label}</td>'
 
-    def _foot_row(label, mm_c_key, mm_ci_key, ip_c_key, i2l_c_key, i2l_ci_key):
+    def _foot_row(label, mm_c_key, mm_ci_key, ip_c_key, i2l_c_key, i2l_ci_key, dbip_c_key=None, dbip_ci_key=None, iplocate_c_key=None):
         row = f"<tr>{_foot_label(label)}"
         if has_mm:
             row += pct_cell(stats.get(mm_c_key), True) + pct_cell(stats.get(mm_ci_key))
@@ -431,11 +451,15 @@ def generate_html(results, stats, has_mm, has_ip, has_i2l, feed):
             row += pct_cell(stats.get(ip_c_key), True) + '<td class="na">N/A</td>'
         if has_i2l:
             row += pct_cell(stats.get(i2l_c_key), True) + pct_cell(stats.get(i2l_ci_key))
+        if has_dbip and dbip_c_key:
+            row += pct_cell(stats.get(dbip_c_key), True) + pct_cell(stats.get(dbip_ci_key))
+        if has_iplocate and iplocate_c_key:
+            row += pct_cell(stats.get(iplocate_c_key), True) + '<td class="na">N/A</td>'
         return row + "</tr>"
 
     html.append("<tfoot>")
-    html.append(_foot_row("Prefix Accuracy", "mm_c", "mm_ci", "ip_c", "i2l_c", "i2l_ci"))
-    html.append(_foot_row("Address Accuracy", "w_mm_c", "w_mm_ci", "w_ip_c", "w_i2l_c", "w_i2l_ci"))
+    html.append(_foot_row("Prefix Accuracy", "mm_c", "mm_ci", "ip_c", "i2l_c", "i2l_ci", "dbip_c", "dbip_ci", "iplocate_c"))
+    html.append(_foot_row("Address Accuracy", "w_mm_c", "w_mm_ci", "w_ip_c", "w_i2l_c", "w_i2l_ci", "w_dbip_c", "w_dbip_ci", "w_iplocate_c"))
     html.append("</tfoot>")
     html.append(f"""</table>
 </div>

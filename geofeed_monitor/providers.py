@@ -9,12 +9,16 @@ from .config import (
     ASSETS_DIR, MAXMIND_DOWNLOAD_URL, MAXMIND_DIR, MAXMIND_DB_FILE,
     IPINFO_DOWNLOAD_URL, IPINFO_DIR, IPINFO_DB_FILE,
     IP2LOCATION_DOWNLOAD_URL_V6, IP2LOCATION_DIR, IP2LOCATION_DB_FILE,
+    DBIP_DIR, DBIP_DB_FILE,
+    IPLOCATE_DOWNLOAD_URL, IPLOCATE_DIR, IPLOCATE_DB_FILE,
     AWS_LOGO_FILE, AWS_LOGO_URL, AWS_CARD_LOGO_FILE, AWS_CARD_LOGO_URL,
     AS213151_LOGO_FILE, AS213151_LOGO_URL, STARLINK_LOGO_FILE, STARLINK_LOGO_URL,
     MICROSOFT_LOGO_FILE, MICROSOFT_LOGO_URL,
     MAXMIND_FAVICON_FILE, MAXMIND_FAVICON_URL,
     IPINFO_FAVICON_FILE, IPINFO_FAVICON_URL,
     IP2LOCATION_FAVICON_FILE, IP2LOCATION_FAVICON_URL,
+    DBIP_FAVICON_FILE, DBIP_FAVICON_URL,
+    IPLOCATE_FAVICON_FILE, IPLOCATE_FAVICON_URL,
 )
 
 
@@ -111,6 +115,8 @@ def download_assets():
         (MAXMIND_FAVICON_FILE, MAXMIND_FAVICON_URL),
         (IPINFO_FAVICON_FILE, IPINFO_FAVICON_URL),
         (IP2LOCATION_FAVICON_FILE, IP2LOCATION_FAVICON_URL),
+        (DBIP_FAVICON_FILE, DBIP_FAVICON_URL),
+        (IPLOCATE_FAVICON_FILE, IPLOCATE_FAVICON_URL),
     ]:
         if path.exists():
             continue
@@ -121,7 +127,62 @@ def download_assets():
         )
 
 
+def update_dbip():
+    """Download the latest DB-IP City Lite mmdb database."""
+    from datetime import datetime
+    import re as _re
+    print("Downloading latest DB-IP City Lite...")
+    DBIP_DIR.mkdir(parents=True, exist_ok=True)
+    # Scrape download page to get current month's URL
+    page = subprocess.run(
+        ["curl", "-sS", "-L", "https://db-ip.com/db/download/ip-to-city-lite"],
+        capture_output=True, text=True, check=True,
+    ).stdout
+    m = _re.search(r'https://download\.db-ip\.com/free/dbip-city-lite-\d{4}-\d{2}\.mmdb\.gz', page)
+    if not m:
+        print("  DB-IP download URL not found on page")
+        return
+    gz_url = m.group(0)
+    tmp = DBIP_DIR / "dbip-city-lite.mmdb.gz"
+    subprocess.run(["curl", "-sS", "-L", "-o", str(tmp), gz_url], check=True)
+    # Decompress
+    import gzip
+    DBIP_DB_FILE.write_bytes(gzip.decompress(tmp.read_bytes()))
+    tmp.unlink()
+    print("  DB-IP database updated")
+
+
+def lookup_dbip(ip_str, dbip_reader):
+    """Returns (country, city) or (None, None)."""
+    result = dbip_reader.get(ip_str)
+    if not result:
+        return (None, None)
+    country = result.get("country", {}).get("iso_code")
+    city = result.get("city", {}).get("names", {}).get("en")
+    return (country, city)
+
+
+def update_iplocate():
+    """Download the latest IPLocate IP-to-Country mmdb database."""
+    print("Downloading latest IPLocate IP-to-Country...")
+    IPLOCATE_DIR.mkdir(parents=True, exist_ok=True)
+    subprocess.run(
+        ["curl", "-sS", "-L", "-o", str(IPLOCATE_DB_FILE), IPLOCATE_DOWNLOAD_URL],
+        check=True,
+    )
+    print("  IPLocate database updated")
+
+
+def lookup_iplocate(ip_str, iplocate_reader):
+    """Returns (country, None) — IPLocate free tier has no city data."""
+    result = iplocate_reader.get(ip_str)
+    if not result:
+        return (None, None)
+    return (result.get("country_code"), None)
+
+
 def lookup_maxmind(ip_str, mm_reader):
+    """Returns (country, city) or (None, None)."""
     result = mm_reader.get(ip_str)
     if not result:
         return (None, None)

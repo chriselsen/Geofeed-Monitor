@@ -62,6 +62,8 @@ Provider credentials are optional — if unset, that provider is skipped. Report
 | [MaxMind](https://www.maxmind.com/) | GeoLite2-City | Country + City |
 | [IPinfo](https://ipinfo.io/) | IPinfo Lite | Country only |
 | [IP2Location](https://www.ip2location.com/) | DB3 Lite | Country + City |
+| [DB-IP](https://db-ip.com/) | City Lite | Country + City |
+| [IPLocate](https://www.iplocate.io/) | IP-to-Country | Country only (City when upgraded) |
 
 ## Validation
 

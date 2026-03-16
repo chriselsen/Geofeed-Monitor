@@ -7,7 +7,7 @@ import IP2Location
 from pathlib import Path
 
 from geofeed_monitor.config import MAXMIND_DB_FILE, IPINFO_DB_FILE, IP2LOCATION_DB_FILE, FEEDS
-from geofeed_monitor.providers import update_maxmind, update_ipinfo, update_ip2location, download_assets
+from geofeed_monitor.providers import update_maxmind, update_ipinfo, update_ip2location, update_dbip, update_iplocate, download_assets
 from geofeed_monitor.geofeed import load_geofeed, group_by_location
 from geofeed_monitor.matching import validate_prefixes
 from geofeed_monitor.stats import compute_stats
@@ -21,12 +21,17 @@ def main():
     update_maxmind()
     update_ipinfo()
     update_ip2location()
+    update_dbip()
+    update_iplocate()
     download_assets()
 
     print("Loading databases...")
     mm_reader = maxminddb.open_database(str(MAXMIND_DB_FILE)) if MAXMIND_DB_FILE.exists() else None
     ip_reader = maxminddb.open_database(str(IPINFO_DB_FILE)) if IPINFO_DB_FILE.exists() else None
     i2l_reader = IP2Location.IP2Location(str(IP2LOCATION_DB_FILE)) if IP2LOCATION_DB_FILE.exists() else None
+    from geofeed_monitor.config import DBIP_DB_FILE, IPLOCATE_DB_FILE
+    dbip_reader = maxminddb.open_database(str(DBIP_DB_FILE)) if DBIP_DB_FILE.exists() else None
+    iplocate_reader = maxminddb.open_database(str(IPLOCATE_DB_FILE)) if IPLOCATE_DB_FILE.exists() else None
 
     if not mm_reader:
         print("  MaxMind database not available — skipping")
@@ -34,10 +39,16 @@ def main():
         print("  IPinfo database not available — skipping")
     if not i2l_reader:
         print("  IP2Location database not available — skipping")
+    if not dbip_reader:
+        print("  DB-IP database not available — skipping")
+    if not iplocate_reader:
+        print("  IPLocate database not available — skipping")
 
     has_mm = mm_reader is not None
     has_ip = ip_reader is not None
     has_i2l = i2l_reader is not None
+    has_dbip = dbip_reader is not None
+    has_iplocate = iplocate_reader is not None
 
     feed_stats = []
     for feed in FEEDS:
@@ -53,15 +64,15 @@ def main():
             continue
         locations = group_by_location(geofeed)
         print("Validating prefixes...")
-        results = validate_prefixes(locations, mm_reader, ip_reader, i2l_reader, feed.get("check_rdap", False))
+        results = validate_prefixes(locations, mm_reader, ip_reader, i2l_reader, dbip_reader, iplocate_reader, feed.get("check_rdap", False))
         stats = compute_stats(results, has_mm, has_ip, has_i2l)
         feed_stats.append(stats)
         print("Checking alerts...")
-        new_state = check_and_alert(feed, results, stats, prev_state, has_mm, has_ip, has_i2l)
+        new_state = check_and_alert(feed, results, stats, prev_state, has_mm, has_ip, has_i2l, has_dbip, has_iplocate)
         STATE_DIR.mkdir(exist_ok=True)
         state_file.write_text(json.dumps(new_state, indent=2))
         print("Generating HTML report...")
-        generate_html(results, stats, has_mm, has_ip, has_i2l, feed)
+        generate_html(results, stats, has_mm, has_ip, has_i2l, has_dbip, has_iplocate, feed)
         print(f"Report written to {feed['output']}")
 
     if mm_reader:
@@ -70,6 +81,10 @@ def main():
         ip_reader.close()
     if i2l_reader:
         i2l_reader.close()
+    if dbip_reader:
+        dbip_reader.close()
+    if iplocate_reader:
+        iplocate_reader.close()
 
     generate_index(FEEDS, feed_stats)
 

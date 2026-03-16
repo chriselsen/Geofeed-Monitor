@@ -54,7 +54,7 @@ def _prefixes_str(prefixes):
     return ", ".join(sorted(prefixes))
 
 
-def check_and_alert(feed, results, stats, prev_state, has_mm=True, has_ip=True, has_i2l=True):
+def check_and_alert(feed, results, stats, prev_state, has_mm=True, has_ip=True, has_i2l=True, has_dbip=False, has_iplocate=False):
     """Run all alert checks, dispatch webhooks, return new state."""
     feed_key = _feed_key(feed)
     embargo = set(feed.get("embargo_countries", DEFAULT_EMBARGO_COUNTRIES))
@@ -74,8 +74,8 @@ def check_and_alert(feed, results, stats, prev_state, has_mm=True, has_ip=True, 
         country_matches = []
         city_matches = []
         for r in loc_results:
-            country_matches += ([r[7]] if has_mm else []) + ([r[10]] if has_ip else []) + ([r[13]] if has_i2l else [])
-            city_matches += ([r[8]] if has_mm else []) + ([r[14]] if has_i2l else [])
+            country_matches += ([r[7]] if has_mm else []) + ([r[10]] if has_ip else []) + ([r[13]] if has_i2l else []) + ([r[23]] if has_dbip else []) + ([r[26]] if has_iplocate else [])
+            city_matches += ([r[8]] if has_mm else []) + ([r[14]] if has_i2l else []) + ([r[24]] if has_dbip else [])
         country_pct = compute_pct(country_matches)
         city_pct = compute_pct(city_matches)
         current_locations[loc_key] = {

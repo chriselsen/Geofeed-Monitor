@@ -3,7 +3,7 @@
 import ipaddress
 import unicodedata
 
-from .providers import lookup_maxmind, lookup_ipinfo, lookup_ip2location
+from .providers import lookup_maxmind, lookup_ipinfo, lookup_ip2location, lookup_dbip, lookup_iplocate
 from .routing import is_routed
 from .unlocode import validate_locode
 
@@ -24,7 +24,7 @@ def match_city(gf_city, provider_city):
     return _normalize(gf_city) == _normalize(provider_city)
 
 
-def validate_prefixes(locations, mm_reader, ip_reader, i2l_reader, check_rdap=False):
+def validate_prefixes(locations, mm_reader, ip_reader, i2l_reader, dbip_reader=None, iplocate_reader=None, check_rdap=False):
     """Validate all prefixes against available providers. Returns results list."""
     results = []
     total = sum(len(entries) for _, _, entries in locations)
@@ -46,6 +46,8 @@ def validate_prefixes(locations, mm_reader, ip_reader, i2l_reader, check_rdap=Fa
             mm_country, mm_city = lookup_maxmind(ip_str, mm_reader) if mm_reader else (None, None)
             ip_country, _ = lookup_ipinfo(ip_str, ip_reader) if ip_reader else (None, None)
             i2l_country, i2l_city = lookup_ip2location(ip_str, i2l_reader) if i2l_reader else (None, None)
+            dbip_country, dbip_city = lookup_dbip(ip_str, dbip_reader) if dbip_reader else (None, None)
+            iplocate_country, _ = lookup_iplocate(ip_str, iplocate_reader) if iplocate_reader else (None, None)
 
             locode_issues = validate_locode(gf_country, gf_subdiv, gf_city)
             routed, route_match = is_routed(prefix, net.version == 6)
@@ -60,6 +62,9 @@ def validate_prefixes(locations, mm_reader, ip_reader, i2l_reader, check_rdap=Fa
                 match_country(gf_country, i2l_country), match_city(gf_city, i2l_city),
                 locode_issues, routed, route_match, too_specific,
                 rdap_url, rdap_handle,
+                dbip_country or "", dbip_city or "",
+                match_country(gf_country, dbip_country), match_city(gf_city, dbip_city),
+                iplocate_country or "", match_country(gf_country, iplocate_country),
             ))
             done += 1
             if done % 500 == 0:

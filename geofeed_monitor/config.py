@@ -19,6 +19,13 @@ IP2LOCATION_DOWNLOAD_URL_V6 = "https://www.ip2location.com/download/"
 IP2LOCATION_DIR = DATA_DIR / "ip2location"
 IP2LOCATION_DB_FILE = IP2LOCATION_DIR / "IP2LOCATION-LITE-DB3.IPV6.BIN"
 
+DBIP_DIR = DATA_DIR / "dbip"
+DBIP_DB_FILE = DBIP_DIR / "dbip-city-lite.mmdb"
+
+IPLOCATE_DOWNLOAD_URL = "https://github.com/iplocate/ip-address-databases/raw/main/ip-to-country/ip-to-country.mmdb"
+IPLOCATE_DIR = DATA_DIR / "iplocate"
+IPLOCATE_DB_FILE = IPLOCATE_DIR / "ip-to-country.mmdb"
+
 # Assets
 ASSETS_DIR = DATA_DIR / "assets"
 AWS_LOGO_FILE = ASSETS_DIR / "aws-logo.svg"
@@ -36,6 +43,10 @@ IPINFO_FAVICON_FILE = ASSETS_DIR / "ipinfo-favicon.ico"
 IPINFO_FAVICON_URL = "https://ipinfo.io/favicon.ico"
 IP2LOCATION_FAVICON_FILE = ASSETS_DIR / "ip2location-favicon.ico"
 IP2LOCATION_FAVICON_URL = "https://www.ip2location.com/favicon.ico"
+DBIP_FAVICON_FILE = ASSETS_DIR / "dbip-favicon.ico"
+DBIP_FAVICON_URL = "https://db-ip.com/favicon.ico"
+IPLOCATE_FAVICON_FILE = ASSETS_DIR / "iplocate-favicon.ico"
+IPLOCATE_FAVICON_URL = "https://www.iplocate.io/favicon.ico"
 
 GOOGLE_CLOUD_ICON_FILE = ASSETS_DIR / "google-cloud-icon.svg"
 MICROSOFT_LOGO_FILE = ASSETS_DIR / "microsoft-logo.svg"

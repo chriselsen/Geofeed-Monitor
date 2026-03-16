@@ -35,6 +35,12 @@ def compute_stats(results, has_mm=True, has_ip=True, has_i2l=True):
         provider_indices += [("ip_c", 10)]
     if has_i2l:
         provider_indices += [("i2l_c", 13), ("i2l_ci", 14)]
+    has_dbip = any(r[21] for _, _, lr in results for r in lr)
+    if has_dbip:
+        provider_indices += [("dbip_c", 23), ("dbip_ci", 24)]
+    has_iplocate = any(r[25] for _, _, lr in results for r in lr)
+    if has_iplocate:
+        provider_indices += [("iplocate_c", 26)]
     prov = {k: [] for k, _ in provider_indices}
     w_prov = {k: [] for k, _ in provider_indices}
     for _, _, loc_results in results:
@@ -42,8 +48,8 @@ def compute_stats(results, has_mm=True, has_ip=True, has_i2l=True):
             net = ipaddress.ip_network(r[0], strict=False)
             n = net.num_addresses
             total += 1
-            country_matches = ([r[7]] if has_mm else []) + ([r[10]] if has_ip else []) + ([r[13]] if has_i2l else [])
-            city_matches = ([r[8]] if has_mm else []) + ([r[14]] if has_i2l else [])
+            country_matches = ([r[7]] if has_mm else []) + ([r[10]] if has_ip else []) + ([r[13]] if has_i2l else []) + ([r[23]] if has_dbip else []) + ([r[26]] if has_iplocate else [])
+            city_matches = ([r[8]] if has_mm else []) + ([r[14]] if has_i2l else []) + ([r[24]] if has_dbip else [])
             country_all.extend(country_matches)
             city_all.extend(city_matches)
             w_country_all.extend((m, n) for m in country_matches)
