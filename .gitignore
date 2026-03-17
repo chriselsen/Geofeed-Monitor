@@ -5,3 +5,4 @@
 __pycache__/
 data/whois/
 data/rdap_cache.json
+data/geonames/

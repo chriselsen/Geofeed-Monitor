@@ -4,6 +4,7 @@ import ipaddress
 import unicodedata
 
 from .providers import lookup_maxmind, lookup_ipinfo, lookup_ip2location, lookup_dbip, lookup_iplocate
+from .geonames import normalize_city
 from .routing import is_routed
 from .unlocode import validate_locode
 
@@ -18,10 +19,14 @@ def _normalize(s):
     return unicodedata.normalize("NFD", s).encode("ascii", "ignore").decode().strip().lower()
 
 
-def match_city(gf_city, provider_city):
+def match_city(gf_country, gf_city, provider_city):
+    """Compare cities using GeoNames normalization to handle alternate names.
+    Both sides are normalized to their GeoNames canonical form before comparing,
+    so e.g. 'Al Manamah' (geofeed) and 'Manama' (provider) match for BH.
+    """
     if not provider_city:
         return None
-    return _normalize(gf_city) == _normalize(provider_city)
+    return normalize_city(gf_country, gf_city) == normalize_city(gf_country, provider_city)
 
 
 def validate_prefixes(locations, mm_reader, ip_reader, i2l_reader, dbip_reader=None, iplocate_reader=None, check_rdap=False):
@@ -56,14 +61,14 @@ def validate_prefixes(locations, mm_reader, ip_reader, i2l_reader, dbip_reader=N
             loc_results.append((
                 prefix, net.version == 6, gf_country, gf_subdiv, gf_city,
                 mm_country or "", mm_city or "",
-                match_country(gf_country, mm_country), match_city(gf_city, mm_city),
+                match_country(gf_country, mm_country), match_city(gf_country, gf_city, mm_city),
                 ip_country or "", match_country(gf_country, ip_country),
                 i2l_country or "", i2l_city or "",
-                match_country(gf_country, i2l_country), match_city(gf_city, i2l_city),
+                match_country(gf_country, i2l_country), match_city(gf_country, gf_city, i2l_city),
                 locode_issues, routed, route_match, too_specific,
                 rdap_url, rdap_handle,
                 dbip_country or "", dbip_city or "",
-                match_country(gf_country, dbip_country), match_city(gf_city, dbip_city),
+                match_country(gf_country, dbip_country), match_city(gf_country, gf_city, dbip_city),
                 iplocate_country or "", match_country(gf_country, iplocate_country),
             ))
             done += 1

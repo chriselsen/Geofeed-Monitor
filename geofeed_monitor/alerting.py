@@ -76,14 +76,20 @@ def check_and_alert(feed, results, stats, prev_state, has_mm=True, has_ip=True, 
         for r in loc_results:
             country_matches += ([r[7]] if has_mm else []) + ([r[10]] if has_ip else []) + ([r[13]] if has_i2l else []) + ([r[23]] if has_dbip else []) + ([r[26]] if has_iplocate else [])
             city_matches += ([r[8]] if has_mm else []) + ([r[14]] if has_i2l else []) + ([r[24]] if has_dbip else [])
-        country_pct = compute_pct(country_matches)
-        city_pct = compute_pct(city_matches)
-        current_locations[loc_key] = {
-            "country": country_code,
-            "prefixes": sorted(prefixes),
-            "country_pct": country_pct,
-            "city_pct": city_pct,
-        }
+        if loc_key in current_locations:
+            # Merge groups with the same display name (same city+country, different subdivision)
+            current_locations[loc_key]["prefixes"] = sorted(
+                set(current_locations[loc_key]["prefixes"]) | prefixes
+            )
+        else:
+            country_pct = compute_pct(country_matches)
+            city_pct = compute_pct(city_matches)
+            current_locations[loc_key] = {
+                "country": country_code,
+                "prefixes": sorted(prefixes),
+                "country_pct": country_pct,
+                "city_pct": city_pct,
+            }
 
     prev_locations = prev_state.get("locations", {}) if prev_state else {}
     prev_prefixes = set(prev_state.get("prefixes", [])) if prev_state else set()

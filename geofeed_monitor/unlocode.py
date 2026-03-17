@@ -23,8 +23,9 @@ _ARABIC_ARTICLES = re.compile(r'^(al|ad|an|ar|as|at|az|ash|ath)\s+', re.IGNORECA
 
 
 def _normalize(s):
-    s = re.sub(r'\s*\(.*?\)', '', s)   # strip parenthetical suffixes
+    s = re.sub(r'\s*\(.*?\)', '', s)   # strip parenthetical suffixes e.g. "Helsinki (Helsingfors)"
     s = re.sub(r'\s*=.*', '', s)       # strip "= alternate name" suffixes
+    s = re.sub(r',.*', '', s)          # strip ", qualifier" suffixes e.g. "Jakarta, Java"
     s = unicodedata.normalize("NFD", s).encode("ascii", "ignore").decode().strip().lower()
     s = _ARABIC_ARTICLES.sub('', s)    # strip Arabic definite article
     return s
