@@ -96,7 +96,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase  # ensure we have latest state before committing
+          git stash --include-untracked
+          git pull --rebase
+          git stash pop
           git add index.html aws.html gcp.html microsoft.html aws-ce.html as213151.html starlink.html state/
           git diff --cached --quiet || git commit -m "Update monitoring report"
           git push
