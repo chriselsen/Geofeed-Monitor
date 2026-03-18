@@ -1575,7 +1575,7 @@
         "74.7.128.0/17"
       ],
       "country_pct": 92.0,
-      "city_pct": 77.27272727272727
+      "city_pct": 77.57575757575758
     },
     "Auckland, NZ": {
       "country": "NZ",
@@ -4212,7 +4212,7 @@
         "9.160.128.0/18"
       ],
       "country_pct": 84.92753623188406,
-      "city_pct": 69.08212560386472
+      "city_pct": 76.32850241545893
     },
     "Bucharest, RO": {
       "country": "RO",
@@ -13160,7 +13160,7 @@
         "147.243.219.0/26"
       ],
       "country_pct": 80.0,
-      "city_pct": 0.0
+      "city_pct": 44.44444444444444
     },
     "Hong Kong, HK": {
       "country": "HK",
@@ -15850,7 +15850,7 @@
         "74.241.0.0/17"
       ],
       "country_pct": 88.09160305343512,
-      "city_pct": 51.653944020356235
+      "city_pct": 79.64376590330788
     },
     "Manchester, GB": {
       "country": "GB",
@@ -17239,7 +17239,7 @@
         "70.37.132.0/23"
       ],
       "country_pct": 93.33333333333333,
-      "city_pct": 47.22222222222222
+      "city_pct": 63.888888888888886
     },
     "Osaka, JP": {
       "country": "JP",
@@ -20462,7 +20462,7 @@
         "70.152.44.0/24"
       ],
       "country_pct": 86.73913043478261,
-      "city_pct": 60.14492753623188
+      "city_pct": 78.26086956521739
     },
     "Quincy, US": {
       "country": "US",
@@ -22001,7 +22001,7 @@
         "2001:4898:80e8:f::/64"
       ],
       "country_pct": 100.0,
-      "city_pct": 94.77911646586345
+      "city_pct": 100.0
     },
     "Richmond, US": {
       "country": "US",
@@ -28974,7 +28974,7 @@
         "74.176.0.0/16",
         "74.226.128.0/17"
       ],
-      "country_pct": 88.84615384615384,
+      "country_pct": 88.94871794871794,
       "city_pct": 58.58974358974359
     },
     "Toronto, CA": {
@@ -68172,7 +68172,7 @@
     "2603:1063:261c::/48": true,
     "2603:1063:281a::/48": true,
     "2603:1063:2a1a::/48": true,
-    "2a01:4180:2000::/40": true,
+    "2a01:4180:2000::/40": false,
     "4.165.0.0/16": true,
     "4.166.0.0/16": true,
     "4.223.0.0/16": true,
@@ -69041,7 +69041,7 @@
     "2603:1063:2836::/48": true,
     "2603:1063:2a36::/48": true,
     "147.243.222.0/24": true,
-    "2a01:4180:2400::/40": true,
+    "2a01:4180:2400::/40": false,
     "4.158.0.0/15": true,
     "4.234.0.0/16": true,
     "4.250.0.0/16": true,
@@ -77154,429 +77154,6 @@
     ],
     "2a01:110:8068:8000::/49": [
       "City \"Herzliya\" not found in UN/LOCODE"
-    ],
-    "13.104.184.224/28": [
-      "City \"Ho Chi Minh\" not found in UN/LOCODE"
-    ],
-    "147.243.218.192/26": [
-      "City \"Ho Chi Minh\" not found in UN/LOCODE"
-    ],
-    "147.243.219.0/26": [
-      "City \"Ho Chi Minh\" not found in UN/LOCODE"
-    ],
-    "13.104.184.208/28": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "13.105.30.192/26": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "13.105.31.0/26": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "13.105.31.64/27": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "13.105.31.128/25": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "13.105.240.128/25": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "13.105.241.0/25": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "13.105.251.0/25": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "13.107.195.192/29": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "13.107.195.200/30": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "20.20.48.0/26": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "20.20.48.64/27": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "20.20.50.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "20.20.64.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "20.20.65.0/26": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "20.20.65.64/27": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "20.20.65.96/28": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "20.20.65.112/29": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "20.20.65.120/30": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "20.33.210.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "20.33.219.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "20.38.27.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "20.60.123.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "20.60.124.0/22": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "20.152.20.0/22": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "20.152.24.0/23": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "20.153.52.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "20.201.154.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "20.201.156.0/23": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "20.231.136.128/26": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "20.231.136.192/27": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "20.231.146.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "23.103.244.224/27": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "40.64.193.128/25": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "40.93.143.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "40.100.70.128/25": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "40.100.71.0/26": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "48.193.0.0/17": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "48.212.52.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "48.212.180.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "48.213.52.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.97.112.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.101.238.0/23": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.101.240.0/23": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.101.242.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.102.28.248/29": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.102.29.96/27": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.102.29.128/28": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.102.29.144/29": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.102.29.160/27": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.102.29.192/26": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.102.30.0/26": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.102.34.56/29": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.102.34.72/29": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.102.116.224/27": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.102.207.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.103.79.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.103.207.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.104.157.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.104.158.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.106.217.64/27": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.107.238.224/27": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.108.153.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.109.170.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.110.20.224/27": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.113.2.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.122.244.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.123.61.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.123.209.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "52.123.225.32/27": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "57.150.6.0/23": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "69.15.56.224/27": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "69.15.57.0/26": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "69.15.57.64/27": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "70.152.212.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "70.153.0.0/17": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "70.153.128.0/18": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "70.153.192.0/19": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "147.243.3.96/27": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "147.243.7.128/27": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "147.243.8.64/27": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "147.243.10.32/27": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "147.243.10.128/27": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "147.243.11.224/27": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "147.243.218.160/27": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "209.199.4.0/23": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "209.199.19.112/28": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "209.199.21.0/25": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1026:c00:35::/64": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1026:c00:36::/64": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1040:1800::/40": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1046:a00:61::/64": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1046:a00:62::/63": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1046:c16::/48": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1046:140e::/48": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1046:2000:240::/59": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1047:1:220::/59": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1049:1600::/40": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1061:1010::/57": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1061:1010:80::/59": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1061:1010:a0::/60": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1061:1010:b0::/62": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1061:1010:b4::/63": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1061:1010:b6::/64": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1061:1310:5800::/54": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1061:13f0:6000::/54": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1061:1600:3900::/56": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1061:1743::/48": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1061:2000:660::/62": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1061:2002:b800::/57": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1061:2004:c000::/57": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1061:2010:43::/64": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1061:2011:43::/64": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1062:0:366::/63": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1062:0:368::/63": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1062:0:390::/63": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1063:3f::/48": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1063:137::/48": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1063:2001:3900::/56": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1063:2202:60::/62": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1063:2436::/48": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1063:2636::/48": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1063:2834::/48": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2603:1063:2a34::/48": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2a01:111:2053:e000::/56": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2a01:111:f402:f15a::/63": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2a01:111:f403:72be::/63": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2a01:111:f403:72c0::/60": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2a01:111:f403:72d0::/63": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2a01:111:f403:7326::/64": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2a01:111:f403:7328::/64": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2a01:111:f403:be00::/58": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2a01:111:f403:c414::/64": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2a01:111:f403:cc68::/62": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2a01:111:f403:cc6c::/64": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2a01:111:f403:d414::/64": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2a01:111:f403:dc14::/64": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2a01:111:f403:e414::/64": [
-      "City \"Jakarta\" not found in UN/LOCODE"
     ],
     "2a01:4180:2400::/40": [
       "City \"Leipzig-Halle\" not found in UN/LOCODE"

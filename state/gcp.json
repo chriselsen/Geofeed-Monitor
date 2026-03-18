@@ -558,7 +558,7 @@
         "8.228.32.0/19"
       ],
       "country_pct": 99.45945945945947,
-      "city_pct": 66.66666666666666
+      "city_pct": 99.09909909909909
     },
     "Los Angeles, US": {
       "country": "US",
@@ -732,7 +732,7 @@
         "34.96.33.0/24"
       ],
       "country_pct": 96.47058823529412,
-      "city_pct": 64.70588235294117
+      "city_pct": 94.11764705882352
     },
     "North Charleston, US": {
       "country": "US",
@@ -848,7 +848,7 @@
         "34.96.55.0/24"
       ],
       "country_pct": 94.28571428571428,
-      "city_pct": 50.0
+      "city_pct": 92.85714285714286
     },
     "Salt Lake City, US": {
       "country": "US",
@@ -1243,7 +1243,7 @@
         "34.34.238.0/24"
       ],
       "country_pct": 93.33333333333333,
-      "city_pct": 61.111111111111114
+      "city_pct": 88.88888888888889
     },
     "Warsaw, PL": {
       "country": "PL",
@@ -3514,60 +3514,6 @@
     ],
     "2600:1900:42c0::/44": [
       "City \"Heringsdorf\" not found in region DE-SN (known in: DE-MV)"
-    ],
-    "34.34.216.0/21": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "34.50.64.0/18": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "34.96.42.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "34.96.57.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "34.101.18.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "34.101.20.0/22": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "34.101.24.0/22": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "34.101.32.0/19": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "34.101.64.0/18": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "34.101.128.0/17": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "34.128.64.0/18": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "34.152.68.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "34.153.44.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "34.153.236.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "34.157.254.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "35.219.0.0/17": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2600:1900:0:4400::/56": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2600:1901:8170::/44": [
-      "City \"Jakarta\" not found in UN/LOCODE"
     ],
     "34.1.0.0/20": [
       "City \"Paris\" not found in region FR-75 (known in: FR-75C)"

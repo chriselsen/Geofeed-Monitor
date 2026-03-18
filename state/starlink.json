@@ -396,7 +396,7 @@
         "98.97.175.0/24"
       ],
       "country_pct": 100.0,
-      "city_pct": 98.85714285714286
+      "city_pct": 98.87005649717514
     },
     "Auckland, NZ": {
       "country": "NZ",
@@ -1988,6 +1988,12 @@
         "2605:59c0:6700::/40",
         "2605:59c1:3400::/38",
         "2605:59ca:8300::/40",
+        "66.9.170.0/24",
+        "66.9.171.0/24",
+        "66.9.172.0/24",
+        "66.9.173.0/24",
+        "66.9.178.0/24",
+        "66.9.179.0/24",
         "74.244.194.0/24",
         "74.244.195.0/24",
         "74.244.196.0/24",
@@ -1997,8 +2003,8 @@
         "98.97.132.0/24",
         "98.97.133.0/24"
       ],
-      "country_pct": 100.0,
-      "city_pct": 100.0
+      "country_pct": 75.0,
+      "city_pct": 81.81818181818183
     },
     "Hawthorne, US": {
       "country": "US",
@@ -2099,7 +2105,7 @@
         "2605:59ca:6700::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": 66.66666666666666
+      "city_pct": 96.66666666666667
     },
     "Iqaluit, CA": {
       "country": "CA",
@@ -2402,7 +2408,7 @@
         "212.105.145.128/25",
         "2a0d:3344:6f00::/40"
       ],
-      "country_pct": 90.0,
+      "country_pct": 93.33333333333333,
       "city_pct": 88.88888888888889
     },
     "Kuujjuaq, CA": {
@@ -2426,7 +2432,7 @@
         "2a0d:3341:d500::/40"
       ],
       "country_pct": 82.85714285714286,
-      "city_pct": 47.61904761904761
+      "city_pct": 71.42857142857143
     },
     "Kyiv, UA": {
       "country": "UA",
@@ -2729,7 +2735,7 @@
         "2a0d:3344:5800::/38"
       ],
       "country_pct": 100.0,
-      "city_pct": 66.66666666666666
+      "city_pct": 100.0
     },
     "Longyearben, SJ": {
       "country": "SJ",
@@ -3053,12 +3059,6 @@
         "153.67.91.0/24",
         "153.67.92.0/24",
         "153.67.93.0/24",
-        "212.105.137.0/27",
-        "212.105.137.128/26",
-        "212.105.137.192/27",
-        "212.105.137.224/27",
-        "212.105.137.32/27",
-        "212.105.137.64/26",
         "2605:59c0:3c00::/40",
         "2605:59ca:8400::/40"
       ],
@@ -3639,7 +3639,7 @@
         "2605:59ca:4600::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": 66.66666666666666
+      "city_pct": 100.0
     },
     "New York City, US": {
       "country": "US",
@@ -3649,7 +3649,7 @@
         "74.244.219.0/24"
       ],
       "country_pct": 100.0,
-      "city_pct": 33.33333333333333
+      "city_pct": 100.0
     },
     "Newark, US": {
       "country": "US",
@@ -3847,7 +3847,7 @@
         "2803:9810:5d00::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": 66.66666666666666
+      "city_pct": 100.0
     },
     "Paramaribo, SR": {
       "country": "SR",
@@ -4086,7 +4086,7 @@
         "2406:2d40:a900::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": 33.33333333333333
+      "city_pct": 100.0
     },
     "Port-au-Prince, HT": {
       "country": "HT",
@@ -4133,7 +4133,7 @@
         "98.97.49.0/24"
       ],
       "country_pct": 100.0,
-      "city_pct": 97.36842105263158
+      "city_pct": 97.43589743589743
     },
     "Porto-Novo, BJ": {
       "country": "BJ",
@@ -4194,7 +4194,7 @@
         "2605:59c0:7500::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": 0.0
+      "city_pct": 33.33333333333333
     },
     "Quito, EC": {
       "country": "EC",
@@ -4334,7 +4334,7 @@
         "150.228.161.0/24"
       ],
       "country_pct": 100.0,
-      "city_pct": 0.0
+      "city_pct": 100.0
     },
     "Saint George's, GD": {
       "country": "GD",
@@ -4344,7 +4344,7 @@
         "2803:9810:bd00::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": 66.66666666666666
+      "city_pct": 100.0
     },
     "Saint John's, AG": {
       "country": "AG",
@@ -4354,7 +4354,7 @@
         "2803:9810:a500::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": 33.33333333333333
+      "city_pct": 100.0
     },
     "Saint John's, CA": {
       "country": "CA",
@@ -4366,7 +4366,7 @@
         "2605:59c0:2a00::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": 0.0
+      "city_pct": 100.0
     },
     "Saint Peter Port, GG": {
       "country": "GG",
@@ -4376,7 +4376,7 @@
         "2a0d:3341:fa00::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": 33.33333333333333
+      "city_pct": 100.0
     },
     "Saint-Denis, RE": {
       "country": "RE",
@@ -4717,15 +4717,13 @@
         "2803:9810:b400::/40",
         "66.9.174.0/24",
         "66.9.175.0/24",
-        "98.97.130.0/25",
-        "98.97.130.128/25",
-        "98.97.131.0/25",
-        "98.97.131.128/25",
+        "98.97.130.0/24",
+        "98.97.131.0/24",
         "98.97.156.0/24",
         "98.97.157.0/24"
       ],
-      "country_pct": 97.43589743589743,
-      "city_pct": 94.8051948051948
+      "country_pct": 97.36842105263158,
+      "city_pct": 93.77777777777779
     },
     "Sao Tome, ST": {
       "country": "ST",
@@ -5005,12 +5003,10 @@
         "212.105.135.64/26",
         "217.142.26.0/24",
         "217.142.27.0/24",
-        "2a0d:3344:7b00::/40",
-        "87.251.27.0/25",
-        "87.251.27.128/25"
+        "2a0d:3344:7b00::/40"
       ],
-      "country_pct": 92.72727272727272,
-      "city_pct": 93.93939393939394
+      "country_pct": 91.11111111111111,
+      "city_pct": 92.5925925925926
     },
     "Tarawa, KI": {
       "country": "KI",
@@ -5239,7 +5235,7 @@
         "2620:134:b054:100::53/128"
       ],
       "country_pct": 84.0,
-      "city_pct": 46.666666666666664
+      "city_pct": 73.33333333333333
     },
     "Vaduz, LI": {
       "country": "LI",
@@ -5478,7 +5474,7 @@
         "2406:2d40:a200::/40"
       ],
       "country_pct": 100.0,
-      "city_pct": 33.33333333333333
+      "city_pct": 66.66666666666666
     },
     "Yerevan, AM": {
       "country": "AM",
@@ -7554,12 +7550,6 @@
     "212.105.136.224/27",
     "212.105.136.32/27",
     "212.105.136.64/26",
-    "212.105.137.0/27",
-    "212.105.137.128/26",
-    "212.105.137.192/27",
-    "212.105.137.224/27",
-    "212.105.137.32/27",
-    "212.105.137.64/26",
     "212.105.138.0/25",
     "212.105.138.128/25",
     "212.105.139.0/25",
@@ -8528,10 +8518,16 @@
     "66.9.167.128/25",
     "66.9.168.0/24",
     "66.9.169.0/24",
+    "66.9.170.0/24",
+    "66.9.171.0/24",
+    "66.9.172.0/24",
+    "66.9.173.0/24",
     "66.9.174.0/24",
     "66.9.175.0/24",
     "66.9.176.0/24",
     "66.9.177.0/24",
+    "66.9.178.0/24",
+    "66.9.179.0/24",
     "66.9.180.0/24",
     "66.9.181.0/24",
     "66.9.182.0/24",
@@ -8810,8 +8806,6 @@
     "87.251.26.224/27",
     "87.251.26.32/27",
     "87.251.26.64/26",
-    "87.251.27.0/25",
-    "87.251.27.128/25",
     "87.251.28.0/24",
     "87.251.29.0/24",
     "87.251.30.0/27",
@@ -8873,10 +8867,8 @@
     "98.97.129.0/25",
     "98.97.129.128/25",
     "98.97.13.0/24",
-    "98.97.130.0/25",
-    "98.97.130.128/25",
-    "98.97.131.0/25",
-    "98.97.131.128/25",
+    "98.97.130.0/24",
+    "98.97.131.0/24",
     "98.97.132.0/24",
     "98.97.133.0/24",
     "98.97.134.0/24",
@@ -9081,7 +9073,7 @@
     "153.66.49.0/24": true,
     "212.105.132.0/24": true,
     "212.105.133.0/24": true,
-    "2a0d:3341:dc00::/40": true,
+    "2a0d:3341:dc00::/40": false,
     "2a0d:3344:37c0::/42": true,
     "209.198.140.0/24": true,
     "209.198.141.0/24": true,
@@ -9580,7 +9572,7 @@
     "2803:9810:b000::/40": true,
     "2803:9810:b500::/40": true,
     "2803:9810:b600::/40": true,
-    "2803:9810:b700::/40": true,
+    "2803:9810:b700::/40": false,
     "153.67.50.0/24": true,
     "153.67.51.0/24": true,
     "2605:59c0:3b00::/40": true,
@@ -10002,7 +9994,7 @@
     "150.228.81.0/24": true,
     "2a0d:3344:4400::/38": true,
     "2a0d:3341:c000::/40": true,
-    "2a0d:3341:f000::/40": true,
+    "2a0d:3341:f000::/40": false,
     "2a0d:3341:c200::/42": true,
     "2605:59ca:8000::/46": true,
     "2605:59c0:700c::/48": true,
@@ -10121,6 +10113,12 @@
     "153.67.156.0/24": true,
     "153.67.157.0/24": true,
     "2605:59c0:6d00::/40": true,
+    "66.9.170.0/24": false,
+    "66.9.171.0/24": false,
+    "66.9.172.0/24": false,
+    "66.9.173.0/24": false,
+    "66.9.178.0/24": false,
+    "66.9.179.0/24": false,
     "74.244.94.0/24": true,
     "74.244.95.0/24": true,
     "74.244.194.0/24": true,
@@ -10212,8 +10210,8 @@
     "2401:e320:100::/40": true,
     "216.128.14.0/24": true,
     "216.128.15.0/24": true,
-    "2a0d:3341:f900::/40": true,
-    "2a0d:3341:b200::/42": true,
+    "2a0d:3341:f900::/40": false,
+    "2a0d:3341:b200::/42": false,
     "2a0d:3344:17c0::/42": true,
     "143.105.40.0/24": true,
     "143.105.41.0/24": true,
@@ -10615,7 +10613,7 @@
     "98.97.50.0/24": true,
     "98.97.51.0/24": true,
     "2803:9810:6500::/40": true,
-    "2a0d:3341:f100::/40": true,
+    "2a0d:3341:f100::/40": false,
     "2a0d:3341:c300::/42": true,
     "153.66.162.0/24": true,
     "153.66.163.0/24": true,
@@ -10854,7 +10852,7 @@
     "2a0d:3344:5400::/38": true,
     "2a0d:3341:b800::/40": true,
     "2a0d:3341:cc00::/40": true,
-    "2a0d:3341:dd00::/40": true,
+    "2a0d:3341:dd00::/40": false,
     "153.66.52.0/24": true,
     "153.66.53.0/24": true,
     "153.66.55.0/24": true,
@@ -11306,7 +11304,7 @@
     "2803:9810:c100::/40": true,
     "216.128.20.0/24": true,
     "216.128.21.0/24": true,
-    "2a0d:3341:f200::/40": true,
+    "2a0d:3341:f200::/40": false,
     "2a0d:3341:b040::/42": true,
     "141.109.91.0/24": true,
     "129.222.96.0/24": true,
@@ -11500,6 +11498,8 @@
     "2803:9810:c300::/40": true,
     "66.9.174.0/24": true,
     "66.9.175.0/24": true,
+    "98.97.130.0/24": true,
+    "98.97.131.0/24": true,
     "98.97.156.0/24": true,
     "98.97.157.0/24": true,
     "138.84.56.0/24": true,
@@ -11938,15 +11938,6 @@
     "2406:2d40:a400::/40": [
       "City \"Avarua District\" not found in UN/LOCODE"
     ],
-    "153.67.162.0/24": [
-      "City \"Basseterre\" not found in UN/LOCODE"
-    ],
-    "153.67.163.0/24": [
-      "City \"Basseterre\" not found in UN/LOCODE"
-    ],
-    "2605:59c0:7300::/40": [
-      "City \"Basseterre\" not found in UN/LOCODE"
-    ],
     "74.244.168.0/24": [
       "City \"Bogota\" not found in region CO-DC (known in: CO-CUN)"
     ],
@@ -12118,15 +12109,6 @@
     "2620:134:b054:100::67/128": [
       "City \"Brussels\" not found in country BE (known in: US)"
     ],
-    "74.244.152.0/24": [
-      "City \"Charlotte Amalie\" not found in UN/LOCODE"
-    ],
-    "74.244.153.0/24": [
-      "City \"Charlotte Amalie\" not found in UN/LOCODE"
-    ],
-    "2605:59ca:9000::/40": [
-      "City \"Charlotte Amalie\" not found in UN/LOCODE"
-    ],
     "14.1.78.0/24": [
       "City \"Colombo\" not found in region LK-1 (known in: LK-11)"
     ],
@@ -12161,13 +12143,13 @@
       "City \"Dhaka\" not found in region BD-E (known in: BD-13)"
     ],
     "74.244.186.0/24": [
-      "City \"George Town\" not found in country KY (known in: AU, MY)"
+      "City \"George Town\" not found in country KY (known in: AU, BS, MY)"
     ],
     "74.244.187.0/24": [
-      "City \"George Town\" not found in country KY (known in: AU, MY)"
+      "City \"George Town\" not found in country KY (known in: AU, BS, MY)"
     ],
     "2605:59c8:6e00::/40": [
-      "City \"George Town\" not found in country KY (known in: AU, MY)"
+      "City \"George Town\" not found in country KY (known in: AU, BS, MY)"
     ],
     "143.105.250.0/24": [
       "City \"Gustavia\" not found in UN/LOCODE"
@@ -12177,123 +12159,6 @@
     ],
     "2605:59ca:9300::/40": [
       "City \"Gustavia\" not found in UN/LOCODE"
-    ],
-    "150.228.196.0/24": [
-      "City \"Honiara\" not found in UN/LOCODE"
-    ],
-    "150.228.197.0/24": [
-      "City \"Honiara\" not found in UN/LOCODE"
-    ],
-    "2406:2d40:a000::/40": [
-      "City \"Honiara\" not found in UN/LOCODE"
-    ],
-    "103.228.240.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "116.254.96.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "116.254.97.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "116.254.98.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "116.254.99.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "202.65.224.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "202.65.225.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "202.65.226.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "202.65.227.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "202.65.238.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "202.65.239.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "203.17.84.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "203.17.85.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "203.17.86.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "203.17.87.0/24": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "103.114.116.0/25": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "103.114.116.128/25": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "103.184.179.0/25": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "103.184.179.128/25": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "103.228.242.0/25": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "103.228.242.128/25": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "103.228.243.0/25": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "103.228.243.128/25": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "202.65.236.0/25": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "202.65.236.128/25": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "202.125.100.0/26": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "202.125.100.64/26": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "202.125.100.128/28": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "202.125.100.144/28": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "198.54.100.22/32": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "198.54.100.23/32": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2401:e320:800::/38": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2401:e320::/40": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2401:e320:100::/40": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2620:134:b054:100::22/128": [
-      "City \"Jakarta\" not found in UN/LOCODE"
-    ],
-    "2620:134:b054:100::23/128": [
-      "City \"Jakarta\" not found in UN/LOCODE"
     ],
     "216.128.14.0/24": [
       "City \"Jerusalem\" not found in UN/LOCODE"
@@ -12431,24 +12296,6 @@
       "City \"Mayotte\" not found in UN/LOCODE"
     ],
     "143.105.5.128/25": [
-      "City \"Mayotte\" not found in UN/LOCODE"
-    ],
-    "212.105.137.64/26": [
-      "City \"Mayotte\" not found in UN/LOCODE"
-    ],
-    "212.105.137.128/26": [
-      "City \"Mayotte\" not found in UN/LOCODE"
-    ],
-    "212.105.137.0/27": [
-      "City \"Mayotte\" not found in UN/LOCODE"
-    ],
-    "212.105.137.32/27": [
-      "City \"Mayotte\" not found in UN/LOCODE"
-    ],
-    "212.105.137.192/27": [
-      "City \"Mayotte\" not found in UN/LOCODE"
-    ],
-    "212.105.137.224/27": [
       "City \"Mayotte\" not found in UN/LOCODE"
     ],
     "2605:59c0:3c00::/40": [
@@ -13050,15 +12897,6 @@
     ],
     "153.67.95.0/24": [
       "City \"Reunion\" not found in country RE (known in: US, ZA)"
-    ],
-    "153.67.168.0/24": [
-      "City \"Road Town\" not found in country VG (known in: GB)"
-    ],
-    "153.67.169.0/24": [
-      "City \"Road Town\" not found in country VG (known in: GB)"
-    ],
-    "2605:59c0:7600::/40": [
-      "City \"Road Town\" not found in country VG (known in: GB)"
     ],
     "216.128.26.0/24": [
       "City \"Rome\" not found in region IT-62 (known in: IT-RM)"
