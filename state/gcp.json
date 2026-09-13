@@ -94,7 +94,7 @@
         "8.34.211.0/24",
         "8.34.220.0/22"
       ],
-      "country_pct": 99.0,
+      "country_pct": 99.33333333333333,
       "city_pct": 99.4413407821229
     },
     "Columbus, US": {
@@ -20405,9 +20405,9 @@
           "changed_at": "2026-06-15T23:49:26Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "BE",
           "city": "",
-          "changed_at": "2026-07-10T02:18:27Z"
+          "changed_at": "2026-09-13T02:30:15Z"
         }
       }
     },
