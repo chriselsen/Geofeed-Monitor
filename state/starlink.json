@@ -3030,7 +3030,7 @@
         "9.246.98.0/24",
         "9.246.99.0/24"
       ],
-      "country_pct": 99.1869918699187,
+      "country_pct": 98.86178861788618,
       "city_pct": 100.0
     },
     "Lagos, NG": {
@@ -3176,7 +3176,7 @@
         "2620:134:b054:100::43/128",
         "2a0d:3344:2100::/40"
       ],
-      "country_pct": 76.36363636363637,
+      "country_pct": 80.0,
       "city_pct": 79.3103448275862
     },
     "Little Rock, US": {
@@ -5648,7 +5648,7 @@
         "98.97.156.0/24",
         "98.97.157.0/24"
       ],
-      "country_pct": 95.29411764705881,
+      "country_pct": 95.76470588235294,
       "city_pct": 92.33870967741935
     },
     "Sao Tome, ST": {
@@ -57978,9 +57978,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "BO",
+          "country": "BR",
           "city": "",
-          "changed_at": "2026-09-13T02:30:29Z"
+          "changed_at": "2026-09-14T02:46:38Z"
         }
       }
     },
@@ -58013,9 +58013,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "BO",
+          "country": "BR",
           "city": "",
-          "changed_at": "2026-09-13T02:30:29Z"
+          "changed_at": "2026-09-14T02:46:38Z"
         }
       }
     },
@@ -60043,9 +60043,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "UA",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-09-06T02:17:17Z"
+          "changed_at": "2026-09-14T02:46:38Z"
         }
       }
     },
@@ -60078,9 +60078,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "UA",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-09-06T02:17:17Z"
+          "changed_at": "2026-09-14T02:46:38Z"
         }
       }
     },
@@ -67988,9 +67988,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "PT",
           "city": "",
-          "changed_at": "2026-09-13T02:30:29Z"
+          "changed_at": "2026-09-14T02:46:38Z"
         }
       }
     },
@@ -68023,9 +68023,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "PT",
           "city": "",
-          "changed_at": "2026-09-13T02:30:29Z"
+          "changed_at": "2026-09-14T02:46:38Z"
         }
       }
     },
