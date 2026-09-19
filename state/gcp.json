@@ -274,7 +274,7 @@
         "8.237.64.0/18"
       ],
       "country_pct": 95.45454545454545,
-      "city_pct": 89.23076923076924
+      "city_pct": 89.39393939393939
     },
     "Dammam, SA": {
       "country": "SA",
@@ -5336,8 +5336,8 @@
       "providers": {
         "maxmind": {
           "country": "US",
-          "city": "",
-          "changed_at": "2026-09-12T02:31:25Z"
+          "city": "Dallas",
+          "changed_at": "2026-09-19T02:34:23Z"
         },
         "ipinfo": {
           "country": "US",
