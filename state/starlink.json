@@ -3042,7 +3042,7 @@
         "9.246.98.0/24",
         "9.246.99.0/24"
       ],
-      "country_pct": 98.21138211382113,
+      "country_pct": 98.69918699186991,
       "city_pct": 100.0
     },
     "Lagos, NG": {
@@ -5450,7 +5450,7 @@
         "66.9.165.0/25",
         "66.9.165.128/25"
       ],
-      "country_pct": 97.77777777777777,
+      "country_pct": 95.55555555555556,
       "city_pct": 100.0
     },
     "San Salvador, SV": {
@@ -36323,9 +36323,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "CA",
+          "country": "UA",
           "city": "",
-          "changed_at": "2026-09-19T02:34:36Z"
+          "changed_at": "2026-09-20T02:46:25Z"
         }
       }
     },
@@ -36358,9 +36358,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "CA",
+          "country": "UA",
           "city": "",
-          "changed_at": "2026-09-19T02:34:36Z"
+          "changed_at": "2026-09-20T02:46:25Z"
         }
       }
     },
@@ -49028,9 +49028,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "UA",
           "city": "",
-          "changed_at": "2026-07-29T01:59:27Z"
+          "changed_at": "2026-09-20T02:46:25Z"
         }
       }
     },
@@ -124803,9 +124803,9 @@
           "changed_at": "2026-09-02T02:18:28Z"
         },
         "iplocate": {
-          "country": "PR",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-09-19T02:34:36Z"
+          "changed_at": "2026-09-20T02:46:25Z"
         }
       }
     },
