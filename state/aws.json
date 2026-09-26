@@ -1044,7 +1044,7 @@
         "99.83.106.0/24"
       ],
       "country_pct": 96.65062560153994,
-      "city_pct": 80.92038965401412
+      "city_pct": 80.92679650772331
     },
     "Athens, GR": {
       "country": "GR",
@@ -1119,6 +1119,7 @@
         "16.12.82.0/23",
         "16.15.8.0/22",
         "173.82.125.0/24",
+        "173.82.169.0/24",
         "173.82.228.0/24",
         "173.82.77.0/24",
         "182.24.0.0/14",
@@ -1176,8 +1177,8 @@
         "96.0.72.0/21",
         "96.0.80.0/22"
       ],
-      "country_pct": 94.11764705882352,
-      "city_pct": 92.66055045871559
+      "country_pct": 93.13984168865436,
+      "city_pct": 92.27272727272727
     },
     "Bahrain, BH": {
       "country": "BH",
@@ -1302,7 +1303,7 @@
         "99.82.144.0/21",
         "99.82.152.0/22"
       ],
-      "country_pct": 90.25210084033614,
+      "country_pct": 90.4201680672269,
       "city_pct": 0.0
     },
     "Baltimore, US": {
@@ -1490,8 +1491,8 @@
         "71.136.64.0/18",
         "71.137.0.0/18"
       ],
-      "country_pct": 94.87179487179486,
-      "city_pct": 92.64705882352942
+      "country_pct": 95.12820512820512,
+      "city_pct": 92.61083743842364
     },
     "Berlin, DE": {
       "country": "DE",
@@ -1516,6 +1517,7 @@
         "2001:3fc3:800::/40",
         "2001:3fc3:8800::/40",
         "2001:3fc3:a800::/40",
+        "2001:3fc4:1000::/40",
         "2001:3fc4:800::/40",
         "2001:3fc5:1000::/40",
         "2001:3fc5:2000::/40",
@@ -1563,8 +1565,8 @@
         "51.74.16.0/23",
         "83.118.240.0/21"
       ],
-      "country_pct": 96.36363636363636,
-      "city_pct": 63.74999999999999
+      "country_pct": 96.71641791044776,
+      "city_pct": 63.190184049079754
     },
     "Berwick, US": {
       "country": "US",
@@ -2286,7 +2288,7 @@
         "99.78.196.0/22"
       ],
       "country_pct": 97.44318181818183,
-      "city_pct": 54.090909090909086
+      "city_pct": 54.16036308623298
     },
     "Boston, US": {
       "country": "US",
@@ -2514,8 +2516,8 @@
         "99.78.144.0/21",
         "99.78.152.0/22"
       ],
-      "country_pct": 88.41911764705883,
-      "city_pct": 85.03184713375796
+      "country_pct": 88.60294117647058,
+      "city_pct": 85.07936507936508
     },
     "Charlotte, US": {
       "country": "US",
@@ -2982,7 +2984,7 @@
         "99.78.216.0/22"
       ],
       "country_pct": 97.3621103117506,
-      "city_pct": 75.47956630525438
+      "city_pct": 75.52039966694421
     },
     "Copenhagen, DK": {
       "country": "DK",
@@ -3258,8 +3260,8 @@
         "99.77.16.0/21",
         "99.77.24.0/22"
       ],
-      "country_pct": 92.32673267326733,
-      "city_pct": 89.40677966101694
+      "country_pct": 92.57425742574257,
+      "city_pct": 89.45147679324894
     },
     "Dublin, IE": {
       "country": "IE",
@@ -4203,6 +4205,7 @@
         "16.12.6.0/23",
         "16.12.8.0/24",
         "16.162.0.0/15",
+        "173.82.149.0/24",
         "173.82.208.0/24",
         "18.162.0.0/15",
         "18.166.0.0/15",
@@ -4302,7 +4305,7 @@
         "99.83.96.0/24"
       ],
       "country_pct": 0.0,
-      "city_pct": 88.46153846153845
+      "city_pct": 87.97814207650273
     },
     "Honolulu, US": {
       "country": "US",
@@ -5317,8 +5320,8 @@
         "99.77.249.0/24",
         "99.82.169.0/24"
       ],
-      "country_pct": 83.16901408450704,
-      "city_pct": 74.93887530562347
+      "country_pct": 83.2394366197183,
+      "city_pct": 74.96947496947497
     },
     "Los Angeles, US": {
       "country": "US",
@@ -6296,7 +6299,7 @@
         "69.234.192.0/18",
         "69.235.128.0/18"
       ],
-      "country_pct": 95.14285714285714,
+      "country_pct": 95.42857142857143,
       "city_pct": 0.0
     },
     "Osaka, JP": {
@@ -6656,11 +6659,10 @@
         "3.2.40.96/29",
         "5.174.80.0/20",
         "54.115.189.0/24",
-        "54.25.76.0/24",
         "99.151.186.0/24"
       ],
-      "country_pct": 97.6923076923077,
-      "city_pct": 77.63157894736842
+      "country_pct": 97.6,
+      "city_pct": 79.72972972972973
     },
     "Piscataway, US": {
       "country": "US",
@@ -6855,8 +6857,8 @@
         "52.94.250.160/28",
         "76.223.170.112/28"
       ],
-      "country_pct": 77.24137931034483,
-      "city_pct": 63.1578947368421
+      "country_pct": 77.58620689655173,
+      "city_pct": 63.372093023255815
     },
     "Sacramento, US": {
       "country": "US",
@@ -8491,6 +8493,7 @@
         "54.240.192.0/22",
         "54.240.203.0/24",
         "54.240.204.0/22",
+        "54.25.66.0/24",
         "54.252.0.0/15",
         "54.66.0.0/16",
         "54.79.0.0/16",
@@ -8512,8 +8515,8 @@
         "99.83.120.0/22",
         "99.83.80.0/22"
       ],
-      "country_pct": 83.97291196388262,
-      "city_pct": 75.45454545454545
+      "country_pct": 83.65817091454272,
+      "city_pct": 75.25906735751295
     },
     "Taipei, TW": {
       "country": "TW",
@@ -8603,8 +8606,8 @@
         "63.249.200.0/24",
         "76.223.170.80/28"
       ],
-      "country_pct": 89.73747016706443,
-      "city_pct": 59.32203389830508
+      "country_pct": 89.97613365155132,
+      "city_pct": 59.49367088607595
     },
     "Tampa, US": {
       "country": "US",
@@ -12128,7 +12131,9 @@
     "173.82.119.0/24",
     "173.82.125.0/24",
     "173.82.129.0/24",
+    "173.82.149.0/24",
     "173.82.16.0/24",
+    "173.82.169.0/24",
     "173.82.186.0/24",
     "173.82.187.0/24",
     "173.82.189.0/24",
@@ -12357,6 +12362,7 @@
     "2001:3fc3:800::/40",
     "2001:3fc3:8800::/40",
     "2001:3fc3:a800::/40",
+    "2001:3fc4:1000::/40",
     "2001:3fc4:800::/40",
     "2001:3fc5:1000::/40",
     "2001:3fc5:2000::/40",
@@ -17299,7 +17305,7 @@
     "54.25.0.0/21",
     "54.25.14.0/23",
     "54.25.20.0/24",
-    "54.25.76.0/24",
+    "54.25.66.0/24",
     "54.25.82.0/24",
     "54.250.0.0/16",
     "54.251.0.0/16",
@@ -18424,7 +18430,8 @@
     "96.0.72.0/21": true,
     "96.0.80.0/22": true,
     "173.82.77.0/24": false,
-    "173.82.125.0/24": true,
+    "173.82.125.0/24": false,
+    "173.82.169.0/24": false,
     "173.82.228.0/24": true,
     "182.24.0.0/14": true,
     "2406:da00:2800::/40": true,
@@ -18711,7 +18718,7 @@
     "51.74.128.0/18": false,
     "51.224.0.0/15": true,
     "83.118.240.0/21": true,
-    "173.82.129.0/24": false,
+    "173.82.129.0/24": true,
     "173.82.229.0/24": false,
     "2001:3fc0:800::/40": true,
     "2001:3fc1:8000::/36": true,
@@ -18723,6 +18730,7 @@
     "2001:3fc3:8800::/40": true,
     "2001:3fc3:a800::/40": true,
     "2001:3fc4:800::/40": true,
+    "2001:3fc4:1000::/40": true,
     "2001:3fc5:800::/40": true,
     "2001:3fc5:1000::/40": true,
     "2001:3fc5:2000::/40": true,
@@ -20353,6 +20361,7 @@
     "150.222.135.0/24": false,
     "151.148.19.0/24": false,
     "159.248.133.0/24": true,
+    "173.82.149.0/24": false,
     "173.82.208.0/24": true,
     "216.244.6.0/24": true,
     "216.244.24.0/21": true,
@@ -21807,7 +21816,6 @@
     "15.181.128.0/20": true,
     "15.220.32.0/21": true,
     "18.88.128.0/18": true,
-    "54.25.76.0/24": false,
     "54.115.189.0/24": true,
     "99.151.186.0/24": true,
     "139.56.16.0/23": false,
@@ -22825,6 +22833,7 @@
     "52.95.128.0/21": true,
     "52.95.241.0/24": true,
     "52.119.210.0/23": true,
+    "54.25.66.0/24": false,
     "54.66.0.0/16": true,
     "54.79.0.0/16": true,
     "54.153.128.0/17": true,
@@ -22956,7 +22965,7 @@
     "63.249.200.0/24": true,
     "173.82.97.0/24": false,
     "173.82.107.0/24": false,
-    "173.82.108.0/24": true,
+    "173.82.108.0/24": false,
     "173.82.227.0/24": true,
     "2406:da00:c800::/40": true,
     "2406:da1c:8000::/36": true,
@@ -24008,6 +24017,9 @@
       "Unrecognized city name \"Hong Kong\" in CN (known in: HK)"
     ],
     "159.248.133.0/24": [
+      "Unrecognized city name \"Hong Kong\" in CN (known in: HK)"
+    ],
+    "173.82.149.0/24": [
       "Unrecognized city name \"Hong Kong\" in CN (known in: HK)"
     ],
     "173.82.208.0/24": [
@@ -81412,8 +81424,8 @@
       "providers": {
         "maxmind": {
           "country": "US",
-          "city": "",
-          "changed_at": "2026-09-25T02:51:26Z"
+          "city": "Ashburn",
+          "changed_at": "2026-09-26T02:54:50Z"
         },
         "ipinfo": {
           "country": "US",
@@ -161622,38 +161634,38 @@
         }
       }
     },
-    "54.25.76.0/24": {
+    "54.25.66.0/24": {
       "geofeed_values": {
-        "country": "US",
-        "subdivision": "US-AZ",
-        "city": "Phoenix"
+        "country": "AU",
+        "subdivision": "AU-NSW",
+        "city": "Sydney"
       },
       "geofeed_changed_at": null,
       "providers": {
         "maxmind": {
           "country": "US",
           "city": "",
-          "changed_at": "2026-09-25T02:51:26Z"
+          "changed_at": "2026-09-26T02:54:50Z"
         },
         "ipinfo": {
           "country": "US",
           "city": "",
-          "changed_at": "2026-09-25T02:51:26Z"
+          "changed_at": "2026-09-26T02:54:50Z"
         },
         "ip2location": {
           "country": "US",
           "city": "Seattle",
-          "changed_at": "2026-09-25T02:51:26Z"
+          "changed_at": "2026-09-26T02:54:50Z"
         },
         "dbip": {
           "country": "US",
           "city": "Seattle",
-          "changed_at": "2026-09-25T02:51:26Z"
+          "changed_at": "2026-09-26T02:54:50Z"
         },
         "iplocate": {
           "country": "US",
           "city": "",
-          "changed_at": "2026-09-25T02:51:26Z"
+          "changed_at": "2026-09-26T02:54:50Z"
         }
       }
     },
@@ -209091,9 +209103,9 @@
       "geofeed_changed_at": null,
       "providers": {
         "maxmind": {
-          "country": "US",
-          "city": "",
-          "changed_at": "2026-09-25T02:51:26Z"
+          "country": "TW",
+          "city": "Taipei",
+          "changed_at": "2026-09-26T02:54:50Z"
         },
         "ipinfo": {
           "country": "US",
@@ -209336,9 +209348,9 @@
       "geofeed_changed_at": null,
       "providers": {
         "maxmind": {
-          "country": "US",
-          "city": "",
-          "changed_at": "2026-09-25T02:51:26Z"
+          "country": "DE",
+          "city": "Berlin",
+          "changed_at": "2026-09-26T02:54:50Z"
         },
         "ipinfo": {
           "country": "DE",
@@ -209359,6 +209371,76 @@
           "country": "DE",
           "city": "",
           "changed_at": "2026-09-25T02:51:26Z"
+        }
+      }
+    },
+    "173.82.149.0/24": {
+      "geofeed_values": {
+        "country": "CN",
+        "subdivision": "CN-HK",
+        "city": "Hong Kong"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-09-26T02:54:50Z"
+        },
+        "ipinfo": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-09-26T02:54:50Z"
+        },
+        "ip2location": {
+          "country": "US",
+          "city": "Seattle",
+          "changed_at": "2026-09-26T02:54:50Z"
+        },
+        "dbip": {
+          "country": "CA",
+          "city": "Montreal",
+          "changed_at": "2026-09-26T02:54:50Z"
+        },
+        "iplocate": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-09-26T02:54:50Z"
+        }
+      }
+    },
+    "173.82.169.0/24": {
+      "geofeed_values": {
+        "country": "NZ",
+        "subdivision": "NZ-AUK",
+        "city": "Auckland"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-09-26T02:54:50Z"
+        },
+        "ipinfo": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-09-26T02:54:50Z"
+        },
+        "ip2location": {
+          "country": "US",
+          "city": "Seattle",
+          "changed_at": "2026-09-26T02:54:50Z"
+        },
+        "dbip": {
+          "country": "NZ",
+          "city": "Auckland",
+          "changed_at": "2026-09-26T02:54:50Z"
+        },
+        "iplocate": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-09-26T02:54:50Z"
         }
       }
     },
@@ -217027,6 +217109,41 @@
         }
       }
     },
+    "2001:3fc4:1000::/40": {
+      "geofeed_values": {
+        "country": "DE",
+        "subdivision": "DE-BE",
+        "city": "Berlin"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "DE",
+          "city": "",
+          "changed_at": "2026-09-26T02:54:50Z"
+        },
+        "ipinfo": {
+          "country": "DE",
+          "city": "",
+          "changed_at": "2026-09-26T02:54:50Z"
+        },
+        "ip2location": {
+          "country": "DE",
+          "city": "Haus",
+          "changed_at": "2026-09-26T02:54:50Z"
+        },
+        "dbip": {
+          "country": "DE",
+          "city": "Potsdam (N\u00f6rdliche Vorstadt)",
+          "changed_at": "2026-09-26T02:54:50Z"
+        },
+        "iplocate": {
+          "country": "DE",
+          "city": "",
+          "changed_at": "2026-09-26T02:54:50Z"
+        }
+      }
+    },
     "2001:3fc5:800::/40": {
       "geofeed_values": {
         "country": "DE",
@@ -218857,8 +218974,8 @@
       "providers": {
         "maxmind": {
           "country": "CN",
-          "city": "Beijing",
-          "changed_at": "2026-07-29T01:59:10Z"
+          "city": "",
+          "changed_at": "2026-09-26T02:54:50Z"
         },
         "ipinfo": {
           "country": "CN",
@@ -218892,8 +219009,8 @@
       "providers": {
         "maxmind": {
           "country": "CN",
-          "city": "Beijing",
-          "changed_at": "2026-07-29T01:59:10Z"
+          "city": "",
+          "changed_at": "2026-09-26T02:54:50Z"
         },
         "ipinfo": {
           "country": "CN",
@@ -221271,9 +221388,9 @@
       "geofeed_changed_at": null,
       "providers": {
         "maxmind": {
-          "country": "KR",
-          "city": "Incheon",
-          "changed_at": "2026-09-25T02:51:26Z"
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-09-26T02:54:50Z"
         },
         "ipinfo": {
           "country": "KR",
@@ -278707,8 +278824,8 @@
       "providers": {
         "maxmind": {
           "country": "US",
-          "city": "",
-          "changed_at": "2026-09-24T02:34:26Z"
+          "city": "Boardman",
+          "changed_at": "2026-09-26T02:54:50Z"
         },
         "ipinfo": {
           "country": "US",
@@ -288996,9 +289113,9 @@
       "geofeed_changed_at": null,
       "providers": {
         "maxmind": {
-          "country": "US",
+          "country": "BH",
           "city": "",
-          "changed_at": "2026-09-23T02:44:54Z"
+          "changed_at": "2026-09-26T02:54:50Z"
         },
         "ipinfo": {
           "country": "BH",
@@ -289031,9 +289148,9 @@
       "geofeed_changed_at": null,
       "providers": {
         "maxmind": {
-          "country": "US",
-          "city": "",
-          "changed_at": "2026-09-23T02:44:54Z"
+          "country": "CN",
+          "city": "Beijing",
+          "changed_at": "2026-09-26T02:54:50Z"
         },
         "ipinfo": {
           "country": "CN",
@@ -289172,8 +289289,8 @@
       "providers": {
         "maxmind": {
           "country": "US",
-          "city": "",
-          "changed_at": "2026-09-23T02:44:54Z"
+          "city": "Columbus",
+          "changed_at": "2026-09-26T02:54:50Z"
         },
         "ipinfo": {
           "country": "US",
@@ -289206,9 +289323,9 @@
       "geofeed_changed_at": null,
       "providers": {
         "maxmind": {
-          "country": "US",
-          "city": "",
-          "changed_at": "2026-09-25T02:51:26Z"
+          "country": "ZA",
+          "city": "Cape Town",
+          "changed_at": "2026-09-26T02:54:50Z"
         },
         "ipinfo": {
           "country": "US",
@@ -289276,9 +289393,9 @@
       "geofeed_changed_at": null,
       "providers": {
         "maxmind": {
-          "country": "US",
-          "city": "",
-          "changed_at": "2026-09-23T02:44:54Z"
+          "country": "AE",
+          "city": "Dubai",
+          "changed_at": "2026-09-26T02:54:50Z"
         },
         "ipinfo": {
           "country": "AE",
@@ -289451,9 +289568,9 @@
       "geofeed_changed_at": null,
       "providers": {
         "maxmind": {
-          "country": "US",
-          "city": "",
-          "changed_at": "2026-09-25T02:51:26Z"
+          "country": "KR",
+          "city": "Incheon",
+          "changed_at": "2026-09-26T02:54:50Z"
         },
         "ipinfo": {
           "country": "US",
@@ -289556,9 +289673,9 @@
       "geofeed_changed_at": null,
       "providers": {
         "maxmind": {
-          "country": "US",
-          "city": "",
-          "changed_at": "2026-09-25T02:51:26Z"
+          "country": "GB",
+          "city": "City of London",
+          "changed_at": "2026-09-26T02:54:50Z"
         },
         "ipinfo": {
           "country": "US",
@@ -289766,9 +289883,9 @@
       "geofeed_changed_at": null,
       "providers": {
         "maxmind": {
-          "country": "US",
-          "city": "",
-          "changed_at": "2026-09-23T02:44:54Z"
+          "country": "SA",
+          "city": "Riyadh",
+          "changed_at": "2026-09-26T02:54:50Z"
         },
         "ipinfo": {
           "country": "SA",
@@ -290046,9 +290163,9 @@
       "geofeed_changed_at": null,
       "providers": {
         "maxmind": {
-          "country": "US",
+          "country": "CN",
           "city": "",
-          "changed_at": "2026-09-23T02:44:54Z"
+          "changed_at": "2026-09-26T02:54:50Z"
         },
         "ipinfo": {
           "country": "CN",
@@ -290152,8 +290269,8 @@
       "providers": {
         "maxmind": {
           "country": "US",
-          "city": "",
-          "changed_at": "2026-09-23T02:44:54Z"
+          "city": "Columbus",
+          "changed_at": "2026-09-26T02:54:50Z"
         },
         "ipinfo": {
           "country": "US",
@@ -290187,8 +290304,8 @@
       "providers": {
         "maxmind": {
           "country": "US",
-          "city": "",
-          "changed_at": "2026-09-23T02:44:54Z"
+          "city": "Boardman",
+          "changed_at": "2026-09-26T02:54:50Z"
         },
         "ipinfo": {
           "country": "US",
@@ -290257,8 +290374,8 @@
       "providers": {
         "maxmind": {
           "country": "US",
-          "city": "",
-          "changed_at": "2026-09-23T02:44:54Z"
+          "city": "Boardman",
+          "changed_at": "2026-09-26T02:54:50Z"
         },
         "ipinfo": {
           "country": "US",
