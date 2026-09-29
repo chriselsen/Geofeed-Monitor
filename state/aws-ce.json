@@ -3093,7 +3093,7 @@
         "99.78.144.0/21",
         "99.78.152.0/22"
       ],
-      "country_pct": 93.73297002724796,
+      "country_pct": 93.8692098092643,
       "city_pct": 94.29928741092637
     },
     "Charlotte, US": {
@@ -5650,7 +5650,6 @@
       "country": "ID",
       "prefixes": [
         "1.178.19.0/24",
-        "1.178.86.0/24",
         "104.255.59.101/32",
         "104.255.59.102/32",
         "104.255.59.103/32",
@@ -5788,8 +5787,8 @@
         "99.78.238.255/32",
         "99.78.240.0/20"
       ],
-      "country_pct": 88.75912408759125,
-      "city_pct": 86.49350649350649
+      "country_pct": 89.11764705882354,
+      "city_pct": 86.68407310704961
     },
     "Kansas City, US": {
       "country": "US",
@@ -6389,7 +6388,7 @@
         "99.77.249.0/24",
         "99.82.169.0/24"
       ],
-      "country_pct": 87.13936430317848,
+      "country_pct": 87.1882640586797,
       "city_pct": 81.57894736842105
     },
     "Los Angeles, US": {
@@ -8077,13 +8076,15 @@
         "51.168.144.0/24",
         "51.168.145.0/24",
         "51.168.146.0/24",
+        "51.168.170.0/23",
+        "51.168.172.0/23",
         "51.204.0.0/15",
         "51.206.0.0/15",
         "52.94.250.160/28",
         "76.223.170.112/28"
       ],
-      "country_pct": 72.78688524590164,
-      "city_pct": 57.14285714285714
+      "country_pct": 73.01587301587301,
+      "city_pct": 57.4585635359116
     },
     "San Francisco, US": {
       "country": "US",
@@ -9343,7 +9344,7 @@
         "99.78.188.0/22",
         "99.82.168.0/24"
       ],
-      "country_pct": 92.92701279157262,
+      "country_pct": 93.00225733634312,
       "city_pct": 31.29973474801061
     },
     "Singapore, SG": {
@@ -11446,7 +11447,7 @@
         "70.232.96.0/20",
         "99.151.80.0/21"
       ],
-      "country_pct": 94.14141414141413,
+      "country_pct": 94.34343434343434,
       "city_pct": 94.71830985915493
     }
   },
@@ -11482,7 +11483,6 @@
     "1.178.65.0/24",
     "1.178.7.0/24",
     "1.178.8.0/24",
-    "1.178.86.0/24",
     "1.178.88.0/24",
     "1.178.89.0/24",
     "1.178.9.0/24",
@@ -19808,6 +19808,8 @@
     "51.168.144.0/24",
     "51.168.145.0/24",
     "51.168.146.0/24",
+    "51.168.170.0/23",
+    "51.168.172.0/23",
     "51.17.0.0/24",
     "51.17.1.0/24",
     "51.17.129.160/28",
@@ -25447,7 +25449,6 @@
     "99.78.228.0/22": true,
     "64.66.153.0/24": true,
     "65.4.0.0/16": true,
-    "1.178.86.0/24": true,
     "15.232.0.0/16": true,
     "16.79.0.0/16": true,
     "15.233.0.0/16": true,
@@ -26720,6 +26721,8 @@
     "51.168.144.0/24": true,
     "51.168.145.0/24": true,
     "51.168.146.0/24": true,
+    "51.168.170.0/23": true,
+    "51.168.172.0/23": true,
     "2a05:d076:800::/40": true,
     "2a05:d039:800::/40": true,
     "2a05:d031:800::/40": true,
@@ -78860,9 +78863,9 @@
           "changed_at": "2026-06-15T23:49:38Z"
         },
         "iplocate": {
-          "country": "DE",
+          "country": "CH",
           "city": "",
-          "changed_at": "2026-09-28T02:56:44Z"
+          "changed_at": "2026-09-29T03:37:07Z"
         }
       }
     },
@@ -145450,9 +145453,9 @@
           "changed_at": "2026-09-26T02:55:01Z"
         },
         "ipinfo": {
-          "country": "US",
+          "country": "GB",
           "city": "",
-          "changed_at": "2026-09-25T02:51:37Z"
+          "changed_at": "2026-09-29T03:37:07Z"
         },
         "ip2location": {
           "country": "US",
@@ -154568,41 +154571,6 @@
           "country": "ID",
           "city": "",
           "changed_at": "2026-06-15T23:49:38Z"
-        }
-      }
-    },
-    "1.178.86.0/24": {
-      "geofeed_values": {
-        "country": "ID",
-        "subdivision": "ID-JK",
-        "city": "Jakarta"
-      },
-      "geofeed_changed_at": null,
-      "providers": {
-        "maxmind": {
-          "country": "US",
-          "city": "",
-          "changed_at": "2026-09-28T02:56:44Z"
-        },
-        "ipinfo": {
-          "country": "US",
-          "city": "",
-          "changed_at": "2026-09-28T02:56:44Z"
-        },
-        "ip2location": {
-          "country": "US",
-          "city": "Seattle",
-          "changed_at": "2026-09-28T02:56:44Z"
-        },
-        "dbip": {
-          "country": "ID",
-          "city": "Jakarta",
-          "changed_at": "2026-09-28T02:56:44Z"
-        },
-        "iplocate": {
-          "country": "ID",
-          "city": "",
-          "changed_at": "2026-09-28T02:56:44Z"
         }
       }
     },
@@ -231935,9 +231903,9 @@
           "changed_at": "2026-09-26T02:55:01Z"
         },
         "ipinfo": {
-          "country": "US",
+          "country": "KR",
           "city": "",
-          "changed_at": "2026-09-25T02:51:37Z"
+          "changed_at": "2026-09-29T03:37:07Z"
         },
         "ip2location": {
           "country": "US",
@@ -243783,6 +243751,76 @@
           "country": "SA",
           "city": "",
           "changed_at": "2026-09-22T02:44:30Z"
+        }
+      }
+    },
+    "51.168.170.0/23": {
+      "geofeed_values": {
+        "country": "SA",
+        "subdivision": "SA-01",
+        "city": "Riyadh"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "SA",
+          "city": "Riyadh",
+          "changed_at": "2026-09-29T03:37:07Z"
+        },
+        "ipinfo": {
+          "country": "SA",
+          "city": "",
+          "changed_at": "2026-09-29T03:37:07Z"
+        },
+        "ip2location": {
+          "country": "IL",
+          "city": "Tel Aviv",
+          "changed_at": "2026-09-29T03:37:07Z"
+        },
+        "dbip": {
+          "country": "SA",
+          "city": "Riyadh",
+          "changed_at": "2026-09-29T03:37:07Z"
+        },
+        "iplocate": {
+          "country": "SA",
+          "city": "",
+          "changed_at": "2026-09-29T03:37:07Z"
+        }
+      }
+    },
+    "51.168.172.0/23": {
+      "geofeed_values": {
+        "country": "SA",
+        "subdivision": "SA-01",
+        "city": "Riyadh"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "SA",
+          "city": "Riyadh",
+          "changed_at": "2026-09-29T03:37:07Z"
+        },
+        "ipinfo": {
+          "country": "SA",
+          "city": "",
+          "changed_at": "2026-09-29T03:37:07Z"
+        },
+        "ip2location": {
+          "country": "IL",
+          "city": "Tel Aviv",
+          "changed_at": "2026-09-29T03:37:07Z"
+        },
+        "dbip": {
+          "country": "SA",
+          "city": "Riyadh",
+          "changed_at": "2026-09-29T03:37:07Z"
+        },
+        "iplocate": {
+          "country": "SA",
+          "city": "",
+          "changed_at": "2026-09-29T03:37:07Z"
         }
       }
     },
@@ -407740,9 +407778,9 @@
           "changed_at": "2026-09-26T02:55:01Z"
         },
         "ipinfo": {
-          "country": "US",
+          "country": "ZA",
           "city": "",
-          "changed_at": "2026-09-25T02:51:37Z"
+          "changed_at": "2026-09-29T03:37:07Z"
         },
         "ip2location": {
           "country": "US",
