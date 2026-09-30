@@ -947,7 +947,7 @@
         "34.184.72.0/24",
         "34.96.35.0/24"
       ],
-      "country_pct": 98.18181818181819,
+      "country_pct": 96.36363636363636,
       "city_pct": 96.96969696969697
     },
     "Phoenix, US": {
@@ -45450,9 +45450,9 @@
           "changed_at": "2026-08-08T01:04:54Z"
         },
         "ipinfo": {
-          "country": "FR",
+          "country": "IE",
           "city": "",
-          "changed_at": "2026-08-21T00:54:08Z"
+          "changed_at": "2026-09-30T03:22:50Z"
         },
         "ip2location": {
           "country": "FR",

@@ -14,7 +14,7 @@
       "prefixes": [
         "2602:fb2a:d0::/46"
       ],
-      "country_pct": 100.0,
+      "country_pct": 80.0,
       "city_pct": 100.0
     },
     "Boardman, US": {
@@ -341,9 +341,9 @@
           "changed_at": "2026-06-15T23:49:40Z"
         },
         "ipinfo": {
-          "country": "NZ",
+          "country": "DE",
           "city": "",
-          "changed_at": "2026-06-15T23:49:40Z"
+          "changed_at": "2026-09-30T03:23:03Z"
         },
         "ip2location": {
           "country": "NZ",
