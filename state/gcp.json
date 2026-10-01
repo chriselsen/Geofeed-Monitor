@@ -299,8 +299,8 @@
         "8.228.192.0/19",
         "8.230.64.0/19"
       ],
-      "country_pct": 94.73684210526315,
-      "city_pct": 91.22807017543859
+      "country_pct": 96.84210526315789,
+      "city_pct": 94.73684210526315
     },
     "Doha, QA": {
       "country": "QA",
@@ -744,8 +744,8 @@
         "34.96.32.0/24",
         "35.219.224.0/19"
       ],
-      "country_pct": 97.89473684210527,
-      "city_pct": 96.49122807017544
+      "country_pct": 98.94736842105263,
+      "city_pct": 98.24561403508771
     },
     "Montreal, CA": {
       "country": "CA",
@@ -847,8 +847,8 @@
         "34.4.24.0/22",
         "34.96.33.0/24"
       ],
-      "country_pct": 93.33333333333333,
-      "city_pct": 88.88888888888889
+      "country_pct": 92.22222222222223,
+      "city_pct": 87.03703703703704
     },
     "North Charleston, US": {
       "country": "US",
@@ -1027,8 +1027,8 @@
         "34.184.109.0/24",
         "34.34.252.0/24"
       ],
-      "country_pct": 98.88888888888889,
-      "city_pct": 98.14814814814815
+      "country_pct": 96.66666666666667,
+      "city_pct": 94.44444444444444
     },
     "Sao Paulo, BR": {
       "country": "BR",
@@ -1260,7 +1260,7 @@
         "35.252.0.0/19",
         "8.230.32.0/19"
       ],
-      "country_pct": 88.75,
+      "country_pct": 91.25,
       "city_pct": 60.416666666666664
     },
     "The Dalles, US": {
@@ -21165,9 +21165,9 @@
           "changed_at": "2026-06-15T23:49:26Z"
         },
         "ip2location": {
-          "country": "CL",
-          "city": "Santiago",
-          "changed_at": "2026-09-15T02:49:20Z"
+          "country": "SA",
+          "city": "Dammam",
+          "changed_at": "2026-10-01T03:29:00Z"
         },
         "dbip": {
           "country": "CL",
@@ -21200,9 +21200,9 @@
           "changed_at": "2026-06-15T23:49:26Z"
         },
         "ip2location": {
-          "country": "CL",
-          "city": "Santiago",
-          "changed_at": "2026-09-15T02:49:20Z"
+          "country": "SA",
+          "city": "Dammam",
+          "changed_at": "2026-10-01T03:29:00Z"
         },
         "dbip": {
           "country": "CL",
@@ -21235,9 +21235,9 @@
           "changed_at": "2026-06-15T23:49:26Z"
         },
         "ip2location": {
-          "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-09-15T02:49:20Z"
+          "country": "IT",
+          "city": "Milan",
+          "changed_at": "2026-10-01T03:29:00Z"
         },
         "dbip": {
           "country": "IT",
@@ -21900,9 +21900,9 @@
           "changed_at": "2026-06-15T23:49:26Z"
         },
         "ip2location": {
-          "country": "CL",
-          "city": "Santiago",
-          "changed_at": "2026-09-15T02:49:20Z"
+          "country": "SA",
+          "city": "Dammam",
+          "changed_at": "2026-10-01T03:29:00Z"
         },
         "dbip": {
           "country": "CL",
@@ -21935,9 +21935,9 @@
           "changed_at": "2026-06-15T23:49:26Z"
         },
         "ip2location": {
-          "country": "CL",
-          "city": "Santiago",
-          "changed_at": "2026-09-15T02:49:20Z"
+          "country": "SA",
+          "city": "Dammam",
+          "changed_at": "2026-10-01T03:29:00Z"
         },
         "dbip": {
           "country": "CL",
@@ -24595,9 +24595,9 @@
           "changed_at": "2026-06-15T23:49:26Z"
         },
         "ip2location": {
-          "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-09-15T02:49:20Z"
+          "country": "IL",
+          "city": "Petah Tikva",
+          "changed_at": "2026-10-01T03:29:00Z"
         },
         "dbip": {
           "country": "US",
@@ -26695,9 +26695,9 @@
           "changed_at": "2026-06-15T23:49:26Z"
         },
         "ip2location": {
-          "country": "IN",
-          "city": "Delhi",
-          "changed_at": "2026-09-15T02:49:20Z"
+          "country": "IL",
+          "city": "Petah Tikva",
+          "changed_at": "2026-10-01T03:29:00Z"
         },
         "dbip": {
           "country": "IN",
@@ -26730,9 +26730,9 @@
           "changed_at": "2026-06-15T23:49:26Z"
         },
         "ip2location": {
-          "country": "IN",
-          "city": "Delhi",
-          "changed_at": "2026-09-15T02:49:20Z"
+          "country": "IL",
+          "city": "Petah Tikva",
+          "changed_at": "2026-10-01T03:29:00Z"
         },
         "dbip": {
           "country": "IN",
