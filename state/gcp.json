@@ -250,6 +250,7 @@
     "Dallas, US": {
       "country": "US",
       "prefixes": [
+        "152.239.128.0/18",
         "2600:1900:0:2900::/56",
         "2600:1901:8140::/44",
         "2600:1902:280::/44",
@@ -271,10 +272,11 @@
         "8.234.20.0/22",
         "8.234.24.0/21",
         "8.236.192.0/18",
+        "8.237.192.0/18",
         "8.237.64.0/18"
       ],
-      "country_pct": 95.45454545454545,
-      "city_pct": 89.39393939393939
+      "country_pct": 95.83333333333334,
+      "city_pct": 87.14285714285714
     },
     "Dammam, SA": {
       "country": "SA",
@@ -406,8 +408,8 @@
         "35.242.16.0/23",
         "8.236.144.0/20"
       ],
-      "country_pct": 99.02439024390245,
-      "city_pct": 66.66666666666666
+      "country_pct": 99.51219512195122,
+      "city_pct": 67.47967479674797
     },
     "Heringsdorf, DE": {
       "country": "DE",
@@ -601,7 +603,7 @@
         "8.234.17.0/24"
       ],
       "country_pct": 98.82352941176471,
-      "city_pct": 94.11764705882352
+      "city_pct": 98.0392156862745
     },
     "London, GB": {
       "country": "GB",
@@ -680,7 +682,7 @@
         "35.243.0.0/21"
       ],
       "country_pct": 99.2,
-      "city_pct": 96.0
+      "city_pct": 98.66666666666667
     },
     "Madrid, ES": {
       "country": "ES",
@@ -929,8 +931,8 @@
         "35.242.45.0/24",
         "35.243.56.0/21"
       ],
-      "country_pct": 96.0,
-      "city_pct": 93.33333333333333
+      "country_pct": 98.66666666666667,
+      "city_pct": 97.77777777777777
     },
     "Paris, FR": {
       "country": "FR",
@@ -947,7 +949,7 @@
         "34.184.72.0/24",
         "34.96.35.0/24"
       ],
-      "country_pct": 96.36363636363636,
+      "country_pct": 94.54545454545455,
       "city_pct": 96.96969696969697
     },
     "Phoenix, US": {
@@ -1098,6 +1100,8 @@
         "136.110.0.0/18",
         "136.85.0.0/17",
         "136.92.128.0/17",
+        "152.239.192.0/18",
+        "179.67.0.0/18",
         "2600:1900:0:3e00::/56",
         "2600:1900:4080::/44",
         "2600:1900:4334::/46",
@@ -1145,8 +1149,8 @@
         "35.242.24.0/23",
         "35.247.128.0/18"
       ],
-      "country_pct": 99.59183673469387,
-      "city_pct": 99.31972789115646
+      "country_pct": 96.47058823529412,
+      "city_pct": 96.05263157894737
     },
     "Stockholm, SE": {
       "country": "SE",
@@ -1334,7 +1338,7 @@
         "8.235.0.0/17"
       ],
       "country_pct": 99.69696969696969,
-      "city_pct": 98.98989898989899
+      "city_pct": 99.4949494949495
     },
     "Tokyo, JP": {
       "country": "JP",
@@ -1370,7 +1374,7 @@
         "35.243.64.0/18",
         "8.237.0.0/18"
       ],
-      "country_pct": 98.66666666666667,
+      "country_pct": 99.33333333333333,
       "city_pct": 66.66666666666666
     },
     "Toronto, CA": {
@@ -1666,10 +1670,13 @@
     "146.148.64.0/19",
     "146.148.8.0/21",
     "146.148.96.0/20",
+    "152.239.128.0/18",
+    "152.239.192.0/18",
     "162.216.148.0/22",
     "162.222.176.0/21",
     "173.255.112.0/21",
     "173.255.120.0/21",
+    "179.67.0.0/18",
     "192.158.28.0/22",
     "199.192.115.0/24",
     "199.223.232.0/22",
@@ -2746,6 +2753,7 @@
     "8.236.144.0/20",
     "8.236.192.0/18",
     "8.237.0.0/18",
+    "8.237.192.0/18",
     "8.237.64.0/18",
     "8.34.208.0/23",
     "8.34.210.0/24",
@@ -2968,6 +2976,7 @@
     "8.234.24.0/21": true,
     "8.236.192.0/18": true,
     "8.237.64.0/18": true,
+    "8.237.192.0/18": true,
     "34.0.128.0/19": true,
     "34.34.243.0/24": true,
     "34.127.156.0/22": true,
@@ -2980,6 +2989,7 @@
     "34.183.66.0/24": true,
     "34.184.65.0/24": true,
     "35.235.172.0/22": true,
+    "152.239.128.0/18": true,
     "2600:1901:8140::/44": true,
     "2600:1902:280::/44": true,
     "8.228.192.0/19": true,
@@ -3598,6 +3608,8 @@
     "136.85.0.0/17": true,
     "136.92.128.0/17": true,
     "136.110.0.0/18": true,
+    "152.239.192.0/18": true,
+    "179.67.0.0/18": true,
     "2600:1900:4080::/44": true,
     "2600:1900:4334::/46": true,
     "2600:1902:90::/44": true,
@@ -5245,9 +5257,9 @@
           "changed_at": "2026-09-15T02:49:20Z"
         },
         "dbip": {
-          "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-09-07T02:14:13Z"
+          "country": "NL",
+          "city": "Groningen",
+          "changed_at": "2026-10-02T03:29:58Z"
         },
         "iplocate": {
           "country": "NL",
@@ -5281,8 +5293,8 @@
         },
         "dbip": {
           "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-09-07T02:14:13Z"
+          "city": "Dallas",
+          "changed_at": "2026-10-02T03:29:58Z"
         },
         "iplocate": {
           "country": "US",
@@ -5315,9 +5327,9 @@
           "changed_at": "2026-09-15T02:49:20Z"
         },
         "dbip": {
-          "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-09-07T02:14:13Z"
+          "country": "JP",
+          "city": "Shibuya City",
+          "changed_at": "2026-10-02T03:29:58Z"
         },
         "iplocate": {
           "country": "JP",
@@ -5351,13 +5363,48 @@
         },
         "dbip": {
           "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-09-12T02:31:25Z"
+          "city": "Dallas",
+          "changed_at": "2026-10-02T03:29:58Z"
         },
         "iplocate": {
           "country": "US",
           "city": "",
           "changed_at": "2026-09-12T02:31:25Z"
+        }
+      }
+    },
+    "8.237.192.0/18": {
+      "geofeed_values": {
+        "country": "US",
+        "subdivision": "US-TX",
+        "city": "Dallas"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-02T03:29:58Z"
+        },
+        "ipinfo": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-02T03:29:58Z"
+        },
+        "ip2location": {
+          "country": "US",
+          "city": "Mountain View",
+          "changed_at": "2026-10-02T03:29:58Z"
+        },
+        "dbip": {
+          "country": "US",
+          "city": "Mountain View",
+          "changed_at": "2026-10-02T03:29:58Z"
+        },
+        "iplocate": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-02T03:29:58Z"
         }
       }
     },
@@ -5970,9 +6017,9 @@
           "changed_at": "2026-06-15T23:49:26Z"
         },
         "ipinfo": {
-          "country": "FR",
+          "country": "IE",
           "city": "",
-          "changed_at": "2026-06-15T23:49:26Z"
+          "changed_at": "2026-10-02T03:29:58Z"
         },
         "ip2location": {
           "country": "FR",
@@ -7171,8 +7218,8 @@
         },
         "dbip": {
           "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-09-07T02:14:13Z"
+          "city": "The Dalles",
+          "changed_at": "2026-10-02T03:29:58Z"
         },
         "iplocate": {
           "country": "US",
@@ -26491,8 +26538,8 @@
         },
         "dbip": {
           "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-08-29T05:03:53Z"
+          "city": "Los Angeles",
+          "changed_at": "2026-10-02T03:29:58Z"
         },
         "iplocate": {
           "country": "US",
@@ -26526,8 +26573,8 @@
         },
         "dbip": {
           "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-08-29T05:03:53Z"
+          "city": "Las Vegas",
+          "changed_at": "2026-10-02T03:29:58Z"
         },
         "iplocate": {
           "country": "US",
@@ -26560,9 +26607,9 @@
           "changed_at": "2026-09-01T02:57:50Z"
         },
         "dbip": {
-          "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-08-29T05:03:53Z"
+          "country": "JP",
+          "city": "Osaka",
+          "changed_at": "2026-10-02T03:29:58Z"
         },
         "iplocate": {
           "country": "JP",
@@ -28801,8 +28848,8 @@
         },
         "dbip": {
           "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-08-29T05:03:53Z"
+          "city": "Los Angeles",
+          "changed_at": "2026-10-02T03:29:58Z"
         },
         "iplocate": {
           "country": "US",
@@ -28836,8 +28883,8 @@
         },
         "dbip": {
           "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-08-29T05:03:53Z"
+          "city": "Las Vegas",
+          "changed_at": "2026-10-02T03:29:58Z"
         },
         "iplocate": {
           "country": "US",
@@ -28870,9 +28917,9 @@
           "changed_at": "2026-09-01T02:57:50Z"
         },
         "dbip": {
-          "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-08-29T05:03:53Z"
+          "country": "JP",
+          "city": "Osaka",
+          "changed_at": "2026-10-02T03:29:58Z"
         },
         "iplocate": {
           "country": "JP",
@@ -40886,6 +40933,76 @@
         }
       }
     },
+    "152.239.128.0/18": {
+      "geofeed_values": {
+        "country": "US",
+        "subdivision": "US-TX",
+        "city": "Dallas"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-02T03:29:58Z"
+        },
+        "ipinfo": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-02T03:29:58Z"
+        },
+        "ip2location": {
+          "country": "US",
+          "city": "Mountain View",
+          "changed_at": "2026-10-02T03:29:58Z"
+        },
+        "dbip": {
+          "country": "US",
+          "city": "Mountain View",
+          "changed_at": "2026-10-02T03:29:58Z"
+        },
+        "iplocate": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-02T03:29:58Z"
+        }
+      }
+    },
+    "152.239.192.0/18": {
+      "geofeed_values": {
+        "country": "SG",
+        "subdivision": "SG-01",
+        "city": "Singapore"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-02T03:29:58Z"
+        },
+        "ipinfo": {
+          "country": "SG",
+          "city": "",
+          "changed_at": "2026-10-02T03:29:58Z"
+        },
+        "ip2location": {
+          "country": "US",
+          "city": "Mountain View",
+          "changed_at": "2026-10-02T03:29:58Z"
+        },
+        "dbip": {
+          "country": "US",
+          "city": "Mountain View",
+          "changed_at": "2026-10-02T03:29:58Z"
+        },
+        "iplocate": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-02T03:29:58Z"
+        }
+      }
+    },
     "162.216.148.0/22": {
       "geofeed_values": {
         "country": "US",
@@ -41023,6 +41140,41 @@
           "country": "US",
           "city": "",
           "changed_at": "2026-06-15T23:49:26Z"
+        }
+      }
+    },
+    "179.67.0.0/18": {
+      "geofeed_values": {
+        "country": "SG",
+        "subdivision": "SG-01",
+        "city": "Singapore"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "BR",
+          "city": "Manaus",
+          "changed_at": "2026-10-02T03:29:58Z"
+        },
+        "ipinfo": {
+          "country": "SG",
+          "city": "",
+          "changed_at": "2026-10-02T03:29:58Z"
+        },
+        "ip2location": {
+          "country": "US",
+          "city": "Mountain View",
+          "changed_at": "2026-10-02T03:29:58Z"
+        },
+        "dbip": {
+          "country": "BR",
+          "city": "S\u00e3o Paulo",
+          "changed_at": "2026-10-02T03:29:58Z"
+        },
+        "iplocate": {
+          "country": "BR",
+          "city": "",
+          "changed_at": "2026-10-02T03:29:58Z"
         }
       }
     },
