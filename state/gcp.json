@@ -1149,7 +1149,7 @@
         "35.242.24.0/23",
         "35.247.128.0/18"
       ],
-      "country_pct": 96.47058823529412,
+      "country_pct": 95.68627450980392,
       "city_pct": 96.05263157894737
     },
     "Stockholm, SE": {
@@ -1545,7 +1545,7 @@
         "35.235.216.0/21",
         "35.242.44.0/24"
       ],
-      "country_pct": 92.85714285714286,
+      "country_pct": 91.42857142857143,
       "city_pct": 90.47619047619048
     }
   },
@@ -32407,9 +32407,9 @@
           "changed_at": "2026-06-15T23:49:26Z"
         },
         "ipinfo": {
-          "country": "CH",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-06-15T23:49:26Z"
+          "changed_at": "2026-10-03T03:13:40Z"
         },
         "ip2location": {
           "country": "CH",
@@ -40982,9 +40982,9 @@
           "changed_at": "2026-10-02T03:29:58Z"
         },
         "ipinfo": {
-          "country": "SG",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-02T03:29:58Z"
+          "changed_at": "2026-10-03T03:13:40Z"
         },
         "ip2location": {
           "country": "US",
@@ -41157,9 +41157,9 @@
           "changed_at": "2026-10-02T03:29:58Z"
         },
         "ipinfo": {
-          "country": "SG",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-02T03:29:58Z"
+          "changed_at": "2026-10-03T03:13:40Z"
         },
         "ip2location": {
           "country": "US",
