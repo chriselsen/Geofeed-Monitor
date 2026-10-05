@@ -4639,7 +4639,7 @@
         "99.83.105.0/24",
         "99.87.32.0/22"
       ],
-      "country_pct": 89.78805394990366,
+      "country_pct": 89.90366088631984,
       "city_pct": 88.41172460804363
     },
     "Frankfurt am Main, DE": {
@@ -5273,7 +5273,7 @@
         "99.83.103.0/24",
         "99.83.99.0/24"
       ],
-      "country_pct": 87.8468899521531,
+      "country_pct": 87.81499202551835,
       "city_pct": 90.07770472205618
     },
     "Hamburg, DE": {
@@ -5663,6 +5663,7 @@
       "country": "ID",
       "prefixes": [
         "1.178.19.0/24",
+        "1.178.86.0/24",
         "104.255.59.101/32",
         "104.255.59.102/32",
         "104.255.59.103/32",
@@ -5800,8 +5801,8 @@
         "99.78.238.255/32",
         "99.78.240.0/20"
       ],
-      "country_pct": 90.0,
-      "city_pct": 88.25065274151436
+      "country_pct": 89.78102189781022,
+      "city_pct": 88.08290155440415
     },
     "Kansas City, US": {
       "country": "US",
@@ -9791,7 +9792,7 @@
         "99.83.104.0/24",
         "99.87.0.0/22"
       ],
-      "country_pct": 91.1934552454283,
+      "country_pct": 91.33782483156881,
       "city_pct": 89.29765886287625
     },
     "Stockholm, SE": {
@@ -11511,6 +11512,7 @@
     "1.178.65.0/24",
     "1.178.7.0/24",
     "1.178.8.0/24",
+    "1.178.86.0/24",
     "1.178.88.0/24",
     "1.178.89.0/24",
     "1.178.9.0/24",
@@ -25512,6 +25514,7 @@
     "99.78.228.0/22": true,
     "64.66.153.0/24": true,
     "65.4.0.0/16": true,
+    "1.178.86.0/24": true,
     "15.232.0.0/16": true,
     "16.79.0.0/16": true,
     "15.233.0.0/16": true,
@@ -102243,9 +102246,9 @@
           "changed_at": "2026-08-02T02:07:02Z"
         },
         "iplocate": {
-          "country": "DE",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-04T03:42:39Z"
+          "changed_at": "2026-10-05T03:25:40Z"
         }
       }
     },
@@ -155064,6 +155067,41 @@
         }
       }
     },
+    "1.178.86.0/24": {
+      "geofeed_values": {
+        "country": "ID",
+        "subdivision": "ID-JK",
+        "city": "Jakarta"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "ID",
+          "city": "Jakarta",
+          "changed_at": "2026-10-05T03:25:40Z"
+        },
+        "ipinfo": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-05T03:25:40Z"
+        },
+        "ip2location": {
+          "country": "ID",
+          "city": "Jakarta",
+          "changed_at": "2026-10-05T03:25:40Z"
+        },
+        "dbip": {
+          "country": "US",
+          "city": "New York",
+          "changed_at": "2026-10-05T03:25:40Z"
+        },
+        "iplocate": {
+          "country": "ID",
+          "city": "",
+          "changed_at": "2026-10-05T03:25:40Z"
+        }
+      }
+    },
     "54.239.1.144/28": {
       "geofeed_values": {
         "country": "ID",
@@ -173608,9 +173646,9 @@
           "changed_at": "2026-10-03T03:13:51Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "IE",
           "city": "",
-          "changed_at": "2026-10-03T03:13:51Z"
+          "changed_at": "2026-10-05T03:25:40Z"
         }
       }
     },
@@ -175393,9 +175431,9 @@
           "changed_at": "2026-10-03T03:13:51Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "IE",
           "city": "",
-          "changed_at": "2026-10-03T03:13:51Z"
+          "changed_at": "2026-10-05T03:25:40Z"
         }
       }
     },
@@ -175708,9 +175746,9 @@
           "changed_at": "2026-10-03T03:13:51Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "IE",
           "city": "",
-          "changed_at": "2026-10-03T03:13:51Z"
+          "changed_at": "2026-10-05T03:25:40Z"
         }
       }
     },
@@ -254038,9 +254076,9 @@
           "changed_at": "2026-10-03T03:13:51Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "SG",
           "city": "",
-          "changed_at": "2026-10-03T03:13:51Z"
+          "changed_at": "2026-10-05T03:25:40Z"
         }
       }
     },
@@ -256208,9 +256246,9 @@
           "changed_at": "2026-10-03T03:13:51Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "SG",
           "city": "",
-          "changed_at": "2026-10-03T03:13:51Z"
+          "changed_at": "2026-10-05T03:25:40Z"
         }
       }
     },
@@ -264223,9 +264261,9 @@
           "changed_at": "2026-10-03T03:13:51Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "SG",
           "city": "",
-          "changed_at": "2026-10-03T03:13:51Z"
+          "changed_at": "2026-10-05T03:25:40Z"
         }
       }
     },
