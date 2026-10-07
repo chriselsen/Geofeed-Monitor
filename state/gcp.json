@@ -279,7 +279,7 @@
         "8.237.64.0/18"
       ],
       "country_pct": 95.83333333333334,
-      "city_pct": 87.14285714285714
+      "city_pct": 87.5
     },
     "Dammam, SA": {
       "country": "SA",
@@ -1161,8 +1161,8 @@
         "35.242.24.0/23",
         "35.247.128.0/18"
       ],
-      "country_pct": 95.38461538461539,
-      "city_pct": 94.8051948051948
+      "country_pct": 96.15384615384616,
+      "city_pct": 95.48387096774194
     },
     "Stockholm, SE": {
       "country": "SE",
@@ -5478,8 +5478,8 @@
       "providers": {
         "maxmind": {
           "country": "US",
-          "city": "",
-          "changed_at": "2026-10-02T03:29:58Z"
+          "city": "Dallas",
+          "changed_at": "2026-10-07T03:39:45Z"
         },
         "ipinfo": {
           "country": "US",
@@ -41528,8 +41528,8 @@
       "providers": {
         "maxmind": {
           "country": "US",
-          "city": "",
-          "changed_at": "2026-10-02T03:29:58Z"
+          "city": "Dallas",
+          "changed_at": "2026-10-07T03:39:45Z"
         },
         "ipinfo": {
           "country": "US",
@@ -41562,9 +41562,9 @@
       "geofeed_changed_at": null,
       "providers": {
         "maxmind": {
-          "country": "US",
-          "city": "",
-          "changed_at": "2026-10-02T03:29:58Z"
+          "country": "SG",
+          "city": "Singapore",
+          "changed_at": "2026-10-07T03:39:45Z"
         },
         "ipinfo": {
           "country": "SG",
@@ -41737,9 +41737,9 @@
       "geofeed_changed_at": null,
       "providers": {
         "maxmind": {
-          "country": "BR",
-          "city": "Manaus",
-          "changed_at": "2026-10-02T03:29:58Z"
+          "country": "SG",
+          "city": "Singapore",
+          "changed_at": "2026-10-07T03:39:45Z"
         },
         "ipinfo": {
           "country": "SG",
