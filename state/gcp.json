@@ -495,7 +495,7 @@
         "34.96.57.0/24",
         "35.219.0.0/17"
       ],
-      "country_pct": 97.27272727272728,
+      "country_pct": 96.36363636363636,
       "city_pct": 95.45454545454545
     },
     "Johannesburg, ZA": {
@@ -583,7 +583,7 @@
         "35.228.0.0/16",
         "35.242.26.0/24"
       ],
-      "country_pct": 95.38461538461539,
+      "country_pct": 93.84615384615384,
       "city_pct": 66.66666666666666
     },
     "Las Vegas, US": {
@@ -753,7 +753,7 @@
         "34.96.32.0/24",
         "35.219.224.0/19"
       ],
-      "country_pct": 95.23809523809523,
+      "country_pct": 93.33333333333333,
       "city_pct": 92.06349206349206
     },
     "Montreal, CA": {
@@ -833,7 +833,7 @@
         "8.231.64.0/18",
         "8.234.64.0/18"
       ],
-      "country_pct": 97.36842105263158,
+      "country_pct": 96.3157894736842,
       "city_pct": 95.6140350877193
     },
     "New Delhi, IN": {
@@ -860,7 +860,7 @@
         "34.4.24.0/22",
         "34.96.33.0/24"
       ],
-      "country_pct": 89.0,
+      "country_pct": 87.0,
       "city_pct": 81.66666666666667
     },
     "North Charleston, US": {
@@ -1412,7 +1412,7 @@
         "34.184.30.0/24",
         "34.34.232.0/24"
       ],
-      "country_pct": 92.94117647058823,
+      "country_pct": 90.58823529411765,
       "city_pct": 86.27450980392157
     },
     "Tulsa, US": {
@@ -1477,7 +1477,7 @@
         "34.34.242.0/24",
         "34.4.64.0/20"
       ],
-      "country_pct": 95.38461538461539,
+      "country_pct": 93.84615384615384,
       "city_pct": 92.3076923076923
     },
     "Washington, US": {
@@ -1565,7 +1565,7 @@
         "35.235.216.0/21",
         "35.242.44.0/24"
       ],
-      "country_pct": 90.66666666666666,
+      "country_pct": 89.33333333333333,
       "city_pct": 86.66666666666667
     }
   },
@@ -7877,9 +7877,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "iplocate": {
-          "country": "ID",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "changed_at": "2026-10-11T03:17:00Z"
         }
       }
     },
@@ -26812,9 +26812,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "iplocate": {
-          "country": "CA",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "changed_at": "2026-10-11T03:17:00Z"
         }
       }
     },
@@ -26847,9 +26847,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "iplocate": {
-          "country": "IT",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "changed_at": "2026-10-11T03:17:00Z"
         }
       }
     },
@@ -26882,9 +26882,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "iplocate": {
-          "country": "IN",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "changed_at": "2026-10-11T03:17:00Z"
         }
       }
     },
@@ -26917,9 +26917,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "iplocate": {
-          "country": "IN",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "changed_at": "2026-10-11T03:17:00Z"
         }
       }
     },
@@ -29297,9 +29297,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "iplocate": {
-          "country": "CA",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "changed_at": "2026-10-11T03:17:00Z"
         }
       }
     },
@@ -29367,9 +29367,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "iplocate": {
-          "country": "SG",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "changed_at": "2026-10-11T03:17:00Z"
         }
       }
     },
@@ -29402,9 +29402,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "iplocate": {
-          "country": "IT",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "changed_at": "2026-10-11T03:17:00Z"
         }
       }
     },
@@ -29437,9 +29437,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "iplocate": {
-          "country": "IN",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "changed_at": "2026-10-11T03:17:00Z"
         }
       }
     },
@@ -29472,9 +29472,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "iplocate": {
-          "country": "IN",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "changed_at": "2026-10-11T03:17:00Z"
         }
       }
     },
@@ -41757,9 +41757,9 @@
           "changed_at": "2026-10-02T03:29:58Z"
         },
         "iplocate": {
-          "country": "BR",
+          "country": "SG",
           "city": "",
-          "changed_at": "2026-10-08T03:58:13Z"
+          "changed_at": "2026-10-11T03:17:00Z"
         }
       }
     },
@@ -41862,9 +41862,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "iplocate": {
-          "country": "PL",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "changed_at": "2026-10-11T03:17:00Z"
         }
       }
     },
@@ -41897,9 +41897,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "iplocate": {
-          "country": "CH",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "changed_at": "2026-10-11T03:17:00Z"
         }
       }
     },
@@ -41932,9 +41932,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "iplocate": {
-          "country": "FI",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "changed_at": "2026-10-11T03:17:00Z"
         }
       }
     },
