@@ -124,7 +124,7 @@
         "8.237.160.0/19"
       ],
       "country_pct": 99.0909090909091,
-      "city_pct": 95.45454545454545
+      "city_pct": 96.96969696969697
     },
     "Council Bluffs, US": {
       "country": "US",
@@ -248,7 +248,7 @@
         "8.35.192.0/21"
       ],
       "country_pct": 99.82905982905983,
-      "city_pct": 98.57549857549857
+      "city_pct": 99.14529914529915
     },
     "Dallas, US": {
       "country": "US",
@@ -279,7 +279,7 @@
         "8.237.64.0/18"
       ],
       "country_pct": 95.83333333333334,
-      "city_pct": 87.5
+      "city_pct": 90.27777777777779
     },
     "Dammam, SA": {
       "country": "SA",
@@ -495,8 +495,8 @@
         "34.96.57.0/24",
         "35.219.0.0/17"
       ],
-      "country_pct": 97.27272727272728,
-      "city_pct": 95.45454545454545
+      "country_pct": 98.18181818181819,
+      "city_pct": 96.96969696969697
     },
     "Johannesburg, ZA": {
       "country": "ZA",
@@ -583,7 +583,7 @@
         "35.228.0.0/16",
         "35.242.26.0/24"
       ],
-      "country_pct": 95.38461538461539,
+      "country_pct": 96.92307692307692,
       "city_pct": 66.66666666666666
     },
     "Las Vegas, US": {
@@ -753,8 +753,8 @@
         "34.96.32.0/24",
         "35.219.224.0/19"
       ],
-      "country_pct": 95.23809523809523,
-      "city_pct": 92.06349206349206
+      "country_pct": 97.14285714285714,
+      "city_pct": 95.23809523809523
     },
     "Montreal, CA": {
       "country": "CA",
@@ -833,8 +833,8 @@
         "8.231.64.0/18",
         "8.234.64.0/18"
       ],
-      "country_pct": 97.36842105263158,
-      "city_pct": 95.6140350877193
+      "country_pct": 98.42105263157895,
+      "city_pct": 97.36842105263158
     },
     "New Delhi, IN": {
       "country": "IN",
@@ -860,8 +860,8 @@
         "34.4.24.0/22",
         "34.96.33.0/24"
       ],
-      "country_pct": 89.0,
-      "city_pct": 81.66666666666667
+      "country_pct": 95.0,
+      "city_pct": 91.66666666666666
     },
     "North Charleston, US": {
       "country": "US",
@@ -1040,8 +1040,8 @@
         "34.184.109.0/24",
         "34.34.252.0/24"
       ],
-      "country_pct": 96.66666666666667,
-      "city_pct": 94.44444444444444
+      "country_pct": 94.44444444444444,
+      "city_pct": 90.74074074074075
     },
     "Sao Paulo, BR": {
       "country": "BR",
@@ -1161,8 +1161,8 @@
         "35.242.24.0/23",
         "35.247.128.0/18"
       ],
-      "country_pct": 96.92307692307692,
-      "city_pct": 95.51282051282051
+      "country_pct": 98.07692307692307,
+      "city_pct": 97.43589743589743
     },
     "Stockholm, SE": {
       "country": "SE",
@@ -1276,7 +1276,7 @@
         "35.252.0.0/19",
         "8.230.32.0/19"
       ],
-      "country_pct": 91.25,
+      "country_pct": 90.0,
       "city_pct": 60.416666666666664
     },
     "The Dalles, US": {
@@ -1352,7 +1352,7 @@
         "8.235.0.0/17"
       ],
       "country_pct": 99.11764705882354,
-      "city_pct": 97.54901960784314
+      "city_pct": 98.52941176470588
     },
     "Tokyo, JP": {
       "country": "JP",
@@ -1457,8 +1457,8 @@
         "34.184.113.0/24",
         "34.34.238.0/24"
       ],
-      "country_pct": 93.33333333333333,
-      "city_pct": 88.88888888888889
+      "country_pct": 96.0,
+      "city_pct": 93.33333333333333
     },
     "Warsaw, PL": {
       "country": "PL",
@@ -1477,8 +1477,8 @@
         "34.34.242.0/24",
         "34.4.64.0/20"
       ],
-      "country_pct": 95.38461538461539,
-      "city_pct": 92.3076923076923
+      "country_pct": 96.92307692307692,
+      "city_pct": 94.87179487179486
     },
     "Washington, US": {
       "country": "US",
@@ -1565,8 +1565,8 @@
         "35.235.216.0/21",
         "35.242.44.0/24"
       ],
-      "country_pct": 90.66666666666666,
-      "city_pct": 86.66666666666667
+      "country_pct": 92.0,
+      "city_pct": 88.88888888888889
     }
   },
   "prefixes": [
@@ -5453,8 +5453,8 @@
         },
         "ip2location": {
           "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "city": "Columbus",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "US",
@@ -5488,8 +5488,8 @@
         },
         "ip2location": {
           "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-10-02T03:29:58Z"
+          "city": "Dallas",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "US",
@@ -7867,9 +7867,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "ip2location": {
-          "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "country": "ID",
+          "city": "Jakarta",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "US",
@@ -18892,9 +18892,9 @@
           "changed_at": "2026-06-15T23:49:26Z"
         },
         "ip2location": {
-          "country": "CA",
-          "city": "Toronto",
-          "changed_at": "2026-09-15T02:49:20Z"
+          "country": "IT",
+          "city": "Torino",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "IT",
@@ -18927,9 +18927,9 @@
           "changed_at": "2026-06-15T23:49:26Z"
         },
         "ip2location": {
-          "country": "CA",
-          "city": "Toronto",
-          "changed_at": "2026-09-15T02:49:20Z"
+          "country": "IT",
+          "city": "Torino",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "IT",
@@ -18962,9 +18962,9 @@
           "changed_at": "2026-06-15T23:49:26Z"
         },
         "ip2location": {
-          "country": "CL",
-          "city": "Santiago",
-          "changed_at": "2026-09-15T02:49:20Z"
+          "country": "IN",
+          "city": "Delhi",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "CL",
@@ -18997,9 +18997,9 @@
           "changed_at": "2026-06-15T23:49:26Z"
         },
         "ip2location": {
-          "country": "CL",
-          "city": "Santiago",
-          "changed_at": "2026-09-15T02:49:20Z"
+          "country": "IN",
+          "city": "Delhi",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "CL",
@@ -23547,9 +23547,9 @@
           "changed_at": "2026-06-15T23:49:26Z"
         },
         "ip2location": {
-          "country": "CA",
-          "city": "Toronto",
-          "changed_at": "2026-09-15T02:49:20Z"
+          "country": "IT",
+          "city": "Torino",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "IT",
@@ -23582,9 +23582,9 @@
           "changed_at": "2026-06-15T23:49:26Z"
         },
         "ip2location": {
-          "country": "CA",
-          "city": "Toronto",
-          "changed_at": "2026-09-15T02:49:20Z"
+          "country": "IT",
+          "city": "Torino",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "IT",
@@ -23617,9 +23617,9 @@
           "changed_at": "2026-06-15T23:49:26Z"
         },
         "ip2location": {
-          "country": "CL",
-          "city": "Santiago",
-          "changed_at": "2026-09-15T02:49:20Z"
+          "country": "IN",
+          "city": "Delhi",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "CL",
@@ -23652,9 +23652,9 @@
           "changed_at": "2026-06-15T23:49:26Z"
         },
         "ip2location": {
-          "country": "CL",
-          "city": "Santiago",
-          "changed_at": "2026-09-15T02:49:20Z"
+          "country": "IN",
+          "city": "Delhi",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "CL",
@@ -23932,9 +23932,9 @@
           "changed_at": "2026-06-15T23:49:26Z"
         },
         "ip2location": {
-          "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-06-15T23:49:26Z"
+          "country": "IT",
+          "city": "Torino",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "IT",
@@ -24527,9 +24527,9 @@
           "changed_at": "2026-06-15T23:49:26Z"
         },
         "ip2location": {
-          "country": "IT",
-          "city": "Torino",
-          "changed_at": "2026-08-15T00:50:25Z"
+          "country": "IN",
+          "city": "Delhi",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "IN",
@@ -24562,9 +24562,9 @@
           "changed_at": "2026-06-15T23:49:26Z"
         },
         "ip2location": {
-          "country": "IT",
-          "city": "Torino",
-          "changed_at": "2026-08-15T00:50:25Z"
+          "country": "IN",
+          "city": "Delhi",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "IN",
@@ -26768,8 +26768,8 @@
         },
         "ip2location": {
           "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "city": "Ashburn",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "US",
@@ -26802,9 +26802,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "ip2location": {
-          "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "country": "CA",
+          "city": "Toronto",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "US",
@@ -26837,9 +26837,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "ip2location": {
-          "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "country": "IT",
+          "city": "Milan",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "US",
@@ -26872,9 +26872,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "ip2location": {
-          "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "country": "IN",
+          "city": "Delhi",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "US",
@@ -26907,9 +26907,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "ip2location": {
-          "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "country": "IN",
+          "city": "Mumbai",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "US",
@@ -26943,8 +26943,8 @@
         },
         "ip2location": {
           "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "city": "Council Bluffs",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "US",
@@ -27082,9 +27082,9 @@
           "changed_at": "2026-06-15T23:49:26Z"
         },
         "ip2location": {
-          "country": "IL",
-          "city": "Petah Tikva",
-          "changed_at": "2026-10-01T03:29:00Z"
+          "country": "IN",
+          "city": "Delhi",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "IN",
@@ -27117,9 +27117,9 @@
           "changed_at": "2026-06-15T23:49:26Z"
         },
         "ip2location": {
-          "country": "IL",
-          "city": "Petah Tikva",
-          "changed_at": "2026-10-01T03:29:00Z"
+          "country": "IN",
+          "city": "Delhi",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "IN",
@@ -29287,9 +29287,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "ip2location": {
-          "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "country": "CA",
+          "city": "Toronto",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "US",
@@ -29323,8 +29323,8 @@
         },
         "ip2location": {
           "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "city": "Ashburn",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "US",
@@ -29357,9 +29357,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "ip2location": {
-          "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "country": "SG",
+          "city": "Singapore",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "US",
@@ -29392,9 +29392,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "ip2location": {
-          "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "country": "IT",
+          "city": "Milan",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "US",
@@ -29427,9 +29427,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "ip2location": {
-          "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "country": "IN",
+          "city": "Delhi",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "US",
@@ -29462,9 +29462,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "ip2location": {
-          "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "country": "IN",
+          "city": "Mumbai",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "US",
@@ -29498,8 +29498,8 @@
         },
         "ip2location": {
           "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "city": "Council Bluffs",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "US",
@@ -41538,8 +41538,8 @@
         },
         "ip2location": {
           "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-10-02T03:29:58Z"
+          "city": "Dallas",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "US",
@@ -41572,9 +41572,9 @@
           "changed_at": "2026-10-04T03:42:29Z"
         },
         "ip2location": {
-          "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-10-02T03:29:58Z"
+          "country": "SG",
+          "city": "Singapore",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "US",
@@ -41747,9 +41747,9 @@
           "changed_at": "2026-10-04T03:42:29Z"
         },
         "ip2location": {
-          "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-10-02T03:29:58Z"
+          "country": "SG",
+          "city": "Singapore",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "BR",
@@ -41783,8 +41783,8 @@
         },
         "ip2location": {
           "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "city": "The Dalles",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "BR",
@@ -41818,8 +41818,8 @@
         },
         "ip2location": {
           "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "city": "The Dalles",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "US",
@@ -41852,9 +41852,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "ip2location": {
-          "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "country": "PL",
+          "city": "Warsaw",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "US",
@@ -41887,9 +41887,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "ip2location": {
-          "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "country": "CH",
+          "city": "Zurich",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "US",
@@ -41922,9 +41922,9 @@
           "changed_at": "2026-10-10T03:44:05Z"
         },
         "ip2location": {
-          "country": "US",
-          "city": "Mountain View",
-          "changed_at": "2026-10-10T03:44:05Z"
+          "country": "FI",
+          "city": "Helsinki",
+          "changed_at": "2026-10-15T02:40:16Z"
         },
         "dbip": {
           "country": "US",
