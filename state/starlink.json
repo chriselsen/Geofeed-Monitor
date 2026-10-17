@@ -2509,7 +2509,7 @@
       "prefixes": [
         "9.161.65.0/24"
       ],
-      "country_pct": 40.0,
+      "country_pct": 60.0,
       "city_pct": 0.0
     },
     "Huntsville, US": {
@@ -3118,7 +3118,7 @@
         "9.246.98.0/24",
         "9.246.99.0/24"
       ],
-      "country_pct": 99.34959349593497,
+      "country_pct": 98.86178861788618,
       "city_pct": 100.0
     },
     "Lagos, NG": {
@@ -3839,7 +3839,7 @@
       "prefixes": [
         "9.161.67.0/24"
       ],
-      "country_pct": 40.0,
+      "country_pct": 60.0,
       "city_pct": 0.0
     },
     "Melbourne, AU": {
@@ -3884,7 +3884,7 @@
       "prefixes": [
         "9.161.66.0/24"
       ],
-      "country_pct": 60.0,
+      "country_pct": 80.0,
       "city_pct": 0.0
     },
     "Memphis, US": {
@@ -5893,7 +5893,7 @@
         "98.97.99.0/24"
       ],
       "country_pct": 98.0392156862745,
-      "city_pct": 94.52054794520548
+      "city_pct": 94.5578231292517
     },
     "Seoul, KR": {
       "country": "KR",
@@ -14876,7 +14876,7 @@
     "129.224.220.0/24": true,
     "2605:59c1::/38": true,
     "2605:59c0:9200::/40": true,
-    "2605:59c1:1e00::/40": false,
+    "2605:59c1:1e00::/40": true,
     "2605:59c8::/40": true,
     "2605:59c8:100::/40": true,
     "2605:59c8:400::/40": true,
@@ -15434,9 +15434,9 @@
       "geofeed_changed_at": null,
       "providers": {
         "maxmind": {
-          "country": "US",
+          "country": "CA",
           "city": "",
-          "changed_at": "2026-10-14T03:00:28Z"
+          "changed_at": "2026-10-17T02:28:18Z"
         },
         "ipinfo": {
           "country": "US",
@@ -15469,9 +15469,9 @@
       "geofeed_changed_at": null,
       "providers": {
         "maxmind": {
-          "country": "US",
+          "country": "CA",
           "city": "",
-          "changed_at": "2026-10-14T03:00:28Z"
+          "changed_at": "2026-10-17T02:28:18Z"
         },
         "ipinfo": {
           "country": "CA",
@@ -15504,9 +15504,9 @@
       "geofeed_changed_at": null,
       "providers": {
         "maxmind": {
-          "country": "US",
+          "country": "CA",
           "city": "",
-          "changed_at": "2026-10-14T03:00:28Z"
+          "changed_at": "2026-10-17T02:28:18Z"
         },
         "ipinfo": {
           "country": "US",
@@ -52974,9 +52974,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "UA",
           "city": "",
-          "changed_at": "2026-10-03T03:13:55Z"
+          "changed_at": "2026-10-17T02:28:18Z"
         }
       }
     },
@@ -101659,9 +101659,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "UA",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-06-26T00:40:15Z"
+          "changed_at": "2026-10-17T02:28:18Z"
         }
       }
     },
@@ -101694,9 +101694,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "UA",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-06-26T00:40:15Z"
+          "changed_at": "2026-10-17T02:28:18Z"
         }
       }
     },
@@ -101729,9 +101729,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "UA",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-06-26T00:40:15Z"
+          "changed_at": "2026-10-17T02:28:18Z"
         }
       }
     },
@@ -101764,9 +101764,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "UA",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-06-26T00:40:15Z"
+          "changed_at": "2026-10-17T02:28:18Z"
         }
       }
     },
@@ -150745,8 +150745,8 @@
       "providers": {
         "maxmind": {
           "country": "US",
-          "city": "",
-          "changed_at": "2026-10-16T02:36:03Z"
+          "city": "Seattle",
+          "changed_at": "2026-10-17T02:28:18Z"
         },
         "ipinfo": {
           "country": "US",
