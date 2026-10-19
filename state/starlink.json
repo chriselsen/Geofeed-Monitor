@@ -480,7 +480,7 @@
         "2a0d:3341:cb00::/40",
         "2a0d:3341:de00::/40"
       ],
-      "country_pct": 97.5,
+      "country_pct": 95.0,
       "city_pct": 100.0
     },
     "Baku, AZ": {
@@ -2880,7 +2880,7 @@
         "98.97.170.0/24",
         "98.97.171.0/24"
       ],
-      "country_pct": 96.36363636363636,
+      "country_pct": 94.54545454545455,
       "city_pct": 96.96969696969697
     },
     "Kolkata, IN": {
@@ -4750,7 +4750,7 @@
         "98.97.174.0/24",
         "98.97.175.0/24"
       ],
-      "country_pct": 100.0,
+      "country_pct": 99.0,
       "city_pct": 100.0
     },
     "Pago Pago, AS": {
@@ -5203,7 +5203,7 @@
         "2605:59c0:8100::/40",
         "2a0d:3341:fc00::/40"
       ],
-      "country_pct": 96.66666666666667,
+      "country_pct": 100.0,
       "city_pct": 100.0
     },
     "Providence, US": {
@@ -5814,7 +5814,7 @@
         "98.97.156.0/24",
         "98.97.157.0/24"
       ],
-      "country_pct": 97.04545454545455,
+      "country_pct": 96.5909090909091,
       "city_pct": 93.05019305019306
     },
     "Sao Tome, ST": {
@@ -73589,9 +73589,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "BR",
+          "country": "CL",
           "city": "",
-          "changed_at": "2026-10-03T03:13:55Z"
+          "changed_at": "2026-10-19T02:42:40Z"
         }
       }
     },
@@ -73624,9 +73624,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "BR",
+          "country": "CL",
           "city": "",
-          "changed_at": "2026-10-03T03:13:55Z"
+          "changed_at": "2026-10-19T02:42:40Z"
         }
       }
     },
@@ -99909,9 +99909,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "CD",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-16T02:36:03Z"
+          "changed_at": "2026-10-19T02:42:40Z"
         }
       }
     },
@@ -101274,9 +101274,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "BF",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-06T04:12:44Z"
+          "changed_at": "2026-10-19T02:42:40Z"
         }
       }
     },
@@ -108029,9 +108029,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "CV",
           "city": "",
-          "changed_at": "2026-10-18T02:28:35Z"
+          "changed_at": "2026-10-19T02:42:40Z"
         }
       }
     },
@@ -130359,9 +130359,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "IQ",
+          "country": "QA",
           "city": "",
-          "changed_at": "2026-10-12T03:40:14Z"
+          "changed_at": "2026-10-19T02:42:40Z"
         }
       }
     },
