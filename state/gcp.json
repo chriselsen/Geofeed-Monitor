@@ -468,7 +468,7 @@
         "35.206.10.0/23"
       ],
       "country_pct": 92.3076923076923,
-      "city_pct": 60.526315789473685
+      "city_pct": 61.53846153846154
     },
     "Jakarta, ID": {
       "country": "ID",
@@ -7161,8 +7161,8 @@
       "providers": {
         "maxmind": {
           "country": "US",
-          "city": "",
-          "changed_at": "2026-10-19T02:42:30Z"
+          "city": "Huntsville",
+          "changed_at": "2026-10-21T02:48:27Z"
         },
         "ipinfo": {
           "country": "US",
