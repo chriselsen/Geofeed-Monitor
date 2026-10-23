@@ -352,7 +352,7 @@
         "14.1.93.0/24",
         "2406:2d40:4800::/40"
       ],
-      "country_pct": 86.66666666666667,
+      "country_pct": 100.0,
       "city_pct": 100.0
     },
     "Athens, GR": {
@@ -3152,7 +3152,7 @@
         "9.246.98.0/24",
         "9.246.99.0/24"
       ],
-      "country_pct": 99.34959349593497,
+      "country_pct": 99.02439024390245,
       "city_pct": 100.0
     },
     "Lagos, NG": {
@@ -34567,9 +34567,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "AU",
+          "country": "TK",
           "city": "",
-          "changed_at": "2026-10-22T02:47:54Z"
+          "changed_at": "2026-10-23T02:51:03Z"
         }
       }
     },
@@ -34602,9 +34602,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "AU",
+          "country": "TK",
           "city": "",
-          "changed_at": "2026-10-22T02:47:54Z"
+          "changed_at": "2026-10-23T02:51:03Z"
         }
       }
     },
@@ -53922,9 +53922,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "UA",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-13T04:53:37Z"
+          "changed_at": "2026-10-23T02:51:03Z"
         }
       }
     },
@@ -53957,9 +53957,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "UA",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-13T04:53:37Z"
+          "changed_at": "2026-10-23T02:51:03Z"
         }
       }
     },
