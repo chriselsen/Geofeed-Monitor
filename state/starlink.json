@@ -1246,7 +1246,7 @@
         "98.97.148.0/24",
         "98.97.149.0/24"
       ],
-      "country_pct": 93.28125,
+      "country_pct": 93.4375,
       "city_pct": 61.96808510638297
     },
     "Buffalo, US": {
@@ -1725,10 +1725,6 @@
         "153.67.251.0/24",
         "153.67.252.0/24",
         "153.67.253.0/24",
-        "179.65.172.0/24",
-        "179.65.173.0/24",
-        "179.65.174.0/24",
-        "179.65.175.0/24",
         "2605:59c0:7000::/45",
         "2605:59c0:a400::/38",
         "2605:59c0:a800::/38",
@@ -1849,8 +1845,8 @@
         "98.97.94.0/24",
         "98.97.95.0/24"
       ],
-      "country_pct": 99.64071856287426,
-      "city_pct": 99.40119760479041
+      "country_pct": 100.0,
+      "city_pct": 100.0
     },
     "Damascus, SY": {
       "country": "SY",
@@ -2191,12 +2187,16 @@
         "153.66.29.0/24",
         "179.64.6.0/24",
         "179.64.7.0/24",
+        "179.65.172.0/24",
+        "179.65.173.0/24",
+        "179.65.174.0/24",
+        "179.65.175.0/24",
         "2605:59ca:3a00::/40",
         "9.170.28.0/24",
         "9.170.29.0/24"
       ],
-      "country_pct": 100.0,
-      "city_pct": 100.0
+      "country_pct": 95.38461538461539,
+      "city_pct": 69.23076923076923
     },
     "Fargo, US": {
       "country": "US",
@@ -4627,7 +4627,7 @@
         "9.170.56.0/24",
         "9.170.57.0/24"
       ],
-      "country_pct": 83.52941176470588,
+      "country_pct": 84.70588235294117,
       "city_pct": 85.1063829787234
     },
     "Nicosia, CY": {
@@ -5257,7 +5257,7 @@
         "2605:59c0:8100::/40",
         "2a0d:3341:fc00::/40"
       ],
-      "country_pct": 100.0,
+      "country_pct": 96.66666666666667,
       "city_pct": 100.0
     },
     "Providence, US": {
@@ -5646,7 +5646,7 @@
         "9.170.182.0/24",
         "9.170.183.0/24"
       ],
-      "country_pct": 86.08695652173914,
+      "country_pct": 86.95652173913044,
       "city_pct": 79.71014492753623
     },
     "San Salvador, SV": {
@@ -6058,7 +6058,7 @@
         "9.246.48.0/24",
         "9.246.49.0/24"
       ],
-      "country_pct": 90.9090909090909,
+      "country_pct": 91.51515151515152,
       "city_pct": 85.85858585858585
     },
     "St Helier, JE": {
@@ -12535,10 +12535,6 @@
     "153.67.251.0/24": true,
     "153.67.252.0/24": true,
     "153.67.253.0/24": true,
-    "179.65.172.0/24": true,
-    "179.65.173.0/24": true,
-    "179.65.174.0/24": true,
-    "179.65.175.0/24": true,
     "2605:59c0:a400::/38": true,
     "2605:59c0:a800::/38": true,
     "2605:59c0:ac00::/38": true,
@@ -12766,6 +12762,10 @@
     "153.66.29.0/24": true,
     "179.64.6.0/24": true,
     "179.64.7.0/24": true,
+    "179.65.172.0/24": true,
+    "179.65.173.0/24": true,
+    "179.65.174.0/24": true,
+    "179.65.175.0/24": true,
     "2605:59ca:3a00::/40": true,
     "98.97.70.0/24": true,
     "98.97.71.0/24": true,
@@ -41147,9 +41147,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "UA",
+          "country": "CA",
           "city": "",
-          "changed_at": "2026-09-20T02:46:25Z"
+          "changed_at": "2026-10-24T02:48:04Z"
         }
       }
     },
@@ -41182,9 +41182,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "UA",
+          "country": "CA",
           "city": "",
-          "changed_at": "2026-09-20T02:46:25Z"
+          "changed_at": "2026-10-24T02:48:04Z"
         }
       }
     },
@@ -53922,9 +53922,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "UA",
           "city": "",
-          "changed_at": "2026-10-23T02:51:03Z"
+          "changed_at": "2026-10-24T02:48:04Z"
         }
       }
     },
@@ -53957,9 +53957,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "UA",
           "city": "",
-          "changed_at": "2026-10-23T02:51:03Z"
+          "changed_at": "2026-10-24T02:48:04Z"
         }
       }
     },
@@ -66767,9 +66767,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "SD",
+          "country": "NE",
           "city": "",
-          "changed_at": "2026-09-30T03:23:04Z"
+          "changed_at": "2026-10-24T02:48:04Z"
         }
       }
     },
@@ -109607,9 +109607,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "CV",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-19T02:42:40Z"
+          "changed_at": "2026-10-24T02:48:04Z"
         }
       }
     },
@@ -117807,9 +117807,9 @@
       "geofeed_values": {
         "country": "US",
         "subdivision": "US-TX",
-        "city": "Dallas"
+        "city": "El Paso"
       },
-      "geofeed_changed_at": "2026-06-15T23:49:41Z",
+      "geofeed_changed_at": "2026-10-24T02:48:04Z",
       "providers": {
         "maxmind": {
           "country": "AU",
@@ -117842,9 +117842,9 @@
       "geofeed_values": {
         "country": "US",
         "subdivision": "US-TX",
-        "city": "Dallas"
+        "city": "El Paso"
       },
-      "geofeed_changed_at": "2026-06-15T23:49:41Z",
+      "geofeed_changed_at": "2026-10-24T02:48:04Z",
       "providers": {
         "maxmind": {
           "country": "AU",
@@ -117877,9 +117877,9 @@
       "geofeed_values": {
         "country": "US",
         "subdivision": "US-TX",
-        "city": "Dallas"
+        "city": "El Paso"
       },
-      "geofeed_changed_at": "2026-06-15T23:49:41Z",
+      "geofeed_changed_at": "2026-10-24T02:48:04Z",
       "providers": {
         "maxmind": {
           "country": "US",
@@ -117912,9 +117912,9 @@
       "geofeed_values": {
         "country": "US",
         "subdivision": "US-TX",
-        "city": "Dallas"
+        "city": "El Paso"
       },
-      "geofeed_changed_at": "2026-06-15T23:49:41Z",
+      "geofeed_changed_at": "2026-10-24T02:48:04Z",
       "providers": {
         "maxmind": {
           "country": "AU",
@@ -130327,9 +130327,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "DE",
+          "country": "BG",
           "city": "",
-          "changed_at": "2026-10-20T02:54:35Z"
+          "changed_at": "2026-10-24T02:48:04Z"
         }
       }
     },
@@ -131622,9 +131622,9 @@
           "changed_at": "2026-09-02T02:18:28Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "PR",
           "city": "",
-          "changed_at": "2026-09-13T02:30:29Z"
+          "changed_at": "2026-10-24T02:48:04Z"
         }
       }
     },
@@ -136522,9 +136522,9 @@
           "changed_at": "2026-09-02T02:18:28Z"
         },
         "iplocate": {
-          "country": "CL",
+          "country": "AR",
           "city": "",
-          "changed_at": "2026-10-22T02:47:54Z"
+          "changed_at": "2026-10-24T02:48:04Z"
         }
       }
     },
