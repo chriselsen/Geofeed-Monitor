@@ -2914,7 +2914,7 @@
         "98.97.170.0/24",
         "98.97.171.0/24"
       ],
-      "country_pct": 90.76923076923077,
+      "country_pct": 89.23076923076924,
       "city_pct": 87.17948717948718
     },
     "Kolkata, IN": {
@@ -3152,7 +3152,7 @@
         "9.246.98.0/24",
         "9.246.99.0/24"
       ],
-      "country_pct": 99.02439024390245,
+      "country_pct": 98.69918699186991,
       "city_pct": 100.0
     },
     "Lagos, NG": {
@@ -5646,7 +5646,7 @@
         "9.170.182.0/24",
         "9.170.183.0/24"
       ],
-      "country_pct": 86.95652173913044,
+      "country_pct": 86.08695652173914,
       "city_pct": 79.71014492753623
     },
     "San Salvador, SV": {
@@ -6058,7 +6058,7 @@
         "9.246.48.0/24",
         "9.246.49.0/24"
       ],
-      "country_pct": 91.51515151515152,
+      "country_pct": 90.9090909090909,
       "city_pct": 85.85858585858585
     },
     "St Helier, JE": {
@@ -6445,7 +6445,7 @@
         "98.97.74.0/24",
         "98.97.75.0/24"
       ],
-      "country_pct": 96.66666666666667,
+      "country_pct": 93.33333333333333,
       "city_pct": 50.0
     },
     "Tunis, TN": {
@@ -37332,9 +37332,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "UA",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-04T03:42:46Z"
+          "changed_at": "2026-10-25T02:38:52Z"
         }
       }
     },
@@ -37367,9 +37367,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "UA",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-04T03:42:46Z"
+          "changed_at": "2026-10-25T02:38:52Z"
         }
       }
     },
@@ -37402,9 +37402,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "UA",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-04T03:42:46Z"
+          "changed_at": "2026-10-25T02:38:52Z"
         }
       }
     },
@@ -37437,9 +37437,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "UA",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-04T03:42:46Z"
+          "changed_at": "2026-10-25T02:38:52Z"
         }
       }
     },
@@ -41147,9 +41147,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "CA",
+          "country": "UA",
           "city": "",
-          "changed_at": "2026-10-24T02:48:04Z"
+          "changed_at": "2026-10-25T02:38:52Z"
         }
       }
     },
@@ -41182,9 +41182,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "CA",
+          "country": "UA",
           "city": "",
-          "changed_at": "2026-10-24T02:48:04Z"
+          "changed_at": "2026-10-25T02:38:52Z"
         }
       }
     },
@@ -48637,9 +48637,9 @@
           "changed_at": "2026-09-02T02:18:28Z"
         },
         "iplocate": {
-          "country": "LY",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-20T02:54:35Z"
+          "changed_at": "2026-10-25T02:38:52Z"
         }
       }
     },
@@ -101487,9 +101487,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "CD",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-22T02:47:54Z"
+          "changed_at": "2026-10-25T02:38:52Z"
         }
       }
     },
@@ -130327,9 +130327,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "BG",
+          "country": "DE",
           "city": "",
-          "changed_at": "2026-10-24T02:48:04Z"
+          "changed_at": "2026-10-25T02:38:52Z"
         }
       }
     },
@@ -131622,9 +131622,9 @@
           "changed_at": "2026-09-02T02:18:28Z"
         },
         "iplocate": {
-          "country": "PR",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-24T02:48:04Z"
+          "changed_at": "2026-10-25T02:38:52Z"
         }
       }
     },

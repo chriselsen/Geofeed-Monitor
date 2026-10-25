@@ -670,8 +670,10 @@
         "34.118.248.0/23",
         "34.124.0.0/21",
         "34.183.125.0/24",
+        "34.183.141.0/24",
         "34.183.83.0/24",
         "34.184.126.0/24",
+        "34.184.135.0/24",
         "34.184.82.0/24",
         "34.186.128.0/18",
         "34.2.76.0/23",
@@ -687,8 +689,8 @@
         "35.242.47.0/24",
         "35.243.0.0/21"
       ],
-      "country_pct": 99.2,
-      "city_pct": 98.66666666666667
+      "country_pct": 99.25925925925925,
+      "city_pct": 93.82716049382715
     },
     "Madrid, ES": {
       "country": "ES",
@@ -724,10 +726,12 @@
         "34.129.0.0/16",
         "34.152.101.0/24",
         "34.177.69.0/24",
+        "34.183.140.0/24",
+        "34.184.134.0/24",
         "34.34.239.0/24"
       ],
-      "country_pct": 98.33333333333333,
-      "city_pct": 97.22222222222221
+      "country_pct": 92.85714285714286,
+      "city_pct": 88.09523809523809
     },
     "Milan, IT": {
       "country": "IT",
@@ -1296,8 +1300,11 @@
         "136.74.0.0/16",
         "136.86.128.0/17",
         "136.87.0.0/16",
+        "179.193.192.0/18",
+        "179.199.0.0/17",
         "179.67.64.0/18",
         "179.69.128.0/18",
+        "186.242.0.0/18",
         "2600:1900:0:4000::/56",
         "2600:1900:4040::/44",
         "2600:1902:290::/44",
@@ -1352,8 +1359,8 @@
         "8.231.48.0/20",
         "8.235.0.0/17"
       ],
-      "country_pct": 99.11764705882354,
-      "city_pct": 98.52941176470588
+      "country_pct": 98.59154929577466,
+      "city_pct": 95.77464788732394
     },
     "Tokyo, JP": {
       "country": "JP",
@@ -1698,11 +1705,14 @@
     "173.255.112.0/21",
     "173.255.120.0/21",
     "179.193.128.0/19",
+    "179.193.192.0/18",
+    "179.199.0.0/17",
     "179.67.0.0/18",
     "179.67.64.0/18",
     "179.69.128.0/18",
     "179.69.192.0/19",
     "179.69.224.0/19",
+    "186.242.0.0/18",
     "192.158.28.0/22",
     "199.192.115.0/24",
     "199.223.232.0/22",
@@ -2236,6 +2246,8 @@
     "34.183.132.0/24",
     "34.183.133.0/24",
     "34.183.136.0/22",
+    "34.183.140.0/24",
+    "34.183.141.0/24",
     "34.183.144.0/20",
     "34.183.16.0/22",
     "34.183.2.0/24",
@@ -2308,6 +2320,8 @@
     "34.184.131.0/24",
     "34.184.132.0/24",
     "34.184.133.0/24",
+    "34.184.134.0/24",
+    "34.184.135.0/24",
     "34.184.136.0/22",
     "34.184.144.0/20",
     "34.184.16.0/22",
@@ -3320,8 +3334,10 @@
     "34.124.0.0/21": true,
     "34.183.83.0/24": true,
     "34.183.125.0/24": true,
+    "34.183.141.0/24": true,
     "34.184.82.0/24": true,
     "34.184.126.0/24": true,
+    "34.184.135.0/24": true,
     "34.186.128.0/18": true,
     "35.215.64.0/18": true,
     "35.220.47.0/24": true,
@@ -3352,6 +3368,8 @@
     "34.129.0.0/16": true,
     "34.152.101.0/24": true,
     "34.177.69.0/24": true,
+    "34.183.140.0/24": true,
+    "34.184.134.0/24": true,
     "2600:1900:41c0::/44": true,
     "2600:1902:c0::/44": true,
     "34.0.160.0/19": true,
@@ -3810,6 +3828,9 @@
     "136.118.0.0/16": true,
     "179.67.64.0/18": true,
     "179.69.128.0/18": true,
+    "179.193.192.0/18": true,
+    "179.199.0.0/17": true,
+    "186.242.0.0/18": true,
     "2600:1900:4040::/44": true,
     "2600:1902:290::/44": true,
     "8.237.0.0/18": true,
@@ -26961,6 +26982,76 @@
         }
       }
     },
+    "34.183.140.0/24": {
+      "geofeed_values": {
+        "country": "AU",
+        "subdivision": "AU-VIC",
+        "city": "Melbourne"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "AU",
+          "city": "Melbourne",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "ipinfo": {
+          "country": "AU",
+          "city": "",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "ip2location": {
+          "country": "US",
+          "city": "Mountain View",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "dbip": {
+          "country": "US",
+          "city": "Mountain View",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "iplocate": {
+          "country": "AU",
+          "city": "",
+          "changed_at": "2026-10-25T02:38:38Z"
+        }
+      }
+    },
+    "34.183.141.0/24": {
+      "geofeed_values": {
+        "country": "US",
+        "subdivision": "US-CA",
+        "city": "Los Angeles"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "US",
+          "city": "Los Angeles",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "ipinfo": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "ip2location": {
+          "country": "US",
+          "city": "Mountain View",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "dbip": {
+          "country": "US",
+          "city": "Mountain View",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "iplocate": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-25T02:38:38Z"
+        }
+      }
+    },
     "34.183.144.0/20": {
       "geofeed_values": {
         "country": "US",
@@ -29478,6 +29569,76 @@
           "country": "IN",
           "city": "",
           "changed_at": "2026-10-13T04:53:24Z"
+        }
+      }
+    },
+    "34.184.134.0/24": {
+      "geofeed_values": {
+        "country": "AU",
+        "subdivision": "AU-VIC",
+        "city": "Melbourne"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "AU",
+          "city": "Melbourne",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "ipinfo": {
+          "country": "AU",
+          "city": "",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "ip2location": {
+          "country": "US",
+          "city": "Mountain View",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "dbip": {
+          "country": "US",
+          "city": "Mountain View",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "iplocate": {
+          "country": "AU",
+          "city": "",
+          "changed_at": "2026-10-25T02:38:38Z"
+        }
+      }
+    },
+    "34.184.135.0/24": {
+      "geofeed_values": {
+        "country": "US",
+        "subdivision": "US-CA",
+        "city": "Los Angeles"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "US",
+          "city": "Los Angeles",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "ipinfo": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "ip2location": {
+          "country": "US",
+          "city": "Mountain View",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "dbip": {
+          "country": "US",
+          "city": "Mountain View",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "iplocate": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-25T02:38:38Z"
         }
       }
     },
@@ -41973,6 +42134,111 @@
           "country": "FI",
           "city": "",
           "changed_at": "2026-10-13T04:53:24Z"
+        }
+      }
+    },
+    "179.193.192.0/18": {
+      "geofeed_values": {
+        "country": "US",
+        "subdivision": "US-OR",
+        "city": "The Dalles"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "US",
+          "city": "The Dalles",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "ipinfo": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "ip2location": {
+          "country": "US",
+          "city": "Mountain View",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "dbip": {
+          "country": "US",
+          "city": "Mountain View",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "iplocate": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-25T02:38:38Z"
+        }
+      }
+    },
+    "179.199.0.0/17": {
+      "geofeed_values": {
+        "country": "US",
+        "subdivision": "US-OR",
+        "city": "The Dalles"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "US",
+          "city": "The Dalles",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "ipinfo": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "ip2location": {
+          "country": "US",
+          "city": "Mountain View",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "dbip": {
+          "country": "BR",
+          "city": "S\u00e3o Paulo",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "iplocate": {
+          "country": "BR",
+          "city": "",
+          "changed_at": "2026-10-25T02:38:38Z"
+        }
+      }
+    },
+    "186.242.0.0/18": {
+      "geofeed_values": {
+        "country": "US",
+        "subdivision": "US-OR",
+        "city": "The Dalles"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "US",
+          "city": "The Dalles",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "ipinfo": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "ip2location": {
+          "country": "US",
+          "city": "Mountain View",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "dbip": {
+          "country": "US",
+          "city": "Mountain View",
+          "changed_at": "2026-10-25T02:38:38Z"
+        },
+        "iplocate": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-25T02:38:38Z"
         }
       }
     },
