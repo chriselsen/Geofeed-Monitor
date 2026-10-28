@@ -32,7 +32,7 @@
         "9.170.154.0/24",
         "9.170.155.0/24"
       ],
-      "country_pct": 97.33333333333334,
+      "country_pct": 98.66666666666667,
       "city_pct": 97.77777777777777
     },
     "Adamstown, PN": {
@@ -352,7 +352,7 @@
         "14.1.93.0/24",
         "2406:2d40:4800::/40"
       ],
-      "country_pct": 100.0,
+      "country_pct": 86.66666666666667,
       "city_pct": 100.0
     },
     "Athens, GR": {
@@ -1246,7 +1246,7 @@
         "98.97.148.0/24",
         "98.97.149.0/24"
       ],
-      "country_pct": 93.4375,
+      "country_pct": 93.28125,
       "city_pct": 61.96808510638297
     },
     "Buffalo, US": {
@@ -2195,8 +2195,8 @@
         "9.170.28.0/24",
         "9.170.29.0/24"
       ],
-      "country_pct": 95.38461538461539,
-      "city_pct": 69.23076923076923
+      "country_pct": 100.0,
+      "city_pct": 79.48717948717949
     },
     "Fargo, US": {
       "country": "US",
@@ -3022,7 +3022,7 @@
         "2620:134:b054:100::79/128",
         "2a0d:3341:d500::/40"
       ],
-      "country_pct": 71.42857142857143,
+      "country_pct": 65.71428571428571,
       "city_pct": 64.70588235294117
     },
     "Kyiv, UA": {
@@ -3152,7 +3152,7 @@
         "9.246.98.0/24",
         "9.246.99.0/24"
       ],
-      "country_pct": 97.39837398373984,
+      "country_pct": 99.34959349593497,
       "city_pct": 100.0
     },
     "Lagos, NG": {
@@ -4375,7 +4375,7 @@
         "153.67.155.0/24",
         "2605:59c0:6c00::/40"
       ],
-      "country_pct": 86.66666666666667,
+      "country_pct": 100.0,
       "city_pct": 100.0
     },
     "Mumbai, IN": {
@@ -4502,7 +4502,7 @@
         "153.67.179.0/24",
         "2605:59ca:9200::/40"
       ],
-      "country_pct": 97.14285714285714,
+      "country_pct": 100.0,
       "city_pct": 100.0
     },
     "New Orleans, US": {
@@ -5257,7 +5257,7 @@
         "2605:59c0:8100::/40",
         "2a0d:3341:fc00::/40"
       ],
-      "country_pct": 96.66666666666667,
+      "country_pct": 100.0,
       "city_pct": 100.0
     },
     "Providence, US": {
@@ -5877,7 +5877,7 @@
         "98.97.157.0/24"
       ],
       "country_pct": 97.04545454545455,
-      "city_pct": 93.46153846153847
+      "city_pct": 94.23076923076923
     },
     "Sao Tome, ST": {
       "country": "ST",
@@ -5955,7 +5955,7 @@
         "98.97.99.0/24"
       ],
       "country_pct": 98.0392156862745,
-      "city_pct": 93.28859060402685
+      "city_pct": 94.5578231292517
     },
     "Seoul, KR": {
       "country": "KR",
@@ -6058,7 +6058,7 @@
         "9.246.48.0/24",
         "9.246.49.0/24"
       ],
-      "country_pct": 90.9090909090909,
+      "country_pct": 91.51515151515152,
       "city_pct": 85.85858585858585
     },
     "St Helier, JE": {
@@ -28037,9 +28037,9 @@
       "geofeed_changed_at": "2026-06-15T23:49:41Z",
       "providers": {
         "maxmind": {
-          "country": "GR",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-09-09T02:29:20Z"
+          "changed_at": "2026-10-28T03:25:47Z"
         },
         "ipinfo": {
           "country": "BH",
@@ -28072,9 +28072,9 @@
       "geofeed_changed_at": "2026-06-15T23:49:41Z",
       "providers": {
         "maxmind": {
-          "country": "GR",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-09-09T02:29:20Z"
+          "changed_at": "2026-10-28T03:25:47Z"
         },
         "ipinfo": {
           "country": "BH",
@@ -34567,9 +34567,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "TK",
+          "country": "AU",
           "city": "",
-          "changed_at": "2026-10-23T02:51:03Z"
+          "changed_at": "2026-10-28T03:25:47Z"
         }
       }
     },
@@ -34602,9 +34602,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "TK",
+          "country": "AU",
           "city": "",
-          "changed_at": "2026-10-23T02:51:03Z"
+          "changed_at": "2026-10-28T03:25:47Z"
         }
       }
     },
@@ -53572,9 +53572,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "UA",
           "city": "",
-          "changed_at": "2026-10-27T03:12:00Z"
+          "changed_at": "2026-10-28T03:25:47Z"
         }
       }
     },
@@ -53607,9 +53607,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "UA",
           "city": "",
-          "changed_at": "2026-10-27T03:12:00Z"
+          "changed_at": "2026-10-28T03:25:47Z"
         }
       }
     },
@@ -53642,9 +53642,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "UA",
           "city": "",
-          "changed_at": "2026-10-27T03:12:00Z"
+          "changed_at": "2026-10-28T03:25:47Z"
         }
       }
     },
@@ -53677,9 +53677,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "UA",
           "city": "",
-          "changed_at": "2026-10-27T03:12:00Z"
+          "changed_at": "2026-10-28T03:25:47Z"
         }
       }
     },
@@ -53712,9 +53712,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "UA",
           "city": "",
-          "changed_at": "2026-10-27T03:12:00Z"
+          "changed_at": "2026-10-28T03:25:47Z"
         }
       }
     },
@@ -53747,9 +53747,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "UA",
           "city": "",
-          "changed_at": "2026-10-27T03:12:00Z"
+          "changed_at": "2026-10-28T03:25:47Z"
         }
       }
     },
@@ -53782,9 +53782,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "UA",
           "city": "",
-          "changed_at": "2026-10-27T03:12:00Z"
+          "changed_at": "2026-10-28T03:25:47Z"
         }
       }
     },
@@ -53817,9 +53817,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "UA",
           "city": "",
-          "changed_at": "2026-10-27T03:12:00Z"
+          "changed_at": "2026-10-28T03:25:47Z"
         }
       }
     },
@@ -54412,9 +54412,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "UA",
           "city": "",
-          "changed_at": "2026-10-27T03:12:00Z"
+          "changed_at": "2026-10-28T03:25:47Z"
         }
       }
     },
@@ -54447,9 +54447,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "UA",
           "city": "",
-          "changed_at": "2026-10-27T03:12:00Z"
+          "changed_at": "2026-10-28T03:25:47Z"
         }
       }
     },
@@ -54482,9 +54482,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "UA",
           "city": "",
-          "changed_at": "2026-10-27T03:12:00Z"
+          "changed_at": "2026-10-28T03:25:47Z"
         }
       }
     },
@@ -54517,9 +54517,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "UA",
           "city": "",
-          "changed_at": "2026-10-27T03:12:00Z"
+          "changed_at": "2026-10-28T03:25:47Z"
         }
       }
     },
@@ -62513,8 +62513,8 @@
       "providers": {
         "maxmind": {
           "country": "AU",
-          "city": "Upper Coomera",
-          "changed_at": "2026-10-21T02:48:41Z"
+          "city": "Brisbane",
+          "changed_at": "2026-10-28T03:25:47Z"
         },
         "ipinfo": {
           "country": "US",
@@ -62548,8 +62548,8 @@
       "providers": {
         "maxmind": {
           "country": "AU",
-          "city": "Upper Coomera",
-          "changed_at": "2026-10-21T02:48:41Z"
+          "city": "Brisbane",
+          "changed_at": "2026-10-28T03:25:47Z"
         },
         "ipinfo": {
           "country": "US",
@@ -62583,8 +62583,8 @@
       "providers": {
         "maxmind": {
           "country": "AU",
-          "city": "Upper Coomera",
-          "changed_at": "2026-10-21T02:48:41Z"
+          "city": "Brisbane",
+          "changed_at": "2026-10-28T03:25:47Z"
         },
         "ipinfo": {
           "country": "US",
@@ -65367,9 +65367,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "BS",
           "city": "",
-          "changed_at": "2026-10-27T03:12:00Z"
+          "changed_at": "2026-10-28T03:25:47Z"
         }
       }
     },
@@ -78543,8 +78543,8 @@
       "providers": {
         "maxmind": {
           "country": "BR",
-          "city": "Cariacica",
-          "changed_at": "2026-10-21T02:48:41Z"
+          "city": "S\u00e3o Paulo",
+          "changed_at": "2026-10-28T03:25:47Z"
         },
         "ipinfo": {
           "country": "BR",
@@ -78578,8 +78578,8 @@
       "providers": {
         "maxmind": {
           "country": "BR",
-          "city": "Rio de Janeiro",
-          "changed_at": "2026-10-21T02:48:41Z"
+          "city": "S\u00e3o Paulo",
+          "changed_at": "2026-10-28T03:25:47Z"
         },
         "ipinfo": {
           "country": "BR",
@@ -83252,9 +83252,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "KW",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-01T03:29:14Z"
+          "changed_at": "2026-10-28T03:25:47Z"
         }
       }
     },
@@ -83287,9 +83287,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "KW",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-01T03:29:14Z"
+          "changed_at": "2026-10-28T03:25:47Z"
         }
       }
     },
@@ -102047,9 +102047,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "KM",
           "city": "",
-          "changed_at": "2026-10-27T03:12:00Z"
+          "changed_at": "2026-10-28T03:25:47Z"
         }
       }
     },
@@ -102082,9 +102082,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "KM",
           "city": "",
-          "changed_at": "2026-10-27T03:12:00Z"
+          "changed_at": "2026-10-28T03:25:47Z"
         }
       }
     },
@@ -109607,9 +109607,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "CV",
           "city": "",
-          "changed_at": "2026-10-24T02:48:04Z"
+          "changed_at": "2026-10-28T03:25:47Z"
         }
       }
     },
@@ -111357,9 +111357,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "GH",
           "city": "",
-          "changed_at": "2026-08-14T01:18:48Z"
+          "changed_at": "2026-10-28T03:25:47Z"
         }
       }
     },
@@ -117812,9 +117812,9 @@
       "geofeed_changed_at": "2026-10-24T02:48:04Z",
       "providers": {
         "maxmind": {
-          "country": "AU",
-          "city": "Brisbane",
-          "changed_at": "2026-10-14T03:00:28Z"
+          "country": "US",
+          "city": "El Paso",
+          "changed_at": "2026-10-28T03:25:47Z"
         },
         "ipinfo": {
           "country": "US",
@@ -117847,9 +117847,9 @@
       "geofeed_changed_at": "2026-10-24T02:48:04Z",
       "providers": {
         "maxmind": {
-          "country": "AU",
-          "city": "Brisbane",
-          "changed_at": "2026-10-14T03:00:28Z"
+          "country": "US",
+          "city": "El Paso",
+          "changed_at": "2026-10-28T03:25:47Z"
         },
         "ipinfo": {
           "country": "US",
@@ -117883,8 +117883,8 @@
       "providers": {
         "maxmind": {
           "country": "US",
-          "city": "Dallas",
-          "changed_at": "2026-09-09T02:29:20Z"
+          "city": "El Paso",
+          "changed_at": "2026-10-28T03:25:47Z"
         },
         "ipinfo": {
           "country": "US",
@@ -117917,9 +117917,9 @@
       "geofeed_changed_at": "2026-10-24T02:48:04Z",
       "providers": {
         "maxmind": {
-          "country": "AU",
-          "city": "Brisbane",
-          "changed_at": "2026-10-14T03:00:28Z"
+          "country": "US",
+          "city": "El Paso",
+          "changed_at": "2026-10-28T03:25:47Z"
         },
         "ipinfo": {
           "country": "US",
@@ -130327,9 +130327,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "DE",
+          "country": "BG",
           "city": "",
-          "changed_at": "2026-10-25T02:38:52Z"
+          "changed_at": "2026-10-28T03:25:47Z"
         }
       }
     },
@@ -135033,8 +135033,8 @@
       "providers": {
         "maxmind": {
           "country": "US",
-          "city": "Clermont",
-          "changed_at": "2026-10-21T02:48:41Z"
+          "city": "",
+          "changed_at": "2026-10-28T03:25:47Z"
         },
         "ipinfo": {
           "country": "US",
@@ -135068,8 +135068,8 @@
       "providers": {
         "maxmind": {
           "country": "US",
-          "city": "Clermont",
-          "changed_at": "2026-10-21T02:48:41Z"
+          "city": "",
+          "changed_at": "2026-10-28T03:25:47Z"
         },
         "ipinfo": {
           "country": "US",
@@ -136522,9 +136522,9 @@
           "changed_at": "2026-09-02T02:18:28Z"
         },
         "iplocate": {
-          "country": "AR",
+          "country": "CL",
           "city": "",
-          "changed_at": "2026-10-24T02:48:04Z"
+          "changed_at": "2026-10-28T03:25:47Z"
         }
       }
     },

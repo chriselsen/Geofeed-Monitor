@@ -730,7 +730,7 @@
         "34.184.134.0/24",
         "34.34.239.0/24"
       ],
-      "country_pct": 90.0,
+      "country_pct": 92.85714285714286,
       "city_pct": 88.09523809523809
     },
     "Milan, IT": {
@@ -1573,7 +1573,7 @@
         "35.235.216.0/21",
         "35.242.44.0/24"
       ],
-      "country_pct": 90.66666666666666,
+      "country_pct": 92.0,
       "city_pct": 88.88888888888889
     }
   },
@@ -27011,9 +27011,9 @@
           "changed_at": "2026-10-25T02:38:38Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "AU",
           "city": "",
-          "changed_at": "2026-10-27T03:11:45Z"
+          "changed_at": "2026-10-28T03:25:32Z"
         }
       }
     },
@@ -29601,9 +29601,9 @@
           "changed_at": "2026-10-25T02:38:38Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "AU",
           "city": "",
-          "changed_at": "2026-10-27T03:11:45Z"
+          "changed_at": "2026-10-28T03:25:32Z"
         }
       }
     },
@@ -33191,9 +33191,9 @@
           "changed_at": "2026-06-15T23:49:26Z"
         },
         "ipinfo": {
-          "country": "US",
+          "country": "CH",
           "city": "",
-          "changed_at": "2026-10-22T02:47:42Z"
+          "changed_at": "2026-10-28T03:25:32Z"
         },
         "ip2location": {
           "country": "CH",
