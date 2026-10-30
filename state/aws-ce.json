@@ -1452,6 +1452,9 @@
         "69.107.7.72/29",
         "69.107.7.96/29",
         "70.232.92.0/22",
+        "72.150.0.0/23",
+        "72.150.16.0/23",
+        "72.150.18.0/23",
         "72.21.192.0/19",
         "72.44.32.0/19",
         "75.101.128.0/17",
@@ -1499,8 +1502,8 @@
         "99.83.101.0/24",
         "99.83.106.0/24"
       ],
-      "country_pct": 99.10355486862443,
-      "city_pct": 86.55986967146349
+      "country_pct": 99.10562837316886,
+      "city_pct": 86.41908376253727
     },
     "Athens, GR": {
       "country": "GR",
@@ -2417,7 +2420,6 @@
         "2606:7b40:10ff:f000::/56",
         "2606:7b40:10ff:f270::/60",
         "2606:7b40:10ff:ff00::/56",
-        "2606:7b40:1800::/40",
         "2606:7b40:1a0f:c000::/60",
         "2606:7b40:1a1f:c000::/60",
         "2606:7b40:1a1f:c340::/60",
@@ -2862,8 +2864,8 @@
         "99.77.253.0/24",
         "99.78.196.0/22"
       ],
-      "country_pct": 99.31662870159454,
-      "city_pct": 45.8723058153721
+      "country_pct": 99.31584948688712,
+      "city_pct": 45.86894586894587
     },
     "Bogota, CO": {
       "country": "CO",
@@ -3187,11 +3189,12 @@
         "2600:1f6a:5400::/46",
         "2600:1f6a:f400::/46",
         "2600:f0fb:eb00::/40",
+        "72.150.10.0/23",
         "96.0.88.0/22",
         "96.0.92.0/23"
       ],
       "country_pct": 100.0,
-      "city_pct": 90.9090909090909
+      "city_pct": 86.95652173913044
     },
     "Columbus, US": {
       "country": "US",
@@ -4699,6 +4702,7 @@
         "69.107.6.216/29",
         "69.107.6.224/29",
         "70.232.124.0/22",
+        "72.150.4.0/23",
         "79.125.0.0/17",
         "87.238.80.0/21",
         "99.151.88.0/21",
@@ -4717,8 +4721,8 @@
         "99.83.105.0/24",
         "99.87.32.0/22"
       ],
-      "country_pct": 89.31818181818181,
-      "city_pct": 87.70161290322581
+      "country_pct": 89.14933837429112,
+      "city_pct": 87.58389261744966
     },
     "Frankfurt am Main, DE": {
       "country": "DE",
@@ -5340,6 +5344,7 @@
         "69.107.11.160/29",
         "69.107.13.32/29",
         "69.107.13.40/29",
+        "72.150.8.0/23",
         "99.150.16.0/21",
         "99.151.188.0/23",
         "99.200.0.0/13",
@@ -5353,8 +5358,8 @@
         "99.83.103.0/24",
         "99.83.99.0/24"
       ],
-      "country_pct": 87.66295707472179,
-      "city_pct": 90.23952095808383
+      "country_pct": 87.52380952380953,
+      "city_pct": 90.13157894736842
     },
     "Hamburg, DE": {
       "country": "DE",
@@ -5743,7 +5748,6 @@
       "country": "ID",
       "prefixes": [
         "1.178.19.0/24",
-        "1.178.86.0/24",
         "104.255.59.101/32",
         "104.255.59.102/32",
         "104.255.59.103/32",
@@ -5881,8 +5885,8 @@
         "99.78.238.255/32",
         "99.78.240.0/20"
       ],
-      "country_pct": 89.63503649635037,
-      "city_pct": 88.05194805194805
+      "country_pct": 90.0,
+      "city_pct": 88.25065274151436
     },
     "Kansas City, US": {
       "country": "US",
@@ -6669,10 +6673,11 @@
         "2600:f0fb:e900::/40",
         "3.2.2.0/24",
         "64.187.128.0/20",
+        "72.150.12.0/23",
         "96.0.100.0/23"
       ],
       "country_pct": 100.0,
-      "city_pct": 100.0
+      "city_pct": 96.22641509433963
     },
     "Milan, IT": {
       "country": "IT",
@@ -8784,6 +8789,7 @@
         "69.107.6.120/29",
         "69.107.9.128/29",
         "69.107.9.136/29",
+        "72.150.6.0/23",
         "99.151.120.0/21",
         "99.77.132.0/24",
         "99.77.154.0/24",
@@ -8792,8 +8798,8 @@
         "99.83.97.0/24",
         "99.83.98.0/24"
       ],
-      "country_pct": 99.28327645051195,
-      "city_pct": 23.258706467661693
+      "country_pct": 99.28449744463373,
+      "city_pct": 23.229813664596275
     },
     "Santiago, CL": {
       "country": "CL",
@@ -8872,7 +8878,7 @@
         "96.0.48.0/21",
         "96.0.56.0/22"
       ],
-      "country_pct": 89.04109589041096,
+      "country_pct": 89.31506849315069,
       "city_pct": 85.37735849056604
     },
     "Sao Paulo, BR": {
@@ -9880,6 +9886,7 @@
         "69.107.6.168/29",
         "69.107.7.0/29",
         "69.107.7.8/29",
+        "72.150.2.0/23",
         "96.0.108.0/24",
         "96.0.112.0/21",
         "96.0.120.0/21",
@@ -9899,8 +9906,8 @@
         "99.83.104.0/24",
         "99.87.0.0/22"
       ],
-      "country_pct": 91.26869271587071,
-      "city_pct": 89.48696383515559
+      "country_pct": 91.04908565928778,
+      "city_pct": 89.33669185558354
     },
     "Stockholm, SE": {
       "country": "SE",
@@ -11135,7 +11142,8 @@
         "161.178.128.0/18",
         "198.41.102.0/24",
         "2600:1f6a:9400::/46",
-        "2600:f0fb:e600::/40"
+        "2600:f0fb:e600::/40",
+        "72.150.14.0/23"
       ],
       "country_pct": 100.0,
       "city_pct": 0.0
@@ -11632,7 +11640,6 @@
     "1.178.65.0/24",
     "1.178.7.0/24",
     "1.178.8.0/24",
-    "1.178.86.0/24",
     "1.178.88.0/24",
     "1.178.89.0/24",
     "1.178.9.0/24",
@@ -17426,7 +17433,6 @@
     "2606:7b40:10ff:f000::/56",
     "2606:7b40:10ff:f270::/60",
     "2606:7b40:10ff:ff00::/56",
-    "2606:7b40:1800::/40",
     "2606:7b40:1a0f:c000::/60",
     "2606:7b40:1a1f:c000::/60",
     "2606:7b40:1a1f:c340::/60",
@@ -22223,6 +22229,16 @@
     "71.136.64.0/18",
     "71.137.0.0/18",
     "71.137.18.0/23",
+    "72.150.0.0/23",
+    "72.150.10.0/23",
+    "72.150.12.0/23",
+    "72.150.14.0/23",
+    "72.150.16.0/23",
+    "72.150.18.0/23",
+    "72.150.2.0/23",
+    "72.150.4.0/23",
+    "72.150.6.0/23",
+    "72.150.8.0/23",
     "72.21.192.0/19",
     "72.242.0.0/15",
     "72.41.0.0/20",
@@ -22784,6 +22800,7 @@
     "150.222.216.0/24": false,
     "15.248.140.0/24": true,
     "34.192.0.0/12": true,
+    "72.150.16.0/23": true,
     "13.216.0.0/13": true,
     "15.230.184.0/24": false,
     "52.119.232.0/21": true,
@@ -22807,6 +22824,7 @@
     "162.250.238.0/23": true,
     "150.222.100.0/24": false,
     "16.15.192.0/18": true,
+    "72.150.18.0/23": true,
     "136.18.138.0/23": true,
     "150.222.103.0/24": false,
     "205.251.246.0/24": true,
@@ -22961,6 +22979,7 @@
     "46.51.208.0/22": true,
     "52.86.0.0/15": true,
     "54.25.20.0/24": false,
+    "72.150.0.0/23": true,
     "52.93.97.0/24": true,
     "3.3.16.0/21": true,
     "5.60.16.0/24": true,
@@ -24035,7 +24054,6 @@
     "2600:1f6a:d800::/46": true,
     "2600:1fba:2000::/40": true,
     "2600:f0f0:c041::/48": true,
-    "2606:7b40:1800::/40": false,
     "2620:108:7000::/44": true,
     "2600:f0f0:11fe::/48": true,
     "2600:f0f0:60::/44": true,
@@ -24401,6 +24419,7 @@
     "155.146.208.0/20": true,
     "139.56.22.0/23": false,
     "155.146.176.0/20": true,
+    "72.150.10.0/23": true,
     "15.181.176.0/20": true,
     "96.0.88.0/22": true,
     "198.41.98.0/24": true,
@@ -25095,6 +25114,7 @@
     "15.230.61.0/24": true,
     "15.230.30.0/24": false,
     "15.230.84.0/24": false,
+    "72.150.4.0/23": true,
     "52.46.240.0/22": true,
     "99.77.250.0/24": true,
     "46.137.0.0/17": true,
@@ -25267,6 +25287,7 @@
     "54.239.64.0/21": true,
     "5.60.96.0/19": true,
     "52.219.210.0/24": true,
+    "72.150.8.0/23": true,
     "52.94.69.0/24": true,
     "64.252.87.0/24": true,
     "216.244.9.0/24": true,
@@ -25795,7 +25816,6 @@
     "99.78.228.0/22": true,
     "64.66.153.0/24": true,
     "65.4.0.0/16": true,
-    "1.178.86.0/24": true,
     "15.232.0.0/16": true,
     "16.79.0.0/16": true,
     "15.233.0.0/16": true,
@@ -26232,6 +26252,7 @@
     "2406:da62:f000::/40": true,
     "2600:1f01:4812::/47": true,
     "15.220.196.0/22": true,
+    "72.150.12.0/23": true,
     "155.146.80.0/20": true,
     "64.187.128.0/20": true,
     "15.181.254.0/24": true,
@@ -27137,6 +27158,7 @@
     "52.219.23.0/24": true,
     "99.82.172.0/24": true,
     "99.151.120.0/21": true,
+    "72.150.6.0/23": true,
     "45.33.180.0/24": true,
     "64.252.121.0/24": true,
     "54.219.0.0/16": true,
@@ -27728,6 +27750,7 @@
     "2600:f0f2:701d::/48": true,
     "2406:daf6:2000::/48": true,
     "2406:da22:4::/48": true,
+    "72.150.2.0/23": true,
     "150.222.78.0/24": false,
     "150.222.14.0/24": false,
     "15.221.35.0/24": true,
@@ -28761,6 +28784,7 @@
     "2406:daf6:4000::/48": true,
     "2406:da24:28::/48": true,
     "15.181.160.0/20": true,
+    "72.150.14.0/23": true,
     "198.41.102.0/24": true,
     "161.178.128.0/18": true,
     "15.181.40.0/21": true,
@@ -83568,9 +83592,9 @@
           "changed_at": "2026-10-29T03:48:39Z"
         },
         "ipinfo": {
-          "country": "US",
+          "country": "CL",
           "city": "",
-          "changed_at": "2026-10-29T03:48:39Z"
+          "changed_at": "2026-10-30T03:52:20Z"
         },
         "ip2location": {
           "country": "US",
@@ -102556,6 +102580,41 @@
           "country": "DE",
           "city": "",
           "changed_at": "2026-06-15T23:49:38Z"
+        }
+      }
+    },
+    "72.150.8.0/23": {
+      "geofeed_values": {
+        "country": "DE",
+        "subdivision": "DE-HE",
+        "city": "Frankfurt am Main"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "ipinfo": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "ip2location": {
+          "country": "US",
+          "city": "Seattle",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "dbip": {
+          "country": "US",
+          "city": "Atlanta (Buckhead)",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "iplocate": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
         }
       }
     },
@@ -156564,41 +156623,6 @@
         }
       }
     },
-    "1.178.86.0/24": {
-      "geofeed_values": {
-        "country": "ID",
-        "subdivision": "ID-JK",
-        "city": "Jakarta"
-      },
-      "geofeed_changed_at": null,
-      "providers": {
-        "maxmind": {
-          "country": "US",
-          "city": "",
-          "changed_at": "2026-10-28T03:25:42Z"
-        },
-        "ipinfo": {
-          "country": "US",
-          "city": "",
-          "changed_at": "2026-10-28T03:25:42Z"
-        },
-        "ip2location": {
-          "country": "ID",
-          "city": "Jakarta",
-          "changed_at": "2026-10-28T03:25:42Z"
-        },
-        "dbip": {
-          "country": "US",
-          "city": "New York",
-          "changed_at": "2026-10-28T03:25:42Z"
-        },
-        "iplocate": {
-          "country": "ID",
-          "city": "",
-          "changed_at": "2026-10-28T03:25:42Z"
-        }
-      }
-    },
     "54.239.1.144/28": {
       "geofeed_values": {
         "country": "ID",
@@ -170351,6 +170375,41 @@
           "country": "IE",
           "city": "",
           "changed_at": "2026-06-15T23:49:38Z"
+        }
+      }
+    },
+    "72.150.4.0/23": {
+      "geofeed_values": {
+        "country": "IE",
+        "subdivision": "IE-D",
+        "city": "Dublin"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "ipinfo": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "ip2location": {
+          "country": "US",
+          "city": "Seattle",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "dbip": {
+          "country": "US",
+          "city": "Atlanta (Buckhead)",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "iplocate": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
         }
       }
     },
@@ -256384,6 +256443,41 @@
         }
       }
     },
+    "72.150.2.0/23": {
+      "geofeed_values": {
+        "country": "SG",
+        "subdivision": "SG-01",
+        "city": "Singapore"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "ipinfo": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "ip2location": {
+          "country": "US",
+          "city": "Seattle",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "dbip": {
+          "country": "US",
+          "city": "Atlanta (Buckhead)",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "iplocate": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
+        }
+      }
+    },
     "150.222.78.0/24": {
       "geofeed_values": {
         "country": "SG",
@@ -280919,6 +281013,41 @@
         }
       }
     },
+    "72.150.6.0/23": {
+      "geofeed_values": {
+        "country": "US",
+        "subdivision": "US-CA",
+        "city": "San Francisco"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "ipinfo": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "ip2location": {
+          "country": "US",
+          "city": "Seattle",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "dbip": {
+          "country": "US",
+          "city": "Atlanta (Buckhead)",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "iplocate": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
+        }
+      }
+    },
     "150.222.252.250/31": {
       "geofeed_values": {
         "country": "US",
@@ -299609,6 +299738,41 @@
         }
       }
     },
+    "72.150.12.0/23": {
+      "geofeed_values": {
+        "country": "US",
+        "subdivision": "US-FL",
+        "city": "Miami"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "ipinfo": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "ip2location": {
+          "country": "US",
+          "city": "Seattle",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "dbip": {
+          "country": "US",
+          "city": "Atlanta (Buckhead)",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "iplocate": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
+        }
+      }
+    },
     "155.146.80.0/20": {
       "geofeed_values": {
         "country": "US",
@@ -300866,6 +301030,41 @@
           "country": "US",
           "city": "",
           "changed_at": "2026-06-15T23:49:38Z"
+        }
+      }
+    },
+    "72.150.10.0/23": {
+      "geofeed_values": {
+        "country": "US",
+        "subdivision": "US-IL",
+        "city": "Chicago"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "ipinfo": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "ip2location": {
+          "country": "US",
+          "city": "Seattle",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "dbip": {
+          "country": "US",
+          "city": "Atlanta (Buckhead)",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "iplocate": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
         }
       }
     },
@@ -302371,6 +302570,41 @@
           "country": "US",
           "city": "",
           "changed_at": "2026-06-15T23:49:38Z"
+        }
+      }
+    },
+    "72.150.14.0/23": {
+      "geofeed_values": {
+        "country": "US",
+        "subdivision": "US-NJ",
+        "city": "Trenton"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "ipinfo": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "ip2location": {
+          "country": "US",
+          "city": "Seattle",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "dbip": {
+          "country": "US",
+          "city": "Atlanta (Buckhead)",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "iplocate": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
         }
       }
     },
@@ -346614,41 +346848,6 @@
         }
       }
     },
-    "2606:7b40:1800::/40": {
-      "geofeed_values": {
-        "country": "US",
-        "subdivision": "US-OR",
-        "city": "Boardman"
-      },
-      "geofeed_changed_at": "2026-06-15T23:49:38Z",
-      "providers": {
-        "maxmind": {
-          "country": "US",
-          "city": "",
-          "changed_at": "2026-06-15T23:49:38Z"
-        },
-        "ipinfo": {
-          "country": "US",
-          "city": "",
-          "changed_at": "2026-06-15T23:49:38Z"
-        },
-        "ip2location": {
-          "country": "US",
-          "city": "Portland",
-          "changed_at": "2026-06-15T23:49:38Z"
-        },
-        "dbip": {
-          "country": "US",
-          "city": "Boardman",
-          "changed_at": "2026-06-15T23:49:38Z"
-        },
-        "iplocate": {
-          "country": "US",
-          "city": "",
-          "changed_at": "2026-06-15T23:49:38Z"
-        }
-      }
-    },
     "2620:108:7000::/44": {
       "geofeed_values": {
         "country": "US",
@@ -367369,6 +367568,41 @@
         }
       }
     },
+    "72.150.16.0/23": {
+      "geofeed_values": {
+        "country": "US",
+        "subdivision": "US-VA",
+        "city": "Ashburn"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "ipinfo": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "ip2location": {
+          "country": "US",
+          "city": "Seattle",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "dbip": {
+          "country": "US",
+          "city": "Atlanta (Buckhead)",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "iplocate": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
+        }
+      }
+    },
     "13.216.0.0/13": {
       "geofeed_values": {
         "country": "US",
@@ -368486,6 +368720,41 @@
           "country": "US",
           "city": "",
           "changed_at": "2026-06-15T23:49:38Z"
+        }
+      }
+    },
+    "72.150.18.0/23": {
+      "geofeed_values": {
+        "country": "US",
+        "subdivision": "US-VA",
+        "city": "Ashburn"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "ipinfo": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "ip2location": {
+          "country": "US",
+          "city": "Seattle",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "dbip": {
+          "country": "US",
+          "city": "Atlanta (Buckhead)",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "iplocate": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
         }
       }
     },
@@ -377061,6 +377330,41 @@
           "country": "US",
           "city": "",
           "changed_at": "2026-06-15T23:49:38Z"
+        }
+      }
+    },
+    "72.150.0.0/23": {
+      "geofeed_values": {
+        "country": "US",
+        "subdivision": "US-VA",
+        "city": "Ashburn"
+      },
+      "geofeed_changed_at": null,
+      "providers": {
+        "maxmind": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "ipinfo": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "ip2location": {
+          "country": "US",
+          "city": "Seattle",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "dbip": {
+          "country": "US",
+          "city": "Atlanta (Buckhead)",
+          "changed_at": "2026-10-30T03:52:20Z"
+        },
+        "iplocate": {
+          "country": "US",
+          "city": "",
+          "changed_at": "2026-10-30T03:52:20Z"
         }
       }
     },
