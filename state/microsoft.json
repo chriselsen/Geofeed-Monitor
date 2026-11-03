@@ -1474,7 +1474,7 @@
         "98.64.0.0/16",
         "98.71.128.0/17"
       ],
-      "country_pct": 84.9795918367347,
+      "country_pct": 84.99319727891157,
       "city_pct": 77.11499206169199
     },
     "Atlanta, US": {
@@ -1633,7 +1633,7 @@
         "9.129.237.128/25",
         "9.129.245.64/27"
       ],
-      "country_pct": 89.21052631578948,
+      "country_pct": 89.34210526315789,
       "city_pct": 76.97368421052632
     },
     "Auckland, NZ": {
@@ -1989,7 +1989,7 @@
         "65.55.60.184/30",
         "66.119.149.0/24"
       ],
-      "country_pct": 97.625,
+      "country_pct": 97.5,
       "city_pct": 88.33333333333333
     },
     "Bengaluru, IN": {
@@ -14594,7 +14594,7 @@
         "9.141.128.0/18",
         "98.67.128.0/17"
       ],
-      "country_pct": 88.04255319148936,
+      "country_pct": 88.08510638297872,
       "city_pct": 0.0
     },
     "Gavle, SE": {
@@ -15018,7 +15018,7 @@
         "74.241.128.0/17",
         "9.223.0.0/16"
       ],
-      "country_pct": 81.58273381294964,
+      "country_pct": 81.63069544364508,
       "city_pct": 67.26618705035972
     },
     "Geneva, CH": {
@@ -32949,7 +32949,7 @@
         "94.245.75.0/24",
         "94.245.76.0/23"
       ],
-      "country_pct": 81.36186770428016,
+      "country_pct": 81.284046692607,
       "city_pct": 71.07652399481194
     },
     "Warsaw, PL": {
@@ -121757,9 +121757,9 @@
           "changed_at": "2026-06-15T23:49:31Z"
         },
         "iplocate": {
-          "country": "BR",
+          "country": "NL",
           "city": "",
-          "changed_at": "2026-06-15T23:49:31Z"
+          "changed_at": "2026-11-03T04:51:25Z"
         }
       }
     },
@@ -137927,9 +137927,9 @@
           "changed_at": "2026-11-02T03:47:17Z"
         },
         "iplocate": {
-          "country": "IN",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-06-15T23:49:31Z"
+          "changed_at": "2026-11-03T04:51:25Z"
         }
       }
     },
@@ -148392,9 +148392,9 @@
           "changed_at": "2026-11-02T03:47:17Z"
         },
         "iplocate": {
-          "country": "CN",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-09-04T02:20:19Z"
+          "changed_at": "2026-11-03T04:51:25Z"
         }
       }
     },
@@ -203867,9 +203867,9 @@
           "changed_at": "2026-06-15T23:49:31Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "CA",
           "city": "",
-          "changed_at": "2026-11-02T03:47:17Z"
+          "changed_at": "2026-11-03T04:51:25Z"
         }
       }
     },
@@ -208907,9 +208907,9 @@
           "changed_at": "2026-06-15T23:49:31Z"
         },
         "iplocate": {
-          "country": "BR",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-06-15T23:49:31Z"
+          "changed_at": "2026-11-03T04:51:25Z"
         }
       }
     },
@@ -316987,9 +316987,9 @@
           "changed_at": "2026-11-02T03:47:17Z"
         },
         "iplocate": {
-          "country": "IN",
+          "country": "GB",
           "city": "",
-          "changed_at": "2026-06-15T23:49:31Z"
+          "changed_at": "2026-11-03T04:51:25Z"
         }
       }
     },
@@ -577212,9 +577212,9 @@
           "changed_at": "2026-06-15T23:49:31Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "DE",
           "city": "",
-          "changed_at": "2026-11-01T03:41:29Z"
+          "changed_at": "2026-11-03T04:51:25Z"
         }
       }
     },
@@ -585787,9 +585787,9 @@
           "changed_at": "2026-10-02T03:30:02Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "SE",
           "city": "",
-          "changed_at": "2026-10-04T03:42:33Z"
+          "changed_at": "2026-11-03T04:51:25Z"
         }
       }
     },
@@ -659777,9 +659777,9 @@
           "changed_at": "2026-11-02T03:47:17Z"
         },
         "iplocate": {
-          "country": "IN",
+          "country": "GB",
           "city": "",
-          "changed_at": "2026-06-15T23:49:31Z"
+          "changed_at": "2026-11-03T04:51:25Z"
         }
       }
     },
@@ -659812,9 +659812,9 @@
           "changed_at": "2026-11-02T03:47:17Z"
         },
         "iplocate": {
-          "country": "IN",
+          "country": "GB",
           "city": "",
-          "changed_at": "2026-06-15T23:49:31Z"
+          "changed_at": "2026-11-03T04:51:25Z"
         }
       }
     },
@@ -1193597,9 +1193597,9 @@
           "changed_at": "2026-11-02T03:47:17Z"
         },
         "iplocate": {
-          "country": "AT",
+          "country": "IE",
           "city": "",
-          "changed_at": "2026-07-04T02:11:59Z"
+          "changed_at": "2026-11-03T04:51:25Z"
         }
       }
     },
@@ -1193632,9 +1193632,9 @@
           "changed_at": "2026-11-02T03:47:17Z"
         },
         "iplocate": {
-          "country": "AT",
+          "country": "IE",
           "city": "",
-          "changed_at": "2026-07-04T02:11:59Z"
+          "changed_at": "2026-11-03T04:51:25Z"
         }
       }
     },
