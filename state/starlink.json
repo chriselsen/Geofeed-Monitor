@@ -32,7 +32,7 @@
         "9.170.154.0/24",
         "9.170.155.0/24"
       ],
-      "country_pct": 98.66666666666667,
+      "country_pct": 100.0,
       "city_pct": 100.0
     },
     "Adamstown, PN": {
@@ -1251,7 +1251,7 @@
         "98.97.148.0/24",
         "98.97.149.0/24"
       ],
-      "country_pct": 97.65625,
+      "country_pct": 97.8125,
       "city_pct": 65.1595744680851
     },
     "Buffalo, US": {
@@ -2069,7 +2069,7 @@
         "2605:59c0:7700::/40",
         "2605:59c0:7800::/40"
       ],
-      "country_pct": 100.0,
+      "country_pct": 96.66666666666667,
       "city_pct": 100.0
     },
     "Doha, QA": {
@@ -3864,7 +3864,7 @@
         "179.64.27.0/24",
         "2605:59c0:6500::/40"
       ],
-      "country_pct": 60.0,
+      "country_pct": 80.0,
       "city_pct": 0.0
     },
     "Mayotte, YT": {
@@ -4107,7 +4107,7 @@
         "98.97.6.0/24",
         "98.97.7.0/24"
       ],
-      "country_pct": 99.31972789115646,
+      "country_pct": 99.18367346938776,
       "city_pct": 100.0
     },
     "Miami, US": {
@@ -4517,7 +4517,7 @@
         "153.67.179.0/24",
         "2605:59ca:9200::/40"
       ],
-      "country_pct": 97.14285714285714,
+      "country_pct": 100.0,
       "city_pct": 100.0
     },
     "New Orleans, US": {
@@ -4642,7 +4642,7 @@
         "9.170.56.0/24",
         "9.170.57.0/24"
       ],
-      "country_pct": 84.70588235294117,
+      "country_pct": 85.88235294117646,
       "city_pct": 87.2340425531915
     },
     "Nicosia, CY": {
@@ -5128,7 +5128,7 @@
         "2620:134:b054:100::82/128",
         "2620:134:b054:100::83/128"
       ],
-      "country_pct": 69.0909090909091,
+      "country_pct": 72.72727272727273,
       "city_pct": 65.51724137931035
     },
     "Port of Spain, TT": {
@@ -5780,7 +5780,7 @@
         "98.97.129.0/25",
         "98.97.129.128/25"
       ],
-      "country_pct": 97.3170731707317,
+      "country_pct": 97.5609756097561,
       "city_pct": 97.52066115702479
     },
     "Santo Domingo, DO": {
@@ -12614,10 +12614,10 @@
     "168.140.240.0/24": true,
     "168.140.241.0/24": true,
     "2406:2d40:b000::/38": true,
-    "179.65.32.0/24": false,
-    "179.65.33.0/24": false,
-    "179.65.34.0/24": false,
-    "179.65.35.0/24": false,
+    "179.65.32.0/24": true,
+    "179.65.33.0/24": true,
+    "179.65.34.0/24": true,
+    "179.65.35.0/24": true,
     "179.65.36.0/24": false,
     "179.65.37.0/24": false,
     "179.65.38.0/24": true,
@@ -46408,9 +46408,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "MX",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-11-04T04:17:46Z"
+          "changed_at": "2026-11-05T04:35:56Z"
         }
       }
     },
@@ -65553,9 +65553,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "BS",
           "city": "",
-          "changed_at": "2026-11-03T04:51:38Z"
+          "changed_at": "2026-11-05T04:35:56Z"
         }
       }
     },
@@ -66953,9 +66953,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "SD",
+          "country": "NE",
           "city": "",
-          "changed_at": "2026-11-01T03:41:38Z"
+          "changed_at": "2026-11-05T04:35:56Z"
         }
       }
     },
@@ -101638,9 +101638,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "CL",
           "city": "",
-          "changed_at": "2026-11-03T04:51:38Z"
+          "changed_at": "2026-11-05T04:35:56Z"
         }
       }
     },
@@ -102828,9 +102828,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "TZ",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-08-26T00:53:41Z"
+          "changed_at": "2026-11-05T04:35:56Z"
         }
       }
     },
@@ -109953,9 +109953,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "ipinfo": {
-          "country": "US",
+          "country": "HM",
           "city": "",
-          "changed_at": "2026-06-15T23:49:41Z"
+          "changed_at": "2026-11-05T04:35:56Z"
         },
         "ip2location": {
           "country": "HM",
@@ -109988,9 +109988,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "ipinfo": {
-          "country": "US",
+          "country": "HM",
           "city": "",
-          "changed_at": "2026-06-15T23:49:41Z"
+          "changed_at": "2026-11-05T04:35:56Z"
         },
         "ip2location": {
           "country": "HM",
@@ -111543,9 +111543,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "GH",
           "city": "",
-          "changed_at": "2026-11-03T04:51:38Z"
+          "changed_at": "2026-11-05T04:35:56Z"
         }
       }
     },
@@ -115763,9 +115763,9 @@
           "changed_at": "2026-11-04T04:17:46Z"
         },
         "ipinfo": {
-          "country": "US",
+          "country": "PG",
           "city": "",
-          "changed_at": "2026-11-03T04:51:38Z"
+          "changed_at": "2026-11-05T04:35:56Z"
         },
         "ip2location": {
           "country": "US",
@@ -115798,9 +115798,9 @@
           "changed_at": "2026-11-04T04:17:46Z"
         },
         "ipinfo": {
-          "country": "US",
+          "country": "PG",
           "city": "",
-          "changed_at": "2026-11-03T04:51:38Z"
+          "changed_at": "2026-11-05T04:35:56Z"
         },
         "ip2location": {
           "country": "US",
@@ -137058,9 +137058,9 @@
           "changed_at": "2026-09-02T02:18:28Z"
         },
         "iplocate": {
-          "country": "CL",
+          "country": "AR",
           "city": "",
-          "changed_at": "2026-11-03T04:51:38Z"
+          "changed_at": "2026-11-05T04:35:56Z"
         }
       }
     },
@@ -151463,9 +151463,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "ipinfo": {
-          "country": "LS",
+          "country": "HM",
           "city": "",
-          "changed_at": "2026-06-15T23:49:41Z"
+          "changed_at": "2026-11-05T04:35:56Z"
         },
         "ip2location": {
           "country": "HM",
