@@ -1639,7 +1639,7 @@
         "96.0.72.0/21",
         "96.0.80.0/22"
       ],
-      "country_pct": 92.07459207459208,
+      "country_pct": 92.54079254079254,
       "city_pct": 89.60000000000001
     },
     "Bangkok, TH": {
@@ -9242,7 +9242,7 @@
         "99.77.234.0/24",
         "99.82.164.0/24"
       ],
-      "country_pct": 88.91025641025641,
+      "country_pct": 89.16666666666667,
       "city_pct": 88.51894374282435
     },
     "Seattle, US": {
@@ -10647,7 +10647,7 @@
         "72.242.0.0/15",
         "76.223.170.80/28"
       ],
-      "country_pct": 91.98218262806236,
+      "country_pct": 92.42761692650335,
       "city_pct": 70.54263565891473
     },
     "Tampa, US": {
@@ -55532,9 +55532,9 @@
           "changed_at": "2026-11-08T03:45:54Z"
         },
         "ipinfo": {
-          "country": "US",
+          "country": "BR",
           "city": "",
-          "changed_at": "2026-11-08T03:45:54Z"
+          "changed_at": "2026-11-09T03:58:24Z"
         },
         "ip2location": {
           "country": "US",
@@ -56337,9 +56337,9 @@
           "changed_at": "2026-11-08T03:45:54Z"
         },
         "ipinfo": {
-          "country": "US",
+          "country": "BR",
           "city": "",
-          "changed_at": "2026-11-08T03:45:54Z"
+          "changed_at": "2026-11-09T03:58:24Z"
         },
         "ip2location": {
           "country": "US",
@@ -59522,9 +59522,9 @@
           "changed_at": "2026-11-08T03:45:54Z"
         },
         "ipinfo": {
-          "country": "US",
+          "country": "BR",
           "city": "",
-          "changed_at": "2026-11-08T03:45:54Z"
+          "changed_at": "2026-11-09T03:58:24Z"
         },
         "ip2location": {
           "country": "US",
@@ -63932,9 +63932,9 @@
           "changed_at": "2026-11-08T03:45:54Z"
         },
         "ipinfo": {
-          "country": "US",
+          "country": "BR",
           "city": "",
-          "changed_at": "2026-11-08T03:45:54Z"
+          "changed_at": "2026-11-09T03:58:24Z"
         },
         "ip2location": {
           "country": "US",
@@ -245407,9 +245407,9 @@
           "changed_at": "2026-11-07T04:00:10Z"
         },
         "ipinfo": {
-          "country": "US",
+          "country": "NZ",
           "city": "",
-          "changed_at": "2026-11-07T04:00:10Z"
+          "changed_at": "2026-11-09T03:58:24Z"
         },
         "ip2location": {
           "country": "US",
@@ -245422,9 +245422,9 @@
           "changed_at": "2026-11-07T04:00:10Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "NZ",
           "city": "",
-          "changed_at": "2026-11-07T04:00:10Z"
+          "changed_at": "2026-11-09T03:58:24Z"
         }
       }
     },
@@ -277957,9 +277957,9 @@
           "changed_at": "2026-11-07T04:00:10Z"
         },
         "ipinfo": {
-          "country": "US",
+          "country": "TW",
           "city": "",
-          "changed_at": "2026-11-07T04:00:10Z"
+          "changed_at": "2026-11-09T03:58:24Z"
         },
         "ip2location": {
           "country": "US",
@@ -277972,9 +277972,9 @@
           "changed_at": "2026-11-07T04:00:10Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "TW",
           "city": "",
-          "changed_at": "2026-11-07T04:00:10Z"
+          "changed_at": "2026-11-09T03:58:24Z"
         }
       }
     },
