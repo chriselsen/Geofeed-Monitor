@@ -801,7 +801,7 @@
         "35.234.240.0/20",
         "35.242.43.0/24"
       ],
-      "country_pct": 94.66666666666667,
+      "country_pct": 96.0,
       "city_pct": 95.45454545454545
     },
     "Mumbai, IN": {
@@ -27453,9 +27453,9 @@
           "changed_at": "2026-11-07T04:00:03Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "CA",
           "city": "",
-          "changed_at": "2026-11-07T04:00:03Z"
+          "changed_at": "2026-11-10T05:31:13Z"
         }
       }
     },
@@ -30323,9 +30323,9 @@
           "changed_at": "2026-11-07T04:00:03Z"
         },
         "iplocate": {
-          "country": "US",
+          "country": "CA",
           "city": "",
-          "changed_at": "2026-11-07T04:00:03Z"
+          "changed_at": "2026-11-10T05:31:13Z"
         }
       }
     },
