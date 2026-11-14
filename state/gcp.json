@@ -95,8 +95,8 @@
         "8.34.211.0/24",
         "8.34.220.0/22"
       ],
-      "country_pct": 97.70491803278688,
-      "city_pct": 98.34254143646409
+      "country_pct": 98.0327868852459,
+      "city_pct": 98.35164835164835
     },
     "Columbus, US": {
       "country": "US",
@@ -42136,9 +42136,9 @@
       "geofeed_changed_at": null,
       "providers": {
         "maxmind": {
-          "country": "US",
-          "city": "",
-          "changed_at": "2026-11-13T04:30:01Z"
+          "country": "BE",
+          "city": "Brussels",
+          "changed_at": "2026-11-14T04:26:14Z"
         },
         "ipinfo": {
           "country": "US",
