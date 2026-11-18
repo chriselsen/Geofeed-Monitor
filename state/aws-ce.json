@@ -1514,7 +1514,7 @@
         "99.83.110.0/24"
       ],
       "country_pct": 99.09785932721714,
-      "city_pct": 87.08031157668546
+      "city_pct": 87.08378088077336
     },
     "Athens, GR": {
       "country": "GR",
@@ -1901,7 +1901,7 @@
         "71.137.28.0/23"
       ],
       "country_pct": 98.7012987012987,
-      "city_pct": 98.82629107981221
+      "city_pct": 98.82903981264637
     },
     "Berlin, DE": {
       "country": "DE",
@@ -2903,7 +2903,7 @@
         "99.78.196.0/22"
       ],
       "country_pct": 99.2108229988726,
-      "city_pct": 45.776347546259046
+      "city_pct": 45.7579412947326
     },
     "Bogota, CO": {
       "country": "CO",
@@ -3942,7 +3942,7 @@
         "99.78.216.0/22"
       ],
       "country_pct": 99.40256045519203,
-      "city_pct": 64.65968586387434
+      "city_pct": 64.71510716152639
     },
     "Copenhagen, DK": {
       "country": "DK",
@@ -86030,8 +86030,8 @@
       "providers": {
         "maxmind": {
           "country": "CN",
-          "city": "",
-          "changed_at": "2026-11-13T04:30:12Z"
+          "city": "Beijing",
+          "changed_at": "2026-11-18T00:11:47Z"
         },
         "ipinfo": {
           "country": "CN",
@@ -307370,8 +307370,8 @@
       "providers": {
         "maxmind": {
           "country": "US",
-          "city": "",
-          "changed_at": "2026-11-14T04:26:22Z"
+          "city": "Columbus",
+          "changed_at": "2026-11-18T00:11:47Z"
         },
         "ipinfo": {
           "country": "US",
@@ -308210,8 +308210,8 @@
       "providers": {
         "maxmind": {
           "country": "US",
-          "city": "",
-          "changed_at": "2026-11-14T04:26:22Z"
+          "city": "Columbus",
+          "changed_at": "2026-11-18T00:11:47Z"
         },
         "ipinfo": {
           "country": "US",
@@ -309155,8 +309155,8 @@
       "providers": {
         "maxmind": {
           "country": "US",
-          "city": "",
-          "changed_at": "2026-11-14T04:26:22Z"
+          "city": "Columbus",
+          "changed_at": "2026-11-18T00:11:47Z"
         },
         "ipinfo": {
           "country": "US",
@@ -351995,8 +351995,8 @@
       "providers": {
         "maxmind": {
           "country": "US",
-          "city": "",
-          "changed_at": "2026-11-14T04:26:22Z"
+          "city": "Los Angeles",
+          "changed_at": "2026-11-18T00:11:47Z"
         },
         "ipinfo": {
           "country": "US",
@@ -377335,8 +377335,8 @@
       "providers": {
         "maxmind": {
           "country": "US",
-          "city": "",
-          "changed_at": "2026-11-14T04:26:22Z"
+          "city": "Ashburn",
+          "changed_at": "2026-11-18T00:11:47Z"
         },
         "ipinfo": {
           "country": "US",

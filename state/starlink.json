@@ -6734,7 +6734,7 @@
         "98.97.148.0/24",
         "98.97.149.0/24"
       ],
-      "country_pct": 95.97014925373134,
+      "country_pct": 95.82089552238806,
       "city_pct": 64.19437340153452
     },
     "Buffalo, US": {
@@ -41164,7 +41164,7 @@
         "98.97.157.0/24"
       ],
       "country_pct": 95.65217391304348,
-      "city_pct": 93.28358208955224
+      "city_pct": 92.91044776119402
     },
     "Sao Tome, ST": {
       "country": "ST",
@@ -41593,7 +41593,7 @@
         "98.97.99.0/24"
       ],
       "country_pct": 98.92857142857143,
-      "city_pct": 93.67088607594937
+      "city_pct": 94.87179487179486
     },
     "Sebastian, US": {
       "country": "US",
@@ -132553,8 +132553,8 @@
       "providers": {
         "maxmind": {
           "country": "BR",
-          "city": "S\u00e3o Paulo",
-          "changed_at": "2026-10-28T03:25:47Z"
+          "city": "Cariacica",
+          "changed_at": "2026-11-18T00:11:56Z"
         },
         "ipinfo": {
           "country": "BR",
@@ -162583,8 +162583,8 @@
       "providers": {
         "maxmind": {
           "country": "BR",
-          "city": "Moju",
-          "changed_at": "2026-10-07T03:39:58Z"
+          "city": "Bel\u00e9m",
+          "changed_at": "2026-11-18T00:11:56Z"
         },
         "ipinfo": {
           "country": "BR",
@@ -184492,9 +184492,9 @@
       "geofeed_changed_at": "2026-06-15T23:49:41Z",
       "providers": {
         "maxmind": {
-          "country": "SA",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-11-04T04:17:46Z"
+          "changed_at": "2026-11-18T00:11:56Z"
         },
         "ipinfo": {
           "country": "QA",
@@ -184527,9 +184527,9 @@
       "geofeed_changed_at": "2026-06-15T23:49:41Z",
       "providers": {
         "maxmind": {
-          "country": "SA",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-11-04T04:17:46Z"
+          "changed_at": "2026-11-18T00:11:56Z"
         },
         "ipinfo": {
           "country": "QA",
@@ -190023,8 +190023,8 @@
       "providers": {
         "maxmind": {
           "country": "US",
-          "city": "Clermont",
-          "changed_at": "2026-11-04T04:17:46Z"
+          "city": "",
+          "changed_at": "2026-11-18T00:11:56Z"
         },
         "ipinfo": {
           "country": "US",
@@ -190058,8 +190058,8 @@
       "providers": {
         "maxmind": {
           "country": "US",
-          "city": "Clermont",
-          "changed_at": "2026-11-04T04:17:46Z"
+          "city": "",
+          "changed_at": "2026-11-18T00:11:56Z"
         },
         "ipinfo": {
           "country": "US",
@@ -288827,9 +288827,9 @@
       "geofeed_changed_at": "2026-06-15T23:49:41Z",
       "providers": {
         "maxmind": {
-          "country": "AR",
-          "city": "Puerto Rico",
-          "changed_at": "2026-11-11T04:02:17Z"
+          "country": "BR",
+          "city": "S\u00e3o Paulo",
+          "changed_at": "2026-11-18T00:11:56Z"
         },
         "ipinfo": {
           "country": "AR",
