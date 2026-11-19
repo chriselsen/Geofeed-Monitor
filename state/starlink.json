@@ -18575,7 +18575,7 @@
         "98.97.132.0/24",
         "98.97.133.0/24"
       ],
-      "country_pct": 96.57142857142857,
+      "country_pct": 95.42857142857143,
       "city_pct": 97.0873786407767
     },
     "Harbin, CN": {
@@ -24045,7 +24045,7 @@
         "9.246.98.0/24",
         "9.246.99.0/24"
       ],
-      "country_pct": 97.63779527559055,
+      "country_pct": 96.69291338582677,
       "city_pct": 98.14323607427056
     },
     "Kyle, US": {
@@ -41163,7 +41163,7 @@
         "98.97.156.0/24",
         "98.97.157.0/24"
       ],
-      "country_pct": 95.65217391304348,
+      "country_pct": 95.21739130434783,
       "city_pct": 92.91044776119402
     },
     "Sao Tome, ST": {
@@ -68689,9 +68689,6 @@
     "2605:59c7:a000:71a::/64": [
       "Unrecognized city name \"Gowrie\" in US (known in: AU)"
     ],
-    "2605:59c7:a000:13a3::/64": [
-      "Unrecognized city name \"Gracefield\""
-    ],
     "2605:59c7:a000:cae::/64": [
       "Unrecognized city name \"Graford\""
     ],
@@ -89942,9 +89939,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "ZW",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-09-01T02:58:05Z"
+          "changed_at": "2026-11-19T00:12:11Z"
         }
       }
     },
@@ -89977,9 +89974,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "ZW",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-11-02T03:47:29Z"
+          "changed_at": "2026-11-19T00:12:11Z"
         }
       }
     },
@@ -90292,9 +90289,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "UA",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-11-09T03:58:28Z"
+          "changed_at": "2026-11-19T00:12:11Z"
         }
       }
     },
@@ -90327,9 +90324,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "UA",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-11-09T03:58:28Z"
+          "changed_at": "2026-11-19T00:12:11Z"
         }
       }
     },
@@ -90362,9 +90359,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "UA",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-11-09T03:58:28Z"
+          "changed_at": "2026-11-19T00:12:11Z"
         }
       }
     },
@@ -90397,9 +90394,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "UA",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-11-09T03:58:28Z"
+          "changed_at": "2026-11-19T00:12:11Z"
         }
       }
     },
@@ -93057,9 +93054,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "UA",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-15T02:40:32Z"
+          "changed_at": "2026-11-19T00:12:11Z"
         }
       }
     },
@@ -93092,9 +93089,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "UA",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-10-15T02:40:32Z"
+          "changed_at": "2026-11-19T00:12:11Z"
         }
       }
     },
@@ -117557,9 +117554,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "BR",
+          "country": "BO",
           "city": "",
-          "changed_at": "2026-10-09T03:59:16Z"
+          "changed_at": "2026-11-19T00:12:11Z"
         }
       }
     },
@@ -117592,9 +117589,9 @@
           "changed_at": "2026-08-02T02:07:06Z"
         },
         "iplocate": {
-          "country": "BR",
+          "country": "BO",
           "city": "",
-          "changed_at": "2026-10-09T03:59:16Z"
+          "changed_at": "2026-11-19T00:12:11Z"
         }
       }
     },
