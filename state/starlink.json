@@ -6133,7 +6133,7 @@
         "98.97.130.0/24",
         "98.97.131.0/24"
       ],
-      "country_pct": 92.0,
+      "country_pct": 92.88888888888889,
       "city_pct": 92.24806201550388
     },
     "Bras\u00edlia, BR": {
@@ -7062,7 +7062,7 @@
         "98.97.148.0/24",
         "98.97.149.0/24"
       ],
-      "country_pct": 95.82089552238806,
+      "country_pct": 95.67164179104478,
       "city_pct": 64.19437340153452
     },
     "Buffalo, US": {
@@ -12377,7 +12377,7 @@
         "9.246.90.0/24",
         "9.246.91.0/24"
       ],
-      "country_pct": 93.33333333333333,
+      "country_pct": 95.0,
       "city_pct": 97.14285714285714
     },
     "Damascus, US": {
@@ -42911,7 +42911,7 @@
         "98.97.129.0/25",
         "98.97.129.128/25"
       ],
-      "country_pct": 94.48275862068965,
+      "country_pct": 94.25287356321839,
       "city_pct": 94.04761904761905
     },
     "Santiago Papasquiaro, MX": {
@@ -159536,9 +159536,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "CL",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-11-22T00:12:34Z"
+          "changed_at": "2026-11-27T00:11:23Z"
         }
       }
     },
@@ -161076,9 +161076,9 @@
           "changed_at": "2026-09-02T02:18:28Z"
         },
         "iplocate": {
-          "country": "AR",
+          "country": "US",
           "city": "",
-          "changed_at": "2026-11-22T00:12:34Z"
+          "changed_at": "2026-11-27T00:11:23Z"
         }
       }
     },
@@ -191806,9 +191806,9 @@
           "changed_at": "2026-06-15T23:49:41Z"
         },
         "iplocate": {
-          "country": "QA",
+          "country": "SY",
           "city": "",
-          "changed_at": "2026-11-22T00:12:34Z"
+          "changed_at": "2026-11-27T00:11:23Z"
         }
       }
     },
@@ -281846,9 +281846,9 @@
           "changed_at": "2026-11-25T00:11:45Z"
         },
         "ipinfo": {
-          "country": "CL",
+          "country": "BR",
           "city": "",
-          "changed_at": "2026-11-25T00:11:45Z"
+          "changed_at": "2026-11-27T00:11:23Z"
         },
         "ip2location": {
           "country": "CL",
@@ -281861,9 +281861,9 @@
           "changed_at": "2026-11-25T00:11:45Z"
         },
         "iplocate": {
-          "country": "CL",
+          "country": "BR",
           "city": "",
-          "changed_at": "2026-11-25T00:11:45Z"
+          "changed_at": "2026-11-27T00:11:23Z"
         }
       }
     },
